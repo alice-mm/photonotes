@@ -1,0 +1,298 @@
+= Explications sur les photos en _raws_ et le traitement
+:description: Vulgarisation sur le concept des photos en raws et leur traitement, et remarques personnelles liées à ça.
+
+include::partials/link-to-index.adoc[]
+
+== Yo
+
+À la base je voulais juste faire un dessin rapidos sur mon site pour expliquer :
+
+* ce que j’appelle *« traiter mes photos »* ;
+
+* pourquoi ça me prend *des mois voire des années* pour mettre un diaporama de mes photos en ligne ;
+
+* ce que sont *les _raws_* (en gros) ;
+
+* pourquoi ça me saoule quand on me dit que je *« triche »*, et aussi (dans une moindre mesure), que je « fais *de la retouche* ».
+
+Je me suis rendu compte que ça faisait beaucoup, et qu’un document en bonne et due forme serait mieux.
+Ça me donnait aussi l’occasion de formaliser un peu, link:rawtherapee.html[dans un document séparé], *mon processus de traitement actuel*.
+
+[CAUTION]
+====
+Ce n’est pas mon domaine professionnel, donc ne prenez pas non plus _trop_ pour argent comptant ce que je vous raconte.
+====
+
+
+== _Raws_
+
+=== Œil, capteurs et information
+
+On a beau se surpasser en technologie, l’œil humain reste, sur bien des plans, incroyablement *stylé par rapport aux capteurs* de nos appareils.
+En particulier, l’œil s’adapte vachement bien aux *changements de luminosité* :
+la plage visible (les degrés de luminosité qu’on arrive à analyser à un instant _t_) change à volonté, constamment, se déplaçant et s’étirant.
+L'œil ne peut certes pas percevoir _simultanément_ une très forte lumière et une très faible lumière avec le même niveau de détail, mais peut se concentrer sur l’un ou l’autre alternativement.
+
+.Deux instants, deux plages visibles avec un certain niveau de détail
+image::plage.png[role = "related thumb", align = center]
+
+En plus :
+
+* le cerveau arrive à *amalgamer les informations* ramassées sur différentes plages, donnant l’impression qu’on voit plein de trucs grave bien ;
+
+* même sans changer la plage, elle est, de base, *plutôt large*.
+
+Quant aux *écrans*, ils sont encore plus à la peine quand il s’agit de représenter différents degrés de luminosité.
+Et encore pire pour les *imprimantes*.
+
+Tout ceci implique qu’il faut *sacrifier une part de l’information visuelle* au moins deux fois de suite, avant de « voir » une photo :
+
+. un premier sacrifice entre la « réalité » et *ce que l’appareil photo va capturer* ;
+
+. un second sacrifice *pour afficher sur un écran ou imprimer la photo* en partant des données écrites par l’appareil photo.
+
+Selon comment on gère ça, il peut par exemple y avoir des pixels *« plus noirs que noir » et « plus blancs que blanc »* (https://www.youtube.com/watch?v=VEZw1Vmq97Y&t=60[Coluche se retourne dans sa tombe^], là), impossibles à représenter sans concessions.
+
+.L’information visuelle qui se fait défoncer la figure deux fois de suite
+image::information.png[role = "related thumb", align = center]
+
+On est pas forcément conscient de tout ça, car bon, on nous a habitués à appuyer sur un bouton, et pouf, à avoir une image qui surgit sur notre écran, et on la prend pour acquise et comme un truc final, alors que les choses sont un peu plus subtiles que ça, surtout si on veut faire des choses un peu plus poussées.
+
+« Bah oui mais même ton appareil, il te montre bien la photo après la prise, non ? »
+Certes, mais c’est juste *_une_ interprétation possible*, suggérée parmi une infinité, histoire qu’on puisse quand même un peu naviguer, supprimer les photos foireuses directement sur l’appareil, etc.
+On détaillera ça très bientôt.
+
+La photo, c’est un peu comme quand on essaye de représenter l’ouïe d’un éléphant, l’odorat d’un chien, ou la vision d’un chat ou d’un insecte : on est plus ou moins niqué d’avance et il faut s’appuyer sur des abstractions.
+
+
+=== D’où les _raws_
+
+Pour obtenir le meilleur résultat possible, il vaut mieux, du fait des sacrifices susmentionnés :
+
+* [x] Faire attention au *paramétrage de l’appareil*, et lui demander, dans la mesure du possible et du raisonnable, de *conserver autant d’information que possible*.
+
+* [x] *Retarder* au maximum l’instant du sacrifice de « capteur vers écran », *en évitant tout changement irréversible* dont on peut se passer.
+
+* [x] Effectuer des choix relativement manuels et éclairés concernant *_quoi_ sacrifier*.
+
+Un fichier _raw_ footnote:[De l’anglais « brut », et prononcé avec une espèce de « ô » comme pour _law_, _draw_, _saw_…] représente l’information disponible avant d’avoir effectué le sacrifice de « capteur vers écran ». +
+https://fr.wikipedia.org/wiki/RAW_(format_d%27image)[^] +
+On est donc encore freiné par les capacités de l’appareil, mais *on a limité les dégâts* au maximum.
+
+Cela permet de conserver une certaine *latitude*, des *degrés de liberté* sur plein de choses, au lieu d’avoir d’emblée une image « figée », gravée dans le marbre.
+Une analogie qui vient tout juste de me venir et qui est peut-être moisie serait : c’est une partition de musique plutôt qu’une _interprétation sonore enregistrée_ de cette partition.
+
+
+=== Visionnage
+
+Donc OK, c’est cool, mais à ce stade, ce n’est *pas « regardable »* sans une phase d’« interprétation ».
+À ce stade, https://rawpedia.rawtherapee.com/How_to_create_DCP_color_profiles[comme dit dans la documentation de RawTherapee^], « il n’y a *même pas de concept de “couleur”* ».
+On a juste une foule de *pixels* (ouais, les éléments du capteur de l’appareil sont qualifiés de « pixels » au même titre que ceux d’un écran, même si on reçoit la lumière au lieu de la produire) qui *disent des trucs cryptiques* :
+
+.Les pixels au stade du _raw_
+image::pixels_raw.png[role = "related thumb", align = center]
+
+[NOTE]
+====
+Les _raws_ contiennent aussi trois tonnes de *métadonnées*, genre des informations sur les réglages de l’appareil au moment de la prise, ou les bonnes vieilles coordonnées{nbsp}GPS, etc.
+C’est partiellement encore vrai pour les JPG, mais quand même moins.
+====
+
+// https://en.wikipedia.org/wiki/Color_balance
+
+// > Several aspects of the acquisition and display process make such color correction essential – including that the acquisition sensors do not match the sensors in the human eye, that the properties of the display medium must be accounted for, and that the ambient viewing conditions of the acquisition differ from the display viewing conditions.
+
+Il n’est pas rare, que les explorateurs de fichiers, en l’absence de modules supplémentaires, *n’essayent même pas de générer d’aperçus* pour les _raws_ :
+
+.Mes _raws_ dans mon explorateur de fichiers
+image::explorateur.png[role = "related thumb", align = center]
+
+Voilà pourquoi, en particulier, ça me semble absurde quand *on me presse pour voir des photos* que je viens _tout juste de prendre_ :
+
+* Je peux juste montrer les *aperçus potentiellement foireux* et distordus proposés par l’appareil photo.
+
+* Les observateurs n’auront pas forcément le *recul* et l’habitude nécessaire pour faire un peu fi de l’exposition, de l’orientation, et j’en passe – pour voir « au-delà » de ce qui est affiché, et penser *en termes de potentiel et non d’esthétique instantanée*.
+
+* Une fois le traitement terminé et les photos _vraiment_ regardables, les gens risquent d’être blasés et d’avoir la flemme de regarder, car ils auront le sentiment d’avoir *déjà tout vu*.
+
+La comparaison la plus évidente est celle que l’on peut effectuer avec les bonnes vieilles *pellicules photographiques* d’époque. footnote:[Encore utilisées par certains, ce que je peux comprendre même si, personnellement, je pense que je n’y toucherai jamais.]
+En photographie sur film, https://fr.wikipedia.org/wiki/Photographie_argentique[dite « argentique »^], l’appareil permet d’inscrire les informations visuelles sur la pellicule, de manière chimique.
+À ce stade, *un être humain ne peut rien voir* à proprement parler, sur la pellicule !
+Il faut une première série de *manipulations* pour produire les négatifs – qui eux non plus ne sont pas géniaux à regarder en tant que tels –, et quelques tours de passe-passe de plus pour en tirer des photos en bonne et due forme.
+
+La comparaison entre pellicule et _raw_ est intéressante pour au moins deux aspects :
+
+* Au début, on a un truc qu’on ne va pas forcément *foutre allègrement sous le nez de ses voisins*.
+
+* Les étapes qui mènent à l’image finale peuvent faire l’objet de *personnalisation, d’expérimentation… et d’erreurs*, bien entendu.
+
+[NOTE]
+====
+Les _raws_ sont d’ailleurs parfois qualifiés de « négatifs numériques ».
+====
+
+Donc bon, harcèleriez-vous quelqu’un pour qu’il vous montre ses négatifs ou sa pellicule ?
+Je veux bien vous présenter mes _raws_, mais bon…
+
+.Il faudra assumer les conséquences potentielles
+image::regarder_un_raw.png[role = "related thumb", align = center]
+
+
+== Comment produire des _raws_
+
+Le sujet des _raws_ peut sembler encore un peu ésotérico-élitiste à ce stade, mais en fait pas forcément.
+*En produire soi-même n’est pas si compliqué.*
+
+En général c’est juste *un paramètre à la con* dans l’appareil, disant *quel format de fichier produire*.
+C’est généralement *aussi possible pour les téléphones portables*. footnote:[Une bête recherche internet du style « android shoot raw » donne trois tonnes de résultats.]
+Le mode d’emploi (et le web) vous en diront davantage, je suppose.
+Mais rien de très sorcier, en soi.
+
+Vous pouvez même souvent choisir de produire _à la fois_ les _raws_ et un format plus basique comme les JPG « habituels ».
+Cette option est cependant souvent perçue comme exagérée car il n’est pas rare qu’un tel JPG soit déjà inclus, de base, dans les métadonnées du _raw_.
+On peut l’extraire relativement facilement, donc c’est pas ouf de prendre de la place pour écrire deux fois le même JPG, quoi.
+Mais tout ça pour dire qu’*on peut effectuer une transition « en douceur »*, sans abandonner du jour au lendemain les JPG, ou même n’utiliser les _raws_ que pour nos clichés préférés, qui « le méritent » selon nous, tout en continuant comme d’habitude pour les autres.
+
+Il est également souvent proposé de produire des _raws_ de divers types :
+
+Compressés sans perte::
+Autant d’information qu’à l’origine, mais mieux organisée, pour moins phagocyter votre disque-dur, un peu comme quand on fait une archive en `.zip`.
+
+Non compressés::
+Pas trop d’avantage si une compression sans perte est proposée par ailleurs.
+Je crois que parfois, ce n’est même pas proposé et c’est la compression sans perte qui prend le nom, genre, de _raws_ « normaux ».
+
+Compressés avec des pertes jugées acceptables par le constructeur::
+La différence n’est généralement visible qu’en zoomant vraiment comme un goret sur la photo finale, en tout cas chez Canon.
+Si vous ne jouez pas votre vie sur la qualité de vos photos et que vous ne faites pas des tirages dédiés à des publicités remplissant la facade d’un gratte-ciel (et encore…), *vous pouvez probablement opter pour ce mode* sans craintes.
+
+
+== Traitement
+
+Il se trouve que *les paramètres d’interprétation par défaut*, suggérés par l’appareil et utilisés pour pondre l’aperçu qu’il expose (et éventuellement pour produire un JPG embarqué dans le _raw_), collent rarement à ce qu’on veut.
+Quand on photographie en _raw_, on demande même souvent explicitement à l’appareil de *calmer sa joie sur certains aspects* pour nous donner une vision plus fiable de la *marge de manœuvre* qu’on aura, donc forcément, ça fait des trucs pas fous, de base. footnote:[Avec mon appareil Canon, j’utilise le https://global.canon/en/imaging/picturestyle/style/index.html[« style d’image »^] appelé « Neutre », légèrement personnalisé pour relever d’un cran l’amélioration de netteté, tandis que par défaut ça doit être genre « Auto » ou « Standard », qui sont en mode fête du slip et essayent de faire péter les couleurs et le contraste comme pas permis. Ça n’affecte que le JPG et pas les données brutes, ce qui permet de changer d’avis plus tard en appliquant un « profil colorimétrique » différent, correspondant à n’importe lequel des « styles d’image » initialement proposés… mais je trouve généralement qu’en dehors de « Neutre » (et « Monochrome » mais c’est pas le même délire) les couleurs sont absurdes.]
+Il faut ensuite faire un peu de gymnastique mentale lors du tri des photos, pour juger non l’aspect qu’elles ont avec les paramètres par défaut, mais plutôt leur potentiel : il faut penser compensation d’exposition, rotation, recadrage, recalibration des couleurs…
+
+Commence ensuite la tâche du *traitement*, consistant à *choisir soi-même les paramètres* qui nous semblent *les plus appropriés* pour *tirer le meilleur des données brutes*.
+Il faut un peu se remonter les manches, des fois, mais ça vaut le coup.
+Pas le meilleur exemple, mais j’ai récemment fait le ménage sur l’ordi et flemme de faire de la spéléo pour trouver mieux :
+
+.À gauche le JPG proposé automatiquement par l’appareil (mais bon, en style d’image « Neutre », il faut dire), et à droite ce que j’ai obtenu en me retroussant les manches à partir du _raw_.
+image::jpg_raw_comp.jpg[role = "related thumb", align = center, width = {max_media_width}]
+
+Un truc marrant, c’est que pour un même _raw_ de départ, *plusieurs personnes pondront des images radicalement différentes*.
+C’est même devenu un jeu (et un moyen d’apprentissage) sur le sympathique site communautaire https://discuss.pixls.us[discuss.pixls.us^] (qui comporte une section francophone, il me semble) : +
+https://discuss.pixls.us/t/animal-pajama-party/43005[^] +
+… Sans parler des filtres artistiques et autres bidouilles qui relèvent plus de l’infographie que de la photographie – c’est un autre sujet.
+Un autre sujet auquel on va indirectement se frotter ci-après.
+
+
+== Triche
+
+Je fais une *distinction* entre les deux concepts suivants :
+
+Traitement::
+💾 —[🧮]→ 🖼️ +
+Choisir des *paramètres* pour produire un JPG (ou similaire) à partir d’un _raw_, via des procédés *mathématiques* et *reproductibles* automatiquement.
+C’est un peu l’équivalent du *développement* des pellicules et négatifs, et certaines personnes appellent même ça _littéralement_ un développement.
+*C’est ce dont on parle dans le présent document.*
+
+Retouche::
+🖼️ —[🖌️]→ 🖼️ +
+Tripoter une image, souvent pas en _raw_, avec un logiciel *genre Photoshop* ou Gimp, plus axé *dessin*, où on passe une bonne partie de son temps à changer des choses *_à des endroits précis_ à l’aide de la souris*, typiquement pour retirer des rides sur un visage pour une pub, ou faire croire qu’une photo a été prise pendant un magnifique coucher de soleil alors que pas du tout.
+La frontière avec le _montage photo_ est parfois mince.
+Cela n’a pas grand-chose à voir avec ce dont parle le présent document.
+
+De ce fait :
+
+* quand les gens disent que je fais de la « retouche », ça me semble totalement hors sujet ;
+
+* quand les gens disent que je « triche », ça m’évoque des scènes de ce genre :
++
+.Ils sont un peu cabossés car faits sans souris
+image::produits.png[role = "related thumb", align = center]
+
+Même pour le développement physique, les gens utilisent *des produits chelous* avec des résultats variés et parfois un peu pifométriques, et doivent choisir *combien de temps* ils vont laisser chaque cliché dans tel ou tel bain chimique, etc.
+
+Je ne vais quand même pas garder *des artefacts à la con* et la distortion due à l’objectif juste pour vous faire plaisir, si ?
+Des fois, sur les _raws_, si on ne gère pas link:++https://fr.wikipedia.org/wiki/Distorsion_(optique)++[la distortion géométrique^], on voit même les bords de l’objectif dans les coins !
+(Ça surprend, la première fois.)
+(J’avais des exemples l’autre jour mais ils ont été supprimés depuis ; mince.)
+
+Au fait, c’est un peu pareil dans le cinéma : ça fait souvent bizarre, dans les _making-of_, car on voit une différence notable entre la tronche du décor et même des gens « vus de l’extérieur » par rapport au rendu final. footnote:[Sans même parler des https://www.alicem.net/shr/film_chuchote_obscurite.png.html[acteurs qui parlent en chuchotant à moitié alors qu’on ne fait jamais ça en vrai, et des salles qui sont plongées dans la pénombre sans raison apparente^].]
+
+C’est d’autant plus vexant d’être accusé d’une triche quelconque quand, de nos jours, des gens spamment de photos prises avec leurs téléphones portables, qui appliquent, automatiquement et plus ou moins silencieusement, *trois tonnes de traitements* et de filtres, sans demander l’avis ou le point de vue de qui que ce soit.
+Autrement dit, *je fais manuellement* (au pris de vingt minutes à genre deux heures _par photo traitée_) *ce que les portables font instantanément*, souvent sans que l’utilisateur n’en ait conscience.
+
+Un des principaux *avantages du traitement manuel* est, bien entendu, que *j’ai mon mot à dire* sur ce qui est fait et comment (le téléphone ne peut pas trop lire dans nos pensées, même s’ils essayent de plus en plus ardemment).
+En plus (mais ça c’est plus psychologique, vous me direz), la photo me semble vraiment être « la mienne », après – *on s’y attache* beaucoup plus.
+Cette différence me rappelle un peu quand des potes m’invitaient à jouer à des jeux vidéo de bagnoles et qu’ils mettaient les vitesses en manuel alors que moi, qui étais tout paumé, restais en manuel.
+Cela demandait davantage d’efforts à mon adversaire, mais c’était rentabilisé.
+
+
+== IA
+
+Cela nous amène au sujet très actuel de l’IA.
+Cette section n’était initialement pas prévue, mais, pendant que je procrastinais au lieu de créer ce document, il y a eu l’essor de l’IA générative et tout le tintouin.
+On en est au point où non seulement *des pubs nous encouragent explicitement*, exemples à l’appui, *à trafiquer des photos* en en retirant automatiquement certains objets ou des personnes, mais en plus c’est parfois _la seule chose_ qu’on nous dit sur un téléphone sur toute la durée d’une longue pub.
+Bon, c’est pas pire que les pubs de bagnoles où on nous dit juste qu’elles sont stylées. footnote:[Je voulais faire un dessin là-dessus sur mon site, tiens, mais c’est enfoui dans ma liste d’idées à l’heure où j’écris ça.]
+
+En parallèle, internet est envahi de gens qui se font encenser pour des « photos » avant qu’on se rende compte que leur seul mérite est d’avoir bien sû rédiger des requêtes particulières.
+C’est certes une discipline à part entière – https://fr.wikipedia.org/wiki/Ing%C3%A9nierie_de_prompt[la « rédactique »^] –, pas toujours triviale, mais on est assez loin de la photographie.
+
+.Eux aussi sont cabossés car également faits sans souris
+image::generation.png[role = "related thumb", align = center]
+
+Et puis, à force, les IA générative s’entraînent sur des trucs créés par des IA génératives – elles « mangent leur propre merde » comme dit mon chef –, et ça part tout en vrille.
+
+Même en dehors du génératif pur et dur, *les améliorations automatiquement appliquées sont souvent elles-mêmes basées sur des réseaux de neurones*, certains *entraînés en siphonnant des œuvres existantes* (et des tonnes d’électricité).
+Ça va même vous rajouter du flou artificiel en arrière-plan des portraits, ou ce genre de conneries.
+Si _moi_ je « triche », alors il n’y a pas de mot pour ce que font ces gens.
+
+.J’exagère peut-être un peu, mais qui sait ?
+image::arriere-train.png[role = "related thumb", align = center]
+
+On parle de plus en plus souvent de https://en.wikipedia.org/wiki/Computational_photography[*« photographie computationnelle »*^], le terme qui englobe cette façon d’*exploiter des resources numériques* et de la *puissance de calcul* pour pallier les défauts de l’optique pure.
+Si ce concept n’est en réalité pas nouveau, il explose en ce moment, et est souvent encensé comme étant « le futur ».
+Alors certes, *retirer du bruit* dans le signal, *suivre un oiseau* en vol, ou *aider à la prise de vue de nuit*, c’est bien, mais j’ai l’impression que les *dérives farfelues* se font de plus en plus nombreuses.
+
+Les fabricants, en particulier de téléphones, cherchent à *appâter les gens* en leur promettant des outils pour *se faire mousser* sur des réseaux sociaux à la con.
+Une part de moins en moins grande du résultat est *_réellement liée_ à ce qui a été donné en entrée* – à la scène réelle et à l’instant présent.
+Au risque de sonner prématurément comme un vieux con (peut-être est-il trop tard pour m’en inquiéter ?), je voudrais souligner que, en conséquence, il y a de moins en moins d’espace pour *les choix*, et donc pour *exprimer sa personnalité, ses intentions, ses émotions* du moment.
+
+Vous me direz que les montages, les bidouilles et la génération par IA sont des formes de choix, et vous aurez peut-être raison, mais personnellement ça ne m’attire pas plus que ça.
+D’ailleurs, même en ce qui concerne le traitement manuel de _raws_, j’essaye personnellement de ne pas trop « craquer mon slip » et de garder quelque chose d’« organique ». footnote:[Une chose qui m’est également souvent chère en musique, sauf quand le non-organique est vraiment bien pensé et maîtrisé plutôt qu’imposé sans réfléchir, mais on s’éloigne du sujet.]
+
+
+== Formats
+
+Sujet pas très fun.
+Je ne vous en voudrai pas si vous sautez la section, mais c’est quand même mieux de savoir où on met les pieds.
+
+* Chaque fabricant d’appareil a tendance à pondre *son propre format de _raw_* : Canon a par exemple le `.cr3`, Panasonic le `.rw2`, etc.
+
+* Ces formats sont grosso modo tous « propriétaires », avec des *spécifications* parfois *gardées jalousement* par leurs créateurs.
+Ils ne prennent, pour la plupart, pas la peine de fournir de la documentation sur « comment le format est gaulé ».
+De ce fait, les développeurs de logiciels, en particulier ceux libres comme RawTherapee, doivent trimer comme des gorets pour réussir à interpréter ces formats et ouvrir ces fichiers de manière satisfaisante.
+Ça donne des discussions à se taper la tête contre un mur, à base de : « À l’adresse `0x1f90a4`, sur trente-deux octets, il y a telle info, je crois ! Pis après, par contre, sur seize octets, on a aucune idée d’à quoi servent les données ! »
+https://github.com/RawTherapee/RawTherapee/pull/6983[Ça peut mener à des bugs^], même quand on croit être sorti d’affaire. footnote:[Oui, j’ai participé à la résolution de ce bug en fournissant gracieusement des photos d’un manchot en peluche perché sur une boîte de mouchoirs.]
+
+* Une même extension de fichier *peut cacher plusieurs versions d’un même format*, avec des données organisées différemment et même des méthodes de compression changeantes et obscures.
+Il y a par exemple chez Panasonic des « vieux » `.rw2` et des `.rw2` « récents ».
+Certains logiciels vont marcher avec les vieux mais pas avec les récents, alors qu’en voyant les noms des fichiers on pourrait s’attendre à ce que le comportement soit le même.
+Ce genre de délires.
+
+* Certains fabricants essayent, par la même occasion, de nous pousser à traiter nos photos *avec _leurs_ logiciels*, qui ne sont même pas forcément multi-plateformes, donc ça me saoule.
+
+* Adobe a proposé *un format ouvert et commun*, https://fr.wikipedia.org/wiki/Digital_Negative[le DNG (_Digital Negative_)^], mais *son adoption laisse à désirer*.
+À l’heure où j’écris ces lignes, rares sont les appareils qui proposent nativement de _shooter_ en{nbsp}DNG.
+C’est quand même mieux que rien, car certains utilisateurs parviennent à exploiter leurs photos dans des logiciels récalcitrants après avoir fait des conversions de leurs _raws_ vers le format DNG.
+Ça ouvre certaines portes, et c’est jugé *sympa pour l’archivage*.
+J’aurais préféré que ça vienne d’une organisation à but pas trop lucratif plutôt que d’Adobe, par contre.
+
+Je suppose que certaines de ces difficultés viennent du fait que les _raws_ sont *intrinsèquement liés aux technologies utilisées* dans chaque appareil, à comment les *capteurs* sont gaulés, etc., et qu’il est dur d’uniformiser tout ça, sans parler des risques de dévoiler des secrets industriels en dévoilant trop de choses.
+
+
+== Voilà
+
+Si ce débroussaillage vous a motivé ou que vous étiez déjà au taquet, et si vous voulez voir *comment je me démerde pour traiter mes photos* (et pourquoi ça me prend parfois deux heures pour un seul cliché – je crois que ça n’est _pas_ la norme…), vous pouvez continuer votre visite en consultant *mes notes* prises dans link:rawtherapee.html[].

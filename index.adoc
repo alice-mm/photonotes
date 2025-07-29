@@ -1,0 +1,24 @@
+= Notes photographie
+:description: Index de notes liées à la photographie.
+
+Ce projet rassemble des notes personnelles sur le thème de la photographie.
+
+
+[discrete]
+== Pages disponibles
+
+Vulgarisation sur le concept des photos en _raws_ et leur traitement, et remarques personnelles liées à ça::
+→ link:explications.html[]
+
+Notes-tutoriel sur comment j’utilise le logiciel RawTherapee pour traiter mes photos en _raw_::
+→ link:rawtherapee.html[]
+
+
+[discrete]
+== Autres trucs
+
+Mes photos proprement dites::
+→ https://www.alicem.net/photos/?C=M;O=D[alicem.net/photos^]
+
+Site perso fourre-tout::
+→ https://www.alicem.net[alicem.net^]

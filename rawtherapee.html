@@ -1,0 +1,3107 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.20">
+<meta name="description" content="Notes-tutoriel sur comment j’utilise le logiciel RawTherapee pour traiter mes photos en raw.">
+<meta name="keywords" content="photographie,photo,rawtherapee,raw,tutoriel,tuto,documentation,alice,alicem">
+<meta name="author" content="Alice M. – alicem.net">
+<title>RawTherapee et comment je m’en sers</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
+<style>
+/*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
+/* Uncomment the following line when using as a custom stylesheet */
+/* @import "https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700"; */
+html{font-family:sans-serif;-webkit-text-size-adjust:100%}
+a{background:none}
+a:focus{outline:thin dotted}
+a:active,a:hover{outline:0}
+h1{font-size:2em;margin:.67em 0}
+b,strong{font-weight:bold}
+abbr{font-size:.9em}
+abbr[title]{cursor:help;border-bottom:1px dotted #dddddf;text-decoration:none}
+dfn{font-style:italic}
+hr{height:0}
+mark{background:#ff0;color:#000}
+code,kbd,pre,samp{font-family:monospace;font-size:1em}
+pre{white-space:pre-wrap}
+q{quotes:"\201C" "\201D" "\2018" "\2019"}
+small{font-size:80%}
+sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}
+sup{top:-.5em}
+sub{bottom:-.25em}
+img{border:0}
+svg:not(:root){overflow:hidden}
+figure{margin:0}
+audio,video{display:inline-block}
+audio:not([controls]){display:none;height:0}
+fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}
+legend{border:0;padding:0}
+button,input,select,textarea{font-family:inherit;font-size:100%;margin:0}
+button,input{line-height:normal}
+button,select{text-transform:none}
+button,html input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer}
+button[disabled],html input[disabled]{cursor:default}
+input[type=checkbox],input[type=radio]{padding:0}
+button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}
+textarea{overflow:auto;vertical-align:top}
+table{border-collapse:collapse;border-spacing:0}
+*,::before,::after{box-sizing:border-box}
+html,body{font-size:100%}
+body{background:#fff;color:rgba(0,0,0,.8);padding:0;margin:0;font-family:"Noto Serif","DejaVu Serif",serif;line-height:1;position:relative;cursor:auto;-moz-tab-size:4;-o-tab-size:4;tab-size:4;word-wrap:anywhere;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased}
+a:hover{cursor:pointer}
+img,object,embed{max-width:100%;height:auto}
+object,embed{height:100%}
+img{-ms-interpolation-mode:bicubic}
+.left{float:left!important}
+.right{float:right!important}
+.text-left{text-align:left!important}
+.text-right{text-align:right!important}
+.text-center{text-align:center!important}
+.text-justify{text-align:justify!important}
+.hide{display:none}
+img,object,svg{display:inline-block;vertical-align:middle}
+textarea{height:auto;min-height:50px}
+select{width:100%}
+.subheader,.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{line-height:1.45;color:#7a2518;font-weight:400;margin-top:0;margin-bottom:.25em}
+div,dl,dt,dd,ul,ol,li,h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6,pre,form,p,blockquote,th,td{margin:0;padding:0}
+a{color:#2156a5;text-decoration:underline;line-height:inherit}
+a:hover,a:focus{color:#1d4b8f}
+a img{border:0}
+p{line-height:1.6;margin-bottom:1.25em;text-rendering:optimizeLegibility}
+p aside{font-size:.875em;line-height:1.35;font-style:italic}
+h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{font-family:"Open Sans","DejaVu Sans",sans-serif;font-weight:300;font-style:normal;color:#ba3925;text-rendering:optimizeLegibility;margin-top:1em;margin-bottom:.5em;line-height:1.0125em}
+h1 small,h2 small,h3 small,#toctitle small,.sidebarblock>.content>.title small,h4 small,h5 small,h6 small{font-size:60%;color:#e99b8f;line-height:0}
+h1{font-size:2.125em}
+h2{font-size:1.6875em}
+h3,#toctitle,.sidebarblock>.content>.title{font-size:1.375em}
+h4,h5{font-size:1.125em}
+h6{font-size:1em}
+hr{border:solid #dddddf;border-width:1px 0 0;clear:both;margin:1.25em 0 1.1875em}
+em,i{font-style:italic;line-height:inherit}
+strong,b{font-weight:bold;line-height:inherit}
+small{font-size:60%;line-height:inherit}
+code{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;font-weight:400;color:rgba(0,0,0,.9)}
+ul,ol,dl{line-height:1.6;margin-bottom:1.25em;list-style-position:outside;font-family:inherit}
+ul,ol{margin-left:1.5em}
+ul li ul,ul li ol{margin-left:1.25em;margin-bottom:0}
+ul.circle{list-style-type:circle}
+ul.disc{list-style-type:disc}
+ul.square{list-style-type:square}
+ul.circle ul:not([class]),ul.disc ul:not([class]),ul.square ul:not([class]){list-style:inherit}
+ol li ul,ol li ol{margin-left:1.25em;margin-bottom:0}
+dl dt{margin-bottom:.3125em;font-weight:bold}
+dl dd{margin-bottom:1.25em}
+blockquote{margin:0 0 1.25em;padding:.5625em 1.25em 0 1.1875em;border-left:1px solid #ddd}
+blockquote,blockquote p{line-height:1.6;color:rgba(0,0,0,.85)}
+@media screen and (min-width:768px){h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2}
+h1{font-size:2.75em}
+h2{font-size:2.3125em}
+h3,#toctitle,.sidebarblock>.content>.title{font-size:1.6875em}
+h4{font-size:1.4375em}}
+table{background:#fff;margin-bottom:1.25em;border:1px solid #dedede;word-wrap:normal}
+table thead,table tfoot{background:#f7f8f7}
+table thead tr th,table thead tr td,table tfoot tr th,table tfoot tr td{padding:.5em .625em .625em;font-size:inherit;color:rgba(0,0,0,.8);text-align:left}
+table tr th,table tr td{padding:.5625em .625em;font-size:inherit;color:rgba(0,0,0,.8)}
+table tr.even,table tr.alt{background:#f8f8f7}
+table thead tr th,table tfoot tr th,table tbody tr td,table tr td,table tfoot tr td{line-height:1.6}
+h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2;word-spacing:-.05em}
+h1 strong,h2 strong,h3 strong,#toctitle strong,.sidebarblock>.content>.title strong,h4 strong,h5 strong,h6 strong{font-weight:400}
+.center{margin-left:auto;margin-right:auto}
+.stretch{width:100%}
+.clearfix::before,.clearfix::after,.float-group::before,.float-group::after{content:" ";display:table}
+.clearfix::after,.float-group::after{clear:both}
+:not(pre).nobreak{word-wrap:normal}
+:not(pre).nowrap{white-space:nowrap}
+:not(pre).pre-wrap{white-space:pre-wrap}
+:not(pre):not([class^=L])>code{font-size:.9375em;font-style:normal!important;letter-spacing:0;padding:.1em .5ex;word-spacing:-.15em;background:#f7f7f8;border-radius:4px;line-height:1.45;text-rendering:optimizeSpeed}
+pre{color:rgba(0,0,0,.9);font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;line-height:1.45;text-rendering:optimizeSpeed}
+pre code,pre pre{color:inherit;font-size:inherit;line-height:inherit}
+pre>code{display:block}
+pre.nowrap,pre.nowrap pre{white-space:pre;word-wrap:normal}
+em em{font-style:normal}
+strong strong{font-weight:400}
+.keyseq{color:rgba(51,51,51,.8)}
+kbd{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;display:inline-block;color:rgba(0,0,0,.8);font-size:.65em;line-height:1.45;background:#f7f7f7;border:1px solid #ccc;border-radius:3px;box-shadow:0 1px 0 rgba(0,0,0,.2),inset 0 0 0 .1em #fff;margin:0 .15em;padding:.2em .5em;vertical-align:middle;position:relative;top:-.1em;white-space:nowrap}
+.keyseq kbd:first-child{margin-left:0}
+.keyseq kbd:last-child{margin-right:0}
+.menuseq,.menuref{color:#000}
+.menuseq b:not(.caret),.menuref{font-weight:inherit}
+.menuseq{word-spacing:-.02em}
+.menuseq b.caret{font-size:1.25em;line-height:.8}
+.menuseq i.caret{font-weight:bold;text-align:center;width:.45em}
+b.button::before,b.button::after{position:relative;top:-1px;font-weight:400}
+b.button::before{content:"[";padding:0 3px 0 2px}
+b.button::after{content:"]";padding:0 2px 0 3px}
+p a>code:hover{color:rgba(0,0,0,.9)}
+#header,#content,#footnotes,#footer{width:100%;margin:0 auto;max-width:62.5em;*zoom:1;position:relative;padding-left:.9375em;padding-right:.9375em}
+#header::before,#header::after,#content::before,#content::after,#footnotes::before,#footnotes::after,#footer::before,#footer::after{content:" ";display:table}
+#header::after,#content::after,#footnotes::after,#footer::after{clear:both}
+#content{margin-top:1.25em}
+#content::before{content:none}
+#header>h1:first-child{color:rgba(0,0,0,.85);margin-top:2.25rem;margin-bottom:0}
+#header>h1:first-child+#toc{margin-top:8px;border-top:1px solid #dddddf}
+#header>h1:only-child,body.toc2 #header>h1:nth-last-child(2){border-bottom:1px solid #dddddf;padding-bottom:8px}
+#header .details{border-bottom:1px solid #dddddf;line-height:1.45;padding-top:.25em;padding-bottom:.25em;padding-left:.25em;color:rgba(0,0,0,.6);display:flex;flex-flow:row wrap}
+#header .details span:first-child{margin-left:-.125em}
+#header .details span.email a{color:rgba(0,0,0,.85)}
+#header .details br{display:none}
+#header .details br+span::before{content:"\00a0\2013\00a0"}
+#header .details br+span.author::before{content:"\00a0\22c5\00a0";color:rgba(0,0,0,.85)}
+#header .details br+span#revremark::before{content:"\00a0|\00a0"}
+#header #revnumber{text-transform:capitalize}
+#header #revnumber::after{content:"\00a0"}
+#content>h1:first-child:not([class]){color:rgba(0,0,0,.85);border-bottom:1px solid #dddddf;padding-bottom:8px;margin-top:0;padding-top:1rem;margin-bottom:1.25rem}
+#toc{border-bottom:1px solid #e7e7e9;padding-bottom:.5em}
+#toc>ul{margin-left:.125em}
+#toc ul.sectlevel0>li>a{font-style:italic}
+#toc ul.sectlevel0 ul.sectlevel1{margin:.5em 0}
+#toc ul{font-family:"Open Sans","DejaVu Sans",sans-serif;list-style-type:none}
+#toc li{line-height:1.3334;margin-top:.3334em}
+#toc a{text-decoration:none}
+#toc a:active{text-decoration:underline}
+#toctitle{color:#7a2518;font-size:1.2em}
+@media screen and (min-width:768px){#toctitle{font-size:1.375em}
+body.toc2{padding-left:15em;padding-right:0}
+#toc.toc2{margin-top:0!important;background:#f8f8f7;position:fixed;width:15em;left:0;top:0;border-right:1px solid #e7e7e9;border-top-width:0!important;border-bottom-width:0!important;z-index:1000;padding:1.25em 1em;height:100%;overflow:auto}
+#toc.toc2 #toctitle{margin-top:0;margin-bottom:.8rem;font-size:1.2em}
+#toc.toc2>ul{font-size:.9em;margin-bottom:0}
+#toc.toc2 ul ul{margin-left:0;padding-left:1em}
+#toc.toc2 ul.sectlevel0 ul.sectlevel1{padding-left:0;margin-top:.5em;margin-bottom:.5em}
+body.toc2.toc-right{padding-left:0;padding-right:15em}
+body.toc2.toc-right #toc.toc2{border-right-width:0;border-left:1px solid #e7e7e9;left:auto;right:0}}
+@media screen and (min-width:1280px){body.toc2{padding-left:20em;padding-right:0}
+#toc.toc2{width:20em}
+#toc.toc2 #toctitle{font-size:1.375em}
+#toc.toc2>ul{font-size:.95em}
+#toc.toc2 ul ul{padding-left:1.25em}
+body.toc2.toc-right{padding-left:0;padding-right:20em}}
+#content #toc{border:1px solid #e0e0dc;margin-bottom:1.25em;padding:1.25em;background:#f8f8f7;border-radius:4px}
+#content #toc>:first-child{margin-top:0}
+#content #toc>:last-child{margin-bottom:0}
+#footer{max-width:none;background:rgba(0,0,0,.8);padding:1.25em}
+#footer-text{color:hsla(0,0%,100%,.8);line-height:1.44}
+#content{margin-bottom:.625em}
+.sect1{padding-bottom:.625em}
+@media screen and (min-width:768px){#content{margin-bottom:1.25em}
+.sect1{padding-bottom:1.25em}}
+.sect1:last-child{padding-bottom:0}
+.sect1+.sect1{border-top:1px solid #e7e7e9}
+#content h1>a.anchor,h2>a.anchor,h3>a.anchor,#toctitle>a.anchor,.sidebarblock>.content>.title>a.anchor,h4>a.anchor,h5>a.anchor,h6>a.anchor{position:absolute;z-index:1001;width:1.5ex;margin-left:-1.5ex;display:block;text-decoration:none!important;visibility:hidden;text-align:center;font-weight:400}
+#content h1>a.anchor::before,h2>a.anchor::before,h3>a.anchor::before,#toctitle>a.anchor::before,.sidebarblock>.content>.title>a.anchor::before,h4>a.anchor::before,h5>a.anchor::before,h6>a.anchor::before{content:"\00A7";font-size:.85em;display:block;padding-top:.1em}
+#content h1:hover>a.anchor,#content h1>a.anchor:hover,h2:hover>a.anchor,h2>a.anchor:hover,h3:hover>a.anchor,#toctitle:hover>a.anchor,.sidebarblock>.content>.title:hover>a.anchor,h3>a.anchor:hover,#toctitle>a.anchor:hover,.sidebarblock>.content>.title>a.anchor:hover,h4:hover>a.anchor,h4>a.anchor:hover,h5:hover>a.anchor,h5>a.anchor:hover,h6:hover>a.anchor,h6>a.anchor:hover{visibility:visible}
+#content h1>a.link,h2>a.link,h3>a.link,#toctitle>a.link,.sidebarblock>.content>.title>a.link,h4>a.link,h5>a.link,h6>a.link{color:#ba3925;text-decoration:none}
+#content h1>a.link:hover,h2>a.link:hover,h3>a.link:hover,#toctitle>a.link:hover,.sidebarblock>.content>.title>a.link:hover,h4>a.link:hover,h5>a.link:hover,h6>a.link:hover{color:#a53221}
+details,.audioblock,.imageblock,.literalblock,.listingblock,.stemblock,.videoblock{margin-bottom:1.25em}
+details{margin-left:1.25rem}
+details>summary{cursor:pointer;display:block;position:relative;line-height:1.6;margin-bottom:.625rem;outline:none;-webkit-tap-highlight-color:transparent}
+details>summary::-webkit-details-marker{display:none}
+details>summary::before{content:"";border:solid transparent;border-left:solid;border-width:.3em 0 .3em .5em;position:absolute;top:.5em;left:-1.25rem;transform:translateX(15%)}
+details[open]>summary::before{border:solid transparent;border-top:solid;border-width:.5em .3em 0;transform:translateY(15%)}
+details>summary::after{content:"";width:1.25rem;height:1em;position:absolute;top:.3em;left:-1.25rem}
+.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{text-rendering:optimizeLegibility;text-align:left;font-family:"Noto Serif","DejaVu Serif",serif;font-size:1rem;font-style:italic}
+table.tableblock.fit-content>caption.title{white-space:nowrap;width:0}
+.paragraph.lead>p,#preamble>.sectionbody>[class=paragraph]:first-of-type p{font-size:1.21875em;line-height:1.6;color:rgba(0,0,0,.85)}
+.admonitionblock>table{border-collapse:separate;border:0;background:none;width:100%}
+.admonitionblock>table td.icon{text-align:center;width:80px}
+.admonitionblock>table td.icon img{max-width:none}
+.admonitionblock>table td.icon .title{font-weight:bold;font-family:"Open Sans","DejaVu Sans",sans-serif;text-transform:uppercase}
+.admonitionblock>table td.content{padding-left:1.125em;padding-right:1.25em;border-left:1px solid #dddddf;color:rgba(0,0,0,.6);word-wrap:anywhere}
+.admonitionblock>table td.content>:last-child>:last-child{margin-bottom:0}
+.exampleblock>.content{border:1px solid #e6e6e6;margin-bottom:1.25em;padding:1.25em;background:#fff;border-radius:4px}
+.sidebarblock{border:1px solid #dbdbd6;margin-bottom:1.25em;padding:1.25em;background:#f3f3f2;border-radius:4px}
+.sidebarblock>.content>.title{color:#7a2518;margin-top:0;text-align:center}
+.exampleblock>.content>:first-child,.sidebarblock>.content>:first-child{margin-top:0}
+.exampleblock>.content>:last-child,.exampleblock>.content>:last-child>:last-child,.exampleblock>.content .olist>ol>li:last-child>:last-child,.exampleblock>.content .ulist>ul>li:last-child>:last-child,.exampleblock>.content .qlist>ol>li:last-child>:last-child,.sidebarblock>.content>:last-child,.sidebarblock>.content>:last-child>:last-child,.sidebarblock>.content .olist>ol>li:last-child>:last-child,.sidebarblock>.content .ulist>ul>li:last-child>:last-child,.sidebarblock>.content .qlist>ol>li:last-child>:last-child{margin-bottom:0}
+.literalblock pre,.listingblock>.content>pre{border-radius:4px;overflow-x:auto;padding:1em;font-size:.8125em}
+@media screen and (min-width:768px){.literalblock pre,.listingblock>.content>pre{font-size:.90625em}}
+@media screen and (min-width:1280px){.literalblock pre,.listingblock>.content>pre{font-size:1em}}
+.literalblock pre,.listingblock>.content>pre:not(.highlight),.listingblock>.content>pre[class=highlight],.listingblock>.content>pre[class^="highlight "]{background:#f7f7f8}
+.literalblock.output pre{color:#f7f7f8;background:rgba(0,0,0,.9)}
+.listingblock>.content{position:relative}
+.listingblock code[data-lang]::before{display:none;content:attr(data-lang);position:absolute;font-size:.75em;top:.425rem;right:.5rem;line-height:1;text-transform:uppercase;color:inherit;opacity:.5}
+.listingblock:hover code[data-lang]::before{display:block}
+.listingblock.terminal pre .command::before{content:attr(data-prompt);padding-right:.5em;color:inherit;opacity:.5}
+.listingblock.terminal pre .command:not([data-prompt])::before{content:"$"}
+.listingblock pre.highlightjs{padding:0}
+.listingblock pre.highlightjs>code{padding:1em;border-radius:4px}
+.listingblock pre.prettyprint{border-width:0}
+.prettyprint{background:#f7f7f8}
+pre.prettyprint .linenums{line-height:1.45;margin-left:2em}
+pre.prettyprint li{background:none;list-style-type:inherit;padding-left:0}
+pre.prettyprint li code[data-lang]::before{opacity:1}
+pre.prettyprint li:not(:first-child) code[data-lang]::before{display:none}
+table.linenotable{border-collapse:separate;border:0;margin-bottom:0;background:none}
+table.linenotable td[class]{color:inherit;vertical-align:top;padding:0;line-height:inherit;white-space:normal}
+table.linenotable td.code{padding-left:.75em}
+table.linenotable td.linenos,pre.pygments .linenos{border-right:1px solid;opacity:.35;padding-right:.5em;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}
+pre.pygments span.linenos{display:inline-block;margin-right:.75em}
+.quoteblock{margin:0 1em 1.25em 1.5em;display:table}
+.quoteblock:not(.excerpt)>.title{margin-left:-1.5em;margin-bottom:.75em}
+.quoteblock blockquote,.quoteblock p{color:rgba(0,0,0,.85);font-size:1.15rem;line-height:1.75;word-spacing:.1em;letter-spacing:0;font-style:italic;text-align:justify}
+.quoteblock blockquote{margin:0;padding:0;border:0}
+.quoteblock blockquote::before{content:"\201c";float:left;font-size:2.75em;font-weight:bold;line-height:.6em;margin-left:-.6em;color:#7a2518;text-shadow:0 1px 2px rgba(0,0,0,.1)}
+.quoteblock blockquote>.paragraph:last-child p{margin-bottom:0}
+.quoteblock .attribution{margin-top:.75em;margin-right:.5ex;text-align:right}
+.verseblock{margin:0 1em 1.25em}
+.verseblock pre{font-family:"Open Sans","DejaVu Sans",sans-serif;font-size:1.15rem;color:rgba(0,0,0,.85);font-weight:300;text-rendering:optimizeLegibility}
+.verseblock pre strong{font-weight:400}
+.verseblock .attribution{margin-top:1.25rem;margin-left:.5ex}
+.quoteblock .attribution,.verseblock .attribution{font-size:.9375em;line-height:1.45;font-style:italic}
+.quoteblock .attribution br,.verseblock .attribution br{display:none}
+.quoteblock .attribution cite,.verseblock .attribution cite{display:block;letter-spacing:-.025em;color:rgba(0,0,0,.6)}
+.quoteblock.abstract blockquote::before,.quoteblock.excerpt blockquote::before,.quoteblock .quoteblock blockquote::before{display:none}
+.quoteblock.abstract blockquote,.quoteblock.abstract p,.quoteblock.excerpt blockquote,.quoteblock.excerpt p,.quoteblock .quoteblock blockquote,.quoteblock .quoteblock p{line-height:1.6;word-spacing:0}
+.quoteblock.abstract{margin:0 1em 1.25em;display:block}
+.quoteblock.abstract>.title{margin:0 0 .375em;font-size:1.15em;text-align:center}
+.quoteblock.excerpt>blockquote,.quoteblock .quoteblock{padding:0 0 .25em 1em;border-left:.25em solid #dddddf}
+.quoteblock.excerpt,.quoteblock .quoteblock{margin-left:0}
+.quoteblock.excerpt blockquote,.quoteblock.excerpt p,.quoteblock .quoteblock blockquote,.quoteblock .quoteblock p{color:inherit;font-size:1.0625rem}
+.quoteblock.excerpt .attribution,.quoteblock .quoteblock .attribution{color:inherit;font-size:.85rem;text-align:left;margin-right:0}
+p.tableblock:last-child{margin-bottom:0}
+td.tableblock>.content{margin-bottom:1.25em;word-wrap:anywhere}
+td.tableblock>.content>:last-child{margin-bottom:-1.25em}
+table.tableblock,th.tableblock,td.tableblock{border:0 solid #dedede}
+table.grid-all>*>tr>*{border-width:1px}
+table.grid-cols>*>tr>*{border-width:0 1px}
+table.grid-rows>*>tr>*{border-width:1px 0}
+table.frame-all{border-width:1px}
+table.frame-ends{border-width:1px 0}
+table.frame-sides{border-width:0 1px}
+table.frame-none>colgroup+*>:first-child>*,table.frame-sides>colgroup+*>:first-child>*{border-top-width:0}
+table.frame-none>:last-child>:last-child>*,table.frame-sides>:last-child>:last-child>*{border-bottom-width:0}
+table.frame-none>*>tr>:first-child,table.frame-ends>*>tr>:first-child{border-left-width:0}
+table.frame-none>*>tr>:last-child,table.frame-ends>*>tr>:last-child{border-right-width:0}
+table.stripes-all>*>tr,table.stripes-odd>*>tr:nth-of-type(odd),table.stripes-even>*>tr:nth-of-type(even),table.stripes-hover>*>tr:hover{background:#f8f8f7}
+th.halign-left,td.halign-left{text-align:left}
+th.halign-right,td.halign-right{text-align:right}
+th.halign-center,td.halign-center{text-align:center}
+th.valign-top,td.valign-top{vertical-align:top}
+th.valign-bottom,td.valign-bottom{vertical-align:bottom}
+th.valign-middle,td.valign-middle{vertical-align:middle}
+table thead th,table tfoot th{font-weight:bold}
+tbody tr th{background:#f7f8f7}
+tbody tr th,tbody tr th p,tfoot tr th,tfoot tr th p{color:rgba(0,0,0,.8);font-weight:bold}
+p.tableblock>code:only-child{background:none;padding:0}
+p.tableblock{font-size:1em}
+ol{margin-left:1.75em}
+ul li ol{margin-left:1.5em}
+dl dd{margin-left:1.125em}
+dl dd:last-child,dl dd:last-child>:last-child{margin-bottom:0}
+li p,ul dd,ol dd,.olist .olist,.ulist .ulist,.ulist .olist,.olist .ulist{margin-bottom:.625em}
+ul.checklist,ul.none,ol.none,ul.no-bullet,ol.no-bullet,ol.unnumbered,ul.unstyled,ol.unstyled{list-style-type:none}
+ul.no-bullet,ol.no-bullet,ol.unnumbered{margin-left:.625em}
+ul.unstyled,ol.unstyled{margin-left:0}
+li>p:empty:only-child::before{content:"";display:inline-block}
+ul.checklist>li>p:first-child{margin-left:-1em}
+ul.checklist>li>p:first-child>.fa-square-o:first-child,ul.checklist>li>p:first-child>.fa-check-square-o:first-child{width:1.25em;font-size:.8em;position:relative;bottom:.125em}
+ul.checklist>li>p:first-child>input[type=checkbox]:first-child{margin-right:.25em}
+ul.inline{display:flex;flex-flow:row wrap;list-style:none;margin:0 0 .625em -1.25em}
+ul.inline>li{margin-left:1.25em}
+.unstyled dl dt{font-weight:400;font-style:normal}
+ol.arabic{list-style-type:decimal}
+ol.decimal{list-style-type:decimal-leading-zero}
+ol.loweralpha{list-style-type:lower-alpha}
+ol.upperalpha{list-style-type:upper-alpha}
+ol.lowerroman{list-style-type:lower-roman}
+ol.upperroman{list-style-type:upper-roman}
+ol.lowergreek{list-style-type:lower-greek}
+.hdlist>table,.colist>table{border:0;background:none}
+.hdlist>table>tbody>tr,.colist>table>tbody>tr{background:none}
+td.hdlist1,td.hdlist2{vertical-align:top;padding:0 .625em}
+td.hdlist1{font-weight:bold;padding-bottom:1.25em}
+td.hdlist2{word-wrap:anywhere}
+.literalblock+.colist,.listingblock+.colist{margin-top:-.5em}
+.colist td:not([class]):first-child{padding:.4em .75em 0;line-height:1;vertical-align:top}
+.colist td:not([class]):first-child img{max-width:none}
+.colist td:not([class]):last-child{padding:.25em 0}
+.thumb,.th{line-height:0;display:inline-block;border:4px solid #fff;box-shadow:0 0 0 1px #ddd}
+.imageblock.left{margin:.25em .625em 1.25em 0}
+.imageblock.right{margin:.25em 0 1.25em .625em}
+.imageblock>.title{margin-bottom:0}
+.imageblock.thumb,.imageblock.th{border-width:6px}
+.imageblock.thumb>.title,.imageblock.th>.title{padding:0 .125em}
+.image.left,.image.right{margin-top:.25em;margin-bottom:.25em;display:inline-block;line-height:0}
+.image.left{margin-right:.625em}
+.image.right{margin-left:.625em}
+a.image{text-decoration:none;display:inline-block}
+a.image object{pointer-events:none}
+sup.footnote,sup.footnoteref{font-size:.875em;position:static;vertical-align:super}
+sup.footnote a,sup.footnoteref a{text-decoration:none}
+sup.footnote a:active,sup.footnoteref a:active{text-decoration:underline}
+#footnotes{padding-top:.75em;padding-bottom:.75em;margin-bottom:.625em}
+#footnotes hr{width:20%;min-width:6.25em;margin:-.25em 0 .75em;border-width:1px 0 0}
+#footnotes .footnote{padding:0 .375em 0 .225em;line-height:1.3334;font-size:.875em;margin-left:1.2em;margin-bottom:.2em}
+#footnotes .footnote a:first-of-type{font-weight:bold;text-decoration:none;margin-left:-1.05em}
+#footnotes .footnote:last-of-type{margin-bottom:0}
+#content #footnotes{margin-top:-.625em;margin-bottom:0;padding:.75em 0}
+div.unbreakable{page-break-inside:avoid}
+.big{font-size:larger}
+.small{font-size:smaller}
+.underline{text-decoration:underline}
+.overline{text-decoration:overline}
+.line-through{text-decoration:line-through}
+.aqua{color:#00bfbf}
+.aqua-background{background:#00fafa}
+.black{color:#000}
+.black-background{background:#000}
+.blue{color:#0000bf}
+.blue-background{background:#0000fa}
+.fuchsia{color:#bf00bf}
+.fuchsia-background{background:#fa00fa}
+.gray{color:#606060}
+.gray-background{background:#7d7d7d}
+.green{color:#006000}
+.green-background{background:#007d00}
+.lime{color:#00bf00}
+.lime-background{background:#00fa00}
+.maroon{color:#600000}
+.maroon-background{background:#7d0000}
+.navy{color:#000060}
+.navy-background{background:#00007d}
+.olive{color:#606000}
+.olive-background{background:#7d7d00}
+.purple{color:#600060}
+.purple-background{background:#7d007d}
+.red{color:#bf0000}
+.red-background{background:#fa0000}
+.silver{color:#909090}
+.silver-background{background:#bcbcbc}
+.teal{color:#006060}
+.teal-background{background:#007d7d}
+.white{color:#bfbfbf}
+.white-background{background:#fafafa}
+.yellow{color:#bfbf00}
+.yellow-background{background:#fafa00}
+span.icon>.fa{cursor:default}
+a span.icon>.fa{cursor:inherit}
+.admonitionblock td.icon [class^="fa icon-"]{font-size:2.5em;text-shadow:1px 1px 2px rgba(0,0,0,.5);cursor:default}
+.admonitionblock td.icon .icon-note::before{content:"\f05a";color:#19407c}
+.admonitionblock td.icon .icon-tip::before{content:"\f0eb";text-shadow:1px 1px 2px rgba(155,155,0,.8);color:#111}
+.admonitionblock td.icon .icon-warning::before{content:"\f071";color:#bf6900}
+.admonitionblock td.icon .icon-caution::before{content:"\f06d";color:#bf3400}
+.admonitionblock td.icon .icon-important::before{content:"\f06a";color:#bf0000}
+.conum[data-value]{display:inline-block;color:#fff!important;background:rgba(0,0,0,.8);border-radius:50%;text-align:center;font-size:.75em;width:1.67em;height:1.67em;line-height:1.67em;font-family:"Open Sans","DejaVu Sans",sans-serif;font-style:normal;font-weight:bold}
+.conum[data-value] *{color:#fff!important}
+.conum[data-value]+b{display:none}
+.conum[data-value]::after{content:attr(data-value)}
+pre .conum[data-value]{position:relative;top:-.125em}
+b.conum *{color:inherit!important}
+.conum:not([data-value]):empty{display:none}
+dt,th.tableblock,td.content,div.footnote{text-rendering:optimizeLegibility}
+h1,h2,p,td.content,span.alt,summary{letter-spacing:-.01em}
+p strong,td.content strong,div.footnote strong{letter-spacing:-.005em}
+p,blockquote,dt,td.content,td.hdlist1,span.alt,summary{font-size:1.0625rem}
+p{margin-bottom:1.25rem}
+.sidebarblock p,.sidebarblock dt,.sidebarblock td.content,p.tableblock{font-size:1em}
+.exampleblock>.content{background:#fffef7;border-color:#e0e0dc;box-shadow:0 1px 4px #e0e0dc}
+.print-only{display:none!important}
+@page{margin:1.25cm .75cm}
+@media print{*{box-shadow:none!important;text-shadow:none!important}
+html{font-size:80%}
+a{color:inherit!important;text-decoration:underline!important}
+a.bare,a[href^="#"],a[href^="mailto:"]{text-decoration:none!important}
+a[href^="http:"]:not(.bare)::after,a[href^="https:"]:not(.bare)::after{content:"(" attr(href) ")";display:inline-block;font-size:.875em;padding-left:.25em}
+abbr[title]{border-bottom:1px dotted}
+abbr[title]::after{content:" (" attr(title) ")"}
+pre,blockquote,tr,img,object,svg{page-break-inside:avoid}
+thead{display:table-header-group}
+svg{max-width:100%}
+p,blockquote,dt,td.content{font-size:1em;orphans:3;widows:3}
+h2,h3,#toctitle,.sidebarblock>.content>.title{page-break-after:avoid}
+#header,#content,#footnotes,#footer{max-width:none}
+#toc,.sidebarblock,.exampleblock>.content{background:none!important}
+#toc{border-bottom:1px solid #dddddf!important;padding-bottom:0!important}
+body.book #header{text-align:center}
+body.book #header>h1:first-child{border:0!important;margin:2.5em 0 1em}
+body.book #header .details{border:0!important;display:block;padding:0!important}
+body.book #header .details span:first-child{margin-left:0!important}
+body.book #header .details br{display:block}
+body.book #header .details br+span::before{content:none!important}
+body.book #toc{border:0!important;text-align:left!important;padding:0!important;margin:0!important}
+body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-break-before:always}
+.listingblock code[data-lang]::before{display:block}
+#footer{padding:0 .9375em}
+.hide-on-print{display:none!important}
+.print-only{display:block!important}
+.hide-for-print{display:none!important}
+.show-for-print{display:inherit!important}}
+@media amzn-kf8,print{#header>h1:first-child{margin-top:1.25rem}
+.sect1{padding:0!important}
+.sect1+.sect1{border:0}
+#footer{background:none}
+#footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
+@media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
+</style>
+<link rel="stylesheet" href="highlight/styles/obsidian.min.css">
+<!--
+Used to extend AsciiDoctor’s default stylesheet.
+https://docs.asciidoctor.org/asciidoctor/latest/html-backend/default-stylesheet/
+-->
+<style>
+#toc .sectlevel3 {
+  font-size: smaller;
+  font-weight: lighter;
+}
+
+#toc .sectlevel3 li a {
+  color: darkslategrey;
+}
+
+h4 {
+  padding-left: calc(2em / 3);
+}
+
+.admonitionblock td.icon img {
+  border-radius: 10px;
+}
+
+.menuref, .menuseq {
+  padding-left: 0.3em;
+  padding-right: 0.3em;
+  border: 1px lightgrey dashed;
+  border-radius: 0.2em;
+}
+
+.menuseq .caret {
+  color: grey;
+}
+
+kbd {
+  font-size: 0.95em;
+  padding: 0.025em 0.4em
+}
+
+#footer-text {
+  color: darkgrey;
+}
+
+#footer-text a {
+  color: inherit;
+  text-decoration: underline dotted 1px;
+}
+
+#footer-text img {
+  max-height: 4ex;
+  border-radius: calc(2ex / 3);
+}
+
+#return-to-index {
+  color: grey;
+  font-size: 12px;
+  font-family: "Open Sans", "DejaVu Sans", sans-serif;
+  text-decoration: none;
+
+  background-color: #ffffffcc;
+  border-radius: 2px;
+
+  position: fixed;
+  top: 2px;
+  left: 2px;
+  z-index: 9999;
+}
+
+#return-to-index:hover,
+#return-to-index:focus {
+  color: black;
+  text-decoration: underline 1px solid black;
+}
+
+
+/* ↓ Gemini-generated CSS to make figure caption appear *before* the picture ↓ */
+/* (Customized a bit because I did not want to suddenly center ALL pictures.) */
+
+/* Target the parent container of the image and its caption */
+div.imageblock {
+  display: flex;
+  flex-direction: column;
+}
+
+div.imageblock > div.content {
+  /* Make the image content appear second. */
+  order: 2;
+}
+
+div.imageblock > div.title {
+  /* Make the caption appear first. */
+  order: 1;
+  /* Optional: Add some bottom margin to separate it from the image */
+  margin-bottom: 0.5em;
+}
+
+/* Optional: Center the caption if desired */
+/*div.imageblock > div.title {
+  text-align: center;
+}*/
+
+/* Ensure the image itself doesn't cause overflow issues. */
+div.imageblock img {
+  max-width: 100%;
+  height: auto;
+  max-height: 480px;
+  /* Removes extra space below image. */
+  display: block;
+  /* For centering if image is smaller than container. */
+  /*margin-left: auto;
+  margin-right: auto;*/
+}
+
+/* Fix “align = center” broken by customizations. */
+div.imageblock.text-center img {
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>
+</head>
+<body class="article toc2 toc-left">
+<div id="header">
+<h1>RawTherapee et comment je m’en sers</h1>
+<div class="details">
+<span id="author" class="author">Alice M. – alicem.net</span><br>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table des matières</div>
+<ul class="sectlevel1">
+<li><a href="#_avant_tout">1. Avant tout</a>
+<ul class="sectlevel2">
+<li><a href="#_rawtherapee">1.1. RawTherapee</a></li>
+<li><a href="#_au_fait">1.2. Au fait</a></li>
+<li><a href="#_concepts">1.3. Concepts</a>
+<ul class="sectlevel3">
+<li><a href="#pp3">1.3.1. pp3</a></li>
+<li><a href="#_snapshots">1.3.2. <em>Snapshots</em></a></li>
+</ul>
+</li>
+<li><a href="#_mise_en_place">1.4. Mise en place</a></li>
+<li><a href="#_navigation_et_manipulations">1.5. Navigation et manipulations</a>
+<ul class="sectlevel3">
+<li><a href="#_se_balader_entre_les_champs">1.5.1. Se balader entre les champs</a></li>
+<li><a href="#raccourcis">1.5.2. Raccourcis</a></li>
+<li><a href="#_changer_les_valeurs">1.5.3. Changer les valeurs</a></li>
+<li><a href="#_trucs_informatiques_classiques">1.5.4. Trucs informatiques classiques</a></li>
+<li><a href="#_et_donc">1.5.5. Et donc…</a></li>
+<li><a href="#crame">1.5.6. Trucs qui crament</a></li>
+<li><a href="#curseurs">1.5.7. Curseurs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#_étapes">2. Étapes</a>
+<ul class="sectlevel2">
+<li><a href="#init">2.1. Initialisation</a></li>
+<li><a href="#transfo_debut">2.2. Transformations</a></li>
+<li><a href="#_pré_courbe">2.3. Pré-courbe</a>
+<ul class="sectlevel3">
+<li><a href="#_petite_base">2.3.1. Petite base</a></li>
+<li><a href="#wb">2.3.2. Balance des blancs</a></li>
+<li><a href="#_noir_et_blanc_ou_couleurs">2.3.3. Noir et blanc ou couleurs</a></li>
+<li><a href="#_les_extrêmes_rapidos">2.3.4. Les extrêmes, rapidos</a></li>
+<li><a href="#_compression_supplémentaire_éventuelle_et_autres_trucs_gourmands">2.3.5. Compression supplémentaire éventuelle et autres trucs gourmands</a></li>
+<li><a href="#_finir_lexposition_de_base">2.3.6. Finir l’exposition de base</a></li>
+<li><a href="#fin_pre-c">2.3.7. Enfin fini le « pré-courbe »</a></li>
+</ul>
+</li>
+<li><a href="#courbe">2.4. Courbe</a>
+<ul class="sectlevel3">
+<li><a href="#_type">2.4.1. Type</a></li>
+<li><a href="#_mode">2.4.2. Mode</a></li>
+<li><a href="#_trifouiller_les_points_de_la_courbe">2.4.3. Trifouiller les points de la courbe</a></li>
+</ul>
+</li>
+<li><a href="#_détails">2.5. Détails</a>
+<ul class="sectlevel3">
+<li><a href="#bruit">2.5.1. Bruit</a></li>
+<li><a href="#_sharpening_microcontrast">2.5.2. <em>Sharpening</em> &#43; <em>Microcontrast</em></a></li>
+<li><a href="#_edges">2.5.3. <em>Edges</em></a></li>
+<li><a href="#_defringe">2.5.4. <em>Defringe</em></a></li>
+<li><a href="#_contrast_by_detail_levels">2.5.5. <em>Contrast by Detail Levels</em></a></li>
+<li><a href="#_local_contrast">2.5.6. <em>Local contrast</em></a></li>
+<li><a href="#fin_details">2.5.7. Fin des détails</a></li>
+</ul>
+</li>
+<li><a href="#couleurs">2.6. Couleurs</a>
+<ul class="sectlevel3">
+<li><a href="#_balance_encore">2.6.1. Balance encore</a></li>
+<li><a href="#_vibrance">2.6.2. <em>Vibrance</em></a></li>
+<li><a href="#_soft_light">2.6.3. <em>Soft Light</em></a></li>
+<li><a href="#_rgb_curves">2.6.4. <em>RGB Curves</em></a></li>
+<li><a href="#toning">2.6.5. <em>Color toning</em></a></li>
+<li><a href="#fin_colours">2.6.6. Hop</a></li>
+</ul>
+</li>
+<li><a href="#_transformations_pour_de_bon">2.7. Transformations pour de bon</a>
+<ul class="sectlevel3">
+<li><a href="#crop">2.7.1. Recadrage (<em>Crop</em>)</a></li>
+<li><a href="#_rotation">2.7.2. Rotation</a></li>
+<li><a href="#_perspective">2.7.3. Perspective</a></li>
+<li><a href="#fin_transfo_encore">2.7.4. Et bien sûr…</a></li>
+</ul>
+</li>
+<li><a href="#select">2.8. <em>Selective Editing</em></a></li>
+<li><a href="#spot">2.9. <em>Spot Removal</em></a></li>
+<li><a href="#vign_grad_lab">2.10. <em>Vignette Filter</em> &#43; <em>Graduated Filter</em> &#43; <em>L*a*b* Adjustments</em></a></li>
+<li><a href="#tone">2.11. <em>Tone Mapping</em></a>
+<ul class="sectlevel3">
+<li><a href="#_sorte_davertissement">2.11.1. Sorte d’avertissement</a></li>
+<li><a href="#_kézako">2.11.2. Kézako</a></li>
+<li><a href="#_paramètres">2.11.3. Paramètres</a></li>
+<li><a href="#_ordres_didée">2.11.4. Ordres d’idée</a></li>
+<li><a href="#tone_protocole">2.11.5. Protocole à deux balles</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#resume">Résumé</a></li>
+<li><a href="#_généralpour_aller_plus_loin">Général / Pour aller plus loin</a>
+<ul class="sectlevel2">
+<li><a href="#_notes_en_vrac">Notes en vrac</a></li>
+<li><a href="#_cli">CLI</a></li>
+</ul>
+</li>
+<li><a href="#profil_defaut">Se faire un profil de trucs par défaut</a></li>
+<li><a href="#_contact">Contact</a></li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Description de comment je me dépatouille avec <a href="https://rawtherapee.com/" target="_blank" rel="noopener">RawTherapee</a> pour traiter mes photos.
+Aussi bien pour moi-même (pour plus tard, pour prendre du recul, ou pour découvrir des choses pendant la rédaction) que pour partager avec autrui – débutants ou non – ou récolter des avis et suggestions.</p>
+</div>
+<div class="paragraph">
+<p>Aussi : Je sais qu’il existe moult vidéos et tout sur ça, mais des fois c’est un peu intimidant, les trucs faits par des pros qui possèdent dix boîtiers et cinquante objectifs et ont un hangar privatif avec tout un tas de lumières et que sais-je encore.
+Et je ne vous parle même pas des articles Wikipédia bourrés de termes chelous et de formules mathématiques qu’on a pas besoin de connaître pour s’amuser.
+Je me dis qu’un truc plus informel venant d’un quidam comme moi peut peut-être avoir son intérêt.
+Et puis, les vidéos, c’est pas toujours le top pour aller à son rythme, prendre des notes, retourner sur un point précis, etc.
+Ce qui ne m’empêchera pas d’en inclure des courtes, faites maison, sur des sujets précis.</p>
+</div>
+<a id="return-to-index" href="index.html" title="Revenir à l’index de ce projet">Retour</a>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_avant_tout"><a class="anchor" href="#_avant_tout"></a>1. Avant tout</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_rawtherapee"><a class="anchor" href="#_rawtherapee"></a>1.1. RawTherapee</h3>
+<div class="paragraph">
+<p>Logiciel gratuit, libre et multi-plateforme pour traiter les photos – aussi bien pour ajuster deux trois trucs sur des images qui sont déjà des JPG que (« surtout », on va dire) pour bosser sur ses <em>raws</em> et produire des « vraies » images à partir d’eux.
+C’est une alternative réputée à Lightroom (le truc payant d’Adobe qui marche main dans la main avec Photoshop).</p>
+</div>
+<div class="paragraph">
+<p>Il en existe <a href="https://en.wikipedia.org/wiki/Raw_image_format#Software_support" target="_blank" rel="noopener">d’autres</a>, bien sûr.
+Personnellement, c’est le seul que j’utilise (après avoir jeté un coup d’œil à <a href="https://fr.wikipedia.org/wiki/Darktable" target="_blank" rel="noopener">Darktable</a> et été horrifié par sa complexité – Darktable est puissant mais hardcore).</p>
+</div>
+<div class="ulist">
+<div class="title">Liens</div>
+<ul>
+<li>
+<p><a href="https://www.rawtherapee.com" class="bare" target="_blank" rel="noopener">https://www.rawtherapee.com</a></p>
+</li>
+<li>
+<p><a href="https://fr.wikipedia.org/wiki/RawTherapee" class="bare" target="_blank" rel="noopener">https://fr.wikipedia.org/wiki/RawTherapee</a></p>
+</li>
+<li>
+<p><a href="https://github.com/Beep6581/RawTherapee" class="bare" target="_blank" rel="noopener">https://github.com/Beep6581/RawTherapee</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_au_fait"><a class="anchor" href="#_au_fait"></a>1.2. Au fait</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Je risque de donner surtout les noms de <strong>l’interface anglaise</strong>, car c’est ce que j’utilise, et ce qui est probablement plus facile à retrouver en ligne quand on cherche de l’aide.
+En plus, la traduction française, aussi bien côté logiciel que dans la documentation, est incomplète (je voulais d’ailleurs essayer d’y contribuer mais je procrastine et utilise le logiciel au lieu de participer à son développement parce que je suis un boulet).</p>
+</li>
+<li>
+<p>Ceci a été pondu avec <strong>RawTherapee&#160;5.11</strong>.
+Je doute qu’il y ait des changements trop radicaux dans l’avenir proche, mais bon, je préfère prévenir.
+D’ailleurs, 5.12 est sorti entre-temps.
+Pas encore testé.</p>
+</li>
+<li>
+<p>J’ai vaguement songé à mettre, sur certaines sections, des indicateurs pour dire « oh là là, attention, cet outil est un peu plus technique et avancé » pour guider un peu et permettre aux gens de sauter ce pour quoi ils ne se sentaient pas très chauds, mais en fait :</p>
+<div class="openblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Ma vision des outils est subjective.</p>
+</li>
+<li>
+<p>La complexité d’utilisation n’est pas corrélée à l’utilité de chaque outil.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Donc il vaut peut-être mieux que vous fassiez le tour du propriétaire une ou deux fois et <strong>que vous vous fassiez votre propre avis</strong>.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_concepts"><a class="anchor" href="#_concepts"></a>1.3. Concepts</h3>
+<div class="paragraph">
+<p>Je ne vais pas non plus réécrire la documentation officielle de RawTherapee ni redonner le contenu des 25 972 985 vidéos qui existent, mais il vaut quand même peut-être mieux que je donne deux ou trois clés de compréhension.</p>
+</div>
+<div class="paragraph">
+<p>Si vous n’êtes pas trop familiers avec <strong>le concept de <em>raw</em></strong> et tout, il vaudrait peut-être mieux passer par <a href="explications.html" class="bare">explications.html</a>.</p>
+</div>
+<div class="paragraph">
+<p>Pour le reste, la doc officielle est (pour le moment, mais je crois qu’ils aimeraient changer) là :<br>
+<a href="https://rawpedia.rawtherapee.com" class="bare" target="_blank" rel="noopener">https://rawpedia.rawtherapee.com</a></p>
+</div>
+<div class="sect3">
+<h4 id="pp3"><a class="anchor" href="#pp3"></a>1.3.1. pp3</h4>
+<div class="paragraph">
+<p>Un élément important dans l’usage de RawTherapee : <strong>les fichiers <em>« sidecar »</em></strong> (« accolés »).
+Quand vous éditez une photo, un fichier reprenant son nom mais avec une extension <code>.pp3</code> apparaît à côté de la photo.
+Il contient <strong>les valeurs des paramètres appliqués</strong> et permet donc de conserver votre travail <strong>sans que la photo elle-même ne soit affectée</strong>.
+Pratique pour tester plusieurs trucs différents, reprendre à zéro si besoin, faire des sauvegardes de secours de ses paramètres…
+C’est aussi ainsi que RawTherapee peut vous replacer là où vous en étiez si jamais vous fermez l’éditeur.</p>
+</div>
+<div class="listingblock">
+<div class="title">Un extrait d’un fichier <code>.pp3</code>, avec des paramètres de filtres de netteté <sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="Voir la note de pied de page.">1</a>]</sup></div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-toml hljs" data-lang="toml">[SharpenEdge]
+Enabled=false
+Passes=1
+Strength=25
+ThreeChannels=false
+
+[SharpenMicro]
+Enabled=false
+Matrix=false
+Strength=16
+Contrast=35
+Uniformity=5</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Un ensemble complet de paramètres tels qu’on les trouve dans un <code>.pp3</code> est un <em>profil de traitement</em>.</p>
+</div>
+<div class="paragraph">
+<p>Lorsque vous exportez votre photo dans un JPG final (ou un PNG ou autre), il vous est proposé via une case cochable d’enregistrer aussi les paramètres correspondants (<b class="button">Save processing parameters with image</b>).
+Ça pond un <code>.out.pp3</code> à côté du JPG (ou autre, bref).
+Je le fais systématiquement, et je fais même des sauvegardes de sécurité de tous mes <code>.out.pp3</code> sur des périphériques de stockage externes.
+C’est moins « périssable » que le <code>.pp3</code> de base qui traîne à côté du <em>raw</em>, quoi – on risque moins de le modifier sans faire exprès.</p>
+</div>
+<div class="paragraph">
+<p>Plus d’infos sur la documentation officielle (la page sur le sujet a été traduite) :<br>
+<a href="https://rawpedia.rawtherapee.com/Sidecar_Files_-_Processing_Profiles/fr" class="bare" target="_blank" rel="noopener">https://rawpedia.rawtherapee.com/Sidecar_Files_-_Processing_Profiles/fr</a></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="icons/note.png" alt="Note">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Les <code>.pp3</code> sont des fichiers en texte tout con, humainement ouvrables et lisibles.
+Ça peut être pratique pour chercher dans tout un tas de <code>.pp3</code> pour retrouver, par exemple, des photos sur lesquelles on a utilisé tel ou tel outil de telle ou telle manière, pour servir de référence, etc.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<img src="icons/tip.png" alt="Tip">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>RawTherapee plante de moins en moins souvent au fil des versions, mais vous savez comment c’est, l’informatique…
+Bref, je fais régulièrement <a href="#raccourcis">le raccourci clavier</a> qui force l’enregistrement du <em>sidecar</em> (<span class="keyseq"><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>S</kbd></span>), plutôt que de juste m’appuyer sur la capacité du logiciel à le mettre à jour quand il se ferme.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_snapshots"><a class="anchor" href="#_snapshots"></a>1.3.2. <em>Snapshots</em></h4>
+<div class="paragraph">
+<p>Les <em>snapshots</em> sont des instantanées d’un état de votre boulot.
+Ça permet de revenir à des points précis, notamment si on a fait n’importe quoi, et de comparer plus facilement certains états.
+Il y a aussi un historique, mais il devient vite dodu vu qu’il répertorie un peu tout, alors que les <em>snapshots</em>, on les crée quand on veut et <strong>on peut leur donner des noms</strong>.</p>
+</div>
+<div class="paragraph">
+<p>Je désigne, dans ce document, des moments idéals pour créer des <em>snapshots</em>, et indique des noms potentiels (genre je dis « <em>Snapshot</em>&#160;<code>plop</code> »), mais ce ne sont que des suggestions et chacun fait comme ça lui chante.
+Moi-même, j’ai changé mes habitudes au fil du temps.
+Globalement j’en fais beaucoup moins qu’avant – au début j’en pondais un à chaque outil activé, quasiment…</p>
+</div>
+<div class="paragraph">
+<p>Un résumé de ces <em>snapshots</em> sera fourni <a href="#resume">en fin de document</a>.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<img src="icons/warning.png" alt="Warning">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Ni l’historique ni les <em>snapshots</em> ne sont enregistrés dans les fichiers <code>.pp3</code>.
+C’est en discussion, je crois, mais pas dit que ça arrive un jour – ça rendrait probablement les <code>.pp3</code> vite dodus.
+Bref, il est <strong>préférable de traiter chaque photo sur une seule lancée</strong>, sans quitter le logiciel, si vous tenez à pouvoir comparer facilement les états entre eux.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_mise_en_place"><a class="anchor" href="#_mise_en_place"></a>1.4. Mise en place</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Redimensionnement volet des <em>snapshots</em>.</p>
+<div class="videoblock">
+<div class="content">
+<video src="images/redimensionnement_snapshots.webm" height="480" controls>
+Your browser does not support the video tag.
+</video>
+</div>
+</div>
+</li>
+<li>
+<p>Déplacement <a href="https://rawpedia.rawtherapee.com/The_Image_Editor_Tab/fr#Histogramme" target="_blank" rel="noopener">histogramme</a> (dans paramètres).
+Normalement, pas besoin de le redire à chaque fois, ça.
+<span class="menuseq"><b class="menu">Preferences</b>&#160;<b class="caret">&#8250;</b> <b class="submenu">General</b>&#160;<b class="caret">&#8250;</b> <b class="submenu">Layout</b>&#160;<b class="caret">&#8250;</b> <b class="menuitem">Histogram in left panel</b></span></p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="icons/note.png" alt="Note">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Je ne sais pas trop pourquoi, mais le bouton pour ouvrir les paramètres n’apparaît que si on a lancé RawTherapee « tout seul », genre pas pour ouvrir une photo précise.
+L’interface du logiciel a en effet plusieurs modes, plus ou moins minimalistes.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_navigation_et_manipulations"><a class="anchor" href="#_navigation_et_manipulations"></a>1.5. Navigation et manipulations</h3>
+<div class="sect3">
+<h4 id="_se_balader_entre_les_champs"><a class="anchor" href="#_se_balader_entre_les_champs"></a>1.5.1. Se balader entre les champs</h4>
+<div class="paragraph">
+<p>Si vous n’avez pas l’habitude d’utiliser <a href="https://fr.wikipedia.org/wiki/Touche_de_tabulation" target="_blank" rel="noopener"><strong>la touche Tabulation</strong></a> (<kbd>↹</kbd>) pour naviguer d’un élément au suivant dans une interface (et même chose avec <kbd>Shift</kbd> (<kbd>⇧</kbd>) pour naviguer en sens inverse), il va falloir vous y mettre, sinon vous aller décéder.</p>
+</div>
+<div class="paragraph">
+<p>Voir également <a href="https://fr.wikipedia.org/wiki/Focus_(informatique)" class="bare" target="_blank" rel="noopener">https://fr.wikipedia.org/wiki/Focus_(informatique)</a> si vous n’êtes pas familier avec la notion de <em>focus</em>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="raccourcis"><a class="anchor" href="#raccourcis"></a>1.5.2. Raccourcis</h4>
+<div class="paragraph">
+<p>De la même manière, si vous êtes allergique aux raccourcis clavier, il y en a quand même un ou deux qui méritent d’être retenus dans RawTherapee pour ne pas perdre trop de temps.
+Fort heureusement, ils sont généralement rappelés quand on survole les boutons correspondants.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 75%;">
+<col style="width: 25%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Ajouter un <em>snapshot</em></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="keyseq"><kbd>Alt</kbd>+<kbd>S</kbd></span></p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Enregistrer le pp3 actuel</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="keyseq"><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>S</kbd></span></p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Exporter en JPG, etc.</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="keyseq"><kbd>Ctrl</kbd>+<kbd>S</kbd></span></p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Afficher ou masquer le volet de gauche</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><kbd>L</kbd></p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Afficher ou masquer le volet de droite</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="keyseq"><kbd>Alt</kbd>+<kbd>L</kbd></span></p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Foutre l’image à une taille qui rentre dans l’espace que vous avez</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><kbd>F</kbd></p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Foutre l’image au zoom 100 %</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><kbd>Z</kbd></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Il y en a une chiée d’autres, mais perso j’en utilise pas tant que ça tout compte fait :<br>
+<a href="https://rawpedia.rawtherapee.com/Keyboard_Shortcuts" class="bare" target="_blank" rel="noopener">https://rawpedia.rawtherapee.com/Keyboard_Shortcuts</a></p>
+</div>
+<div class="paragraph">
+<p>Notez aussi qu’un clic droit sur l’en-tête d’un outil replie automatiquement <strong>tous les autres outils</strong> de l’onglet courant tout en ouvrant (si pas déjà le cas) celui visé.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_changer_les_valeurs"><a class="anchor" href="#_changer_les_valeurs"></a>1.5.3. Changer les valeurs</h4>
+<div class="paragraph">
+<p>Quand vous êtes dans un champ prévu pour taper une valeur numérique (soit la majeure partie des trucs qu’on va tripoter), quasiment à chaque fois, vous pouvez :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Légèrement augmenter ou baisser la valeur avec les touches directionnelles <kbd>↑</kbd> et <kbd>↓</kbd>.</p>
+</li>
+<li>
+<p>Plus brutalement augmenter ou baisser la valeur avec <kbd>Page Up</kbd> (<kbd>⇞</kbd>) et <kbd>Page Down</kbd> (<kbd>⇟</kbd>). <sup class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnotedef_2" title="Voir la note de pied de page.">2</a>]</sup></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Ça marche aussi quand <a href="https://fr.wikipedia.org/wiki/Focus_(informatique)" target="_blank" rel="noopener">le <em>focus</em></a> est sur <a href="https://fr.wikipedia.org/wiki/Slider_(informatique)" target="_blank" rel="noopener">un <em>slider</em></a> mais… les effets sont alors inversés !
+Donc ça me saoule et, quand je tripatouille tout ça au clavier, je me concentre sur les champs numériques.
+Les <em>sliders</em>, c’est plutôt pour tripoter à la souris, quand on a pas besoin d’autant de finesse.</p>
+</div>
+<div class="paragraph">
+<p>À propos de <em>sliders</em> et de finesse :
+Si on clique sur un <em>slider</em> en maintenant le bouton de la souris et qu’on s’abstient de déplacer le curseur pendant un bref instant, le <em>slider</em> devient plus épais et on peut alors déplacer sa poignée plus lentement.</p>
+</div>
+<div class="videoblock">
+<div class="content">
+<video src="images/slider_epais.webm" controls>
+Your browser does not support the video tag.
+</video>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_trucs_informatiques_classiques"><a class="anchor" href="#_trucs_informatiques_classiques"></a>1.5.4. Trucs informatiques classiques</h4>
+<div class="paragraph">
+<p>Certaines techniques encore moins spécifiques à RawTherapee servent bien pour taper des valeurs plus vite, aussi, et surtout pour défoncer les valeurs précédentes.
+Désolé par avance si certains éléments de cette liste vous donnent l’impression que je vous prends pour un demeuré, mais mieux vaut prévenir que guérir :</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><kbd>Suppr</kbd></dt>
+<dd>
+<p>Supprimer le caractère situé à droite du curseur ou toute la sélection.</p>
+</dd>
+<dt class="hdlist1"><span class="keyseq"><kbd>Ctrl</kbd>+<kbd>Backspace</kbd></span> <sup class="footnote">[<a id="_footnoteref_3" class="footnote" href="#_footnotedef_3" title="Voir la note de pied de page.">3</a>]</sup> / <span class="keyseq"><kbd>Ctrl</kbd>+<kbd>Suppr</kbd></span></dt>
+<dd>
+<p>Supprimer un mot entier à gauche / à droite du curseur.</p>
+</dd>
+<dt class="hdlist1">Maintenir <kbd>Shift</kbd> tout en utilisant les touches directionnelles de gauche et de droite</dt>
+<dd>
+<p>Définir une sélection de texte en l’étendant caractère par caractère.</p>
+</dd>
+<dt class="hdlist1"><span class="keyseq"><kbd>Shift</kbd>+<kbd>Début</kbd></span> <sup class="footnote">[<a id="_footnoteref_4" class="footnote" href="#_footnotedef_4" title="Voir la note de pied de page.">4</a>]</sup> / <span class="keyseq"><kbd>Shift</kbd>+<kbd>Fin</kbd></span></dt>
+<dd>
+<p>Étendre la sélection jusqu’au début ou à la fin de la ligne.</p>
+</dd>
+<dt class="hdlist1">Double ou triple clic</dt>
+<dd>
+<p>Sélectionner un mot, une ligne.</p>
+</dd>
+<dt class="hdlist1">Taper directement en ayant sélectionné du texte, sans même avoir fait <kbd>Suppr</kbd> ni rien avant</dt>
+<dd>
+<p>Remplacer le texte sélectionné par ce qu’on tape.</p>
+</dd>
+</dl>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<img src="icons/caution.png" alt="Caution">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Sur RawTherapee&#160;5.8, je faisais beaucoup <span class="keyseq"><kbd>Ctrl</kbd>+<kbd>A</kbd></span> pour sélectionner l’intégralité du contenu d’un champ, mais dans les versions suivantes ça ne marche plus, en tout cas chez moi.
+Triste.
+<a href="https://github.com/RawTherapee/RawTherapee/issues/6972" target="_blank" rel="noopener">J’ai ouvert un ticket de bug à ce sujet</a>, d’ailleurs.
+Un mec a confirmé que ce n’était pas un changement volontaire.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_et_donc"><a class="anchor" href="#_et_donc"></a>1.5.5. Et donc…</h4>
+<div class="paragraph">
+<p>Une bonne partie du temps, les réglages se résument à :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Faire deux fois de suite <kbd>Tabulation</kbd> pour <strong>passer au champ numérique suivant</strong> en sautant par-dessus le <em>slider</em>.</p>
+</li>
+<li>
+<p>Bourriner les touches fléchées du haut et du bas ou <kbd>Page Up</kbd> et <kbd>Page Down</kbd> pour changer les valeurs.</p>
+</li>
+</ul>
+</div>
+<div class="videoblock">
+<div class="title">Trifouiller deux valeurs consécutives sans la souris</div>
+<div class="content">
+<video src="images/navigation_et_changements_de_valeurs.webm" controls>
+Your browser does not support the video tag.
+</video>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="crame"><a class="anchor" href="#crame"></a>1.5.6. Trucs qui crament</h4>
+<div class="paragraph">
+<p>En haut de l’interface se trouvent deux boutons en « ⚠ ».
+Ils permettent de mettre en évidence, respectivement,</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>les trucs tellement sombres que ça nique des informations sur leur couleur ;</p>
+</li>
+<li>
+<p>les trucs tellement clairs que ça nique également des informations sur leur couleur.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Les pixels concernés apparaissent alors en blanc dans le premier cas, et en noir dans le second.
+Donc ça fait des bouses blanches dans les zones trop sombres et des bouses noires dans les zones trop claires.
+Difficile de les rater.</p>
+</div>
+<div class="videoblock">
+<div class="title">Mes fleurs sont un peu dégueulasses</div>
+<div class="content">
+<video src="images/crame.webm" controls>
+Your browser does not support the video tag.
+</video>
+</div>
+</div>
+<div class="paragraph">
+<p>Ce sont de bons indicateurs quand on se laisse aller et qu’on pousse certains outils trop loin.
+En particulier, les trucs trop lumineux peuvent défoncer les yeux, mais quand on est en plein traitement, tête dans le guidon, des fois on ne se rend pas compte qu’on a abusé.</p>
+</div>
+<div class="paragraph">
+<p>On dit communément des trucs trop clairs <strong>qu’ils sont « cramés »</strong>.
+Je ne sais pas s’il y a un équivalent pour les trucs trop sombres ; j’ai tendance à appeler ça « cramé » également par abus et facilité.
+<a href="https://en.wikipedia.org/wiki/Clipping_(photography)" target="_blank" rel="noopener">Les anglophones</a> disent que les ombres et lumières sont alors <em>« clipped »</em> (un terme <a href="https://en.wikipedia.org/wiki/Clipping_(signal_processing)" target="_blank" rel="noopener">somme toute assez générique</a> pour quand une valeur numérique se heurte à une borne) ou <em>« blown »</em>.</p>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<img src="icons/caution.png" alt="Caution">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Le zoom affecte l’affichage des zones cramées.
+Des fois on croit que tout va bien mais c’est juste qu’on est loin et que le logiciel a la flemme de nous montrer des trucs, ou qu’il ne calcule pas le résultat avec autant de précision, ou je ne sais quoi.
+Enfin bon, quand c’est vraiment l’hécatombe, il nous le fait savoir, normalement.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>En plus de ces indicateurs, on peut garder un œil sur l’histogramme : si les « montagnes » <strong>s’écrabouillent comme des merdes contre le bord gauche ou droit</strong>, et en particulier si de <strong>petits indicateurs carrés</strong> s’affichent dans les coins supérieurs, c’est qu’on est en train de trucider nos couleurs :</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/histogramme.png" alt="histogramme">
+</div>
+<div class="title">Image 1. L’histogramme après avoir abusé du boost d’exposition</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="curseurs"><a class="anchor" href="#curseurs"></a>1.5.7. Curseurs</h4>
+<div class="paragraph">
+<p>Certaines fonctionnalités <strong>changent le curseur</strong> pour effectuer des opérations particulières, comme recadrer la photo ou effectuer une rotation.
+La plupart ont aussi un raccourci clavier associé, comme <kbd>C</kbd> pour le recadrage.
+Ça peut perturber au début, surtout si vous activez ça sans faire exprès.</p>
+</div>
+<div class="paragraph">
+<p>La touche <kbd>H</kbd> (comme <em>« Hand »</em>) remet le curseur « normal » : la main à la con qui permet de faire glisser l’image.</p>
+</div>
+<div class="paragraph">
+<p>Vous pouvez retrouver les types de curseurs <strong>en haut de l’écran</strong>, changer à loisir, et obtenir les raccourcis clavier en survolant les boutons :</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/curseurs.png" alt="curseurs">
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_étapes"><a class="anchor" href="#_étapes"></a>2. Étapes</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="init"><a class="anchor" href="#init"></a>2.1. Initialisation</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Je charge mes valeurs par défaut à la main car j’ai la flemme d’essayer de configurer un truc automatique et je préfère savoir où j’en suis et ce qu’il se passe.
+On verra dans <a href="#profil_defaut">Se faire un profil de trucs par défaut</a> comment pondre un fichier de trucs par défaut (ou autres) qu’on peut charger à loisir plus tard.
+<strong>Vous pouvez faire sans</strong>, c’est juste que certains trucs me saoulent car les valeurs suggérées de base sont farfelues pour mon usage, donc je fous les miennes à la place.</p>
+</li>
+</ul>
+</div>
+<div id="hot" class="ulist">
+<ul>
+<li>
+<p><span class="menuseq"><b class="menu">Raw</b>&#160;<b class="caret">&#8250;</b> <b class="submenu">Preprocessing</b>&#160;<b class="caret">&#8250;</b> <b class="menuitem">Hot pixel filter</b></span>
+Au début je le foutais uniquement pour les photos sombres, mais en fait on est jamais vraiment à l’abri de pixels qui fument la moquette, et les effets indésirables sont quasi nuls si on met une valeur pas trop agressive genre&#160;125… voire le maximum, si ça fait le taf.</p>
+<div class="videoblock">
+<div class="title">Même quand on met un ou deux mois de son salaire dans un appareil, des bouts du capteur finissent par fumer la moquette…</div>
+<div class="content">
+<video src="images/hot.webm" controls>
+Your browser does not support the video tag.
+</video>
+</div>
+</div>
+</li>
+<li>
+<p><em>Snapshot</em> <code>init</code>.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="transfo_debut"><a class="anchor" href="#transfo_debut"></a>2.2. Transformations</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><em>Distortion</em> si objectif relou et si la suggestion initiale automatique n’est pas top.</p>
+<div class="imageblock right">
+<div class="content">
+<img src="images/distorsion.png" alt="distorsion">
+</div>
+</div>
+<div class="openblock">
+<div class="content">
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>C’est un peu obscur, ce truc.
+Il y a à la fois une case cochable (<span class="menuseq"><b class="menu">Transform</b>&#160;<b class="caret">&#8250;</b> <b class="submenu">Lens&#160;/ Geometry</b>&#160;<b class="caret">&#8250;</b> <b class="submenu">Profiled Lens Correction</b>&#160;<b class="caret">&#8250;</b> <b class="submenu">Correct</b>&#160;<b class="caret">&#8250;</b> <b class="menuitem">Geometric distortion</b></span>) pour demander une rectification automatique, basée sur le profil de l’objectif…</p>
+</li>
+<li>
+<p>… mais <em>aussi</em> un bouton (<span class="menuseq"><b class="menu">Transform</b>&#160;<b class="caret">&#8250;</b> <b class="submenu">Lens&#160;/ Geometry</b>&#160;<b class="caret">&#8250;</b> <b class="submenu">Distortion Correction</b>&#160;<b class="caret">&#8250;</b> <b class="menuitem">Automatic</b></span>) qui met une valeur automatiquement (dans le <em>Amount</em> sous ledit bouton) pour essayer de mieux coller au JPG inclus par l’appareil dans le <em>raw</em>.</p>
+</li>
+<li>
+<p>Avec mon vieil appareil, je gardais la case cochée et je cliquais sur le bouton qui remplit le champ tout seul.
+Puis, éventuellement, j’ajustais un peu.</p>
+</li>
+<li>
+<p>Avec le nouvel appareil, peut-être parce que l’objectif distord DE OUF, ça a tendance à faire nawak.
+J’ai l’impression que ça essaye de corriger des trucs que l’appareil a déjà corrigés.
+Bref, je DÉCOCHE la case (qui semble parfois faire plus de mal que de bien avec cet appareil) et je choisis une valeur manuellement.
+Ça me faisait grave chier au début mais finalement une fois qu’on a pris le coup de main ça se fait bien, et ça aide à choisir l’effet qu’on veut donner (un peu de distorsion n’est pas forcément un tort).</p>
+</li>
+<li>
+<p>Autrement dit, vous allez peut-être devoir expérimenter un peu et trouver la stratégie qui va le mieux.
+En cas de doute, le réglage manuel vous assure une absence de surprise, on va dire…
+Vous pouvez aussi vous en foutre car l’œil s’habitue assez vite à des trucs tordus, mais bon, après ça ressemble à des vidéos de skateboard quoi, des fois.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="icons/note.png" alt="Note">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Je crois que la version&#160;5.12 améliore ça, mais j’ai pas encore testé.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Le reste de cet onglet peut servir à ce moment aussi si on veut, mais ne presse généralement pas.
+À moins que vous n’ayez prévu un recadrage ou une rotation vraiment radicale, je considère qu’il vaut mieux garder ça pour la fin, car <strong>notre façon de faire ça sera peut-être affectée par le rendu presque-final de l’image</strong> (on peut vouloir finalement garder dans le cadre un truc qu’orn trouvait initialement moche, et inversement).
+Enfin bon c’est comme vous voulez, vous pouvez aussi faire un premier jet de recadrage (voir <a href="#crop">Recadrage (<em>Crop</em>)</a>) et de rotation et de perspective à ce stade et ajuster plus tard.</p>
+</li>
+<li>
+<p><em>Snapshot</em> <code>transfo</code> si changé quelque chose.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_pré_courbe"><a class="anchor" href="#_pré_courbe"></a>2.3. Pré-courbe</h3>
+<div class="paragraph">
+<p>J’appelle ça « pré-courbe » parce que c’est une poignée de trucs que je fais avant de m’embêter à tripatouiller une courbe, dont on parlera plus loin – et parce que la courbe en question sera un assez gros morceau.
+Globalement, mes trucs « pré-courbe » concernent la luminosité et compagnie.</p>
+</div>
+<div class="paragraph">
+<p>Le gros de cette partie a lieu dans l’onglet <b class="button">Exposure</b>, avec quelques petites escales.</p>
+</div>
+<div class="sect3">
+<h4 id="_petite_base"><a class="anchor" href="#_petite_base"></a>2.3.1. Petite base</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><em>Exposure compensation</em> en faisant surtout gaffe <a href="#crame">aux trucs qui crament</a> (regarder la tronche de l’histogramme, aussi).
+Pas trop stresser si ça rend moche les parties sombres.</p>
+</li>
+<li>
+<p><em>Highlight compression</em> si trucs encore cramés qui auraient demandé trop de sacrifices niveau <em>Exposure compensation</em>.
+Pas abuser sur ça non plus car il y a d’autres moyens de rectifier ça après.
+Je dépasse rarement&#160;30 et presque jamais&#160;50.
+Peut-être que j’ai tort, mais perso je trouve que ça fait trop de la bouillie terne, après.</p>
+</li>
+<li>
+<p><em>Black</em>, je sais pas trop pourquoi ça autorise des valeurs à cinq chiffres ; perso je suis généralement dans&#160;-1000–1000, mais faut pas trop se mettre spécialement de limite je pense.
+L’intérêt peut être :</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Sauver les trucs sombres qui ont fait… l’inverse de cramer, quoi.
+<strong>Les bouts qui sont devenus plus noirs que noirs.</strong></p>
+</li>
+<li>
+<p>Ou au contraire encore plus <strong>sacrifier les zones sombres</strong> si on veut créer une espèce d’<strong>intensité dramatique</strong>, je sais pas.</p>
+</li>
+<li>
+<p>Ou juste mieux <strong>rentabiliser la plage de luminosité</strong>, si tout est trop lumineux et rien vraiment noir.</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<img src="icons/caution.png" alt="Caution">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Ne pas oublier l’histogramme au profit de la tronche de la photo et inversement.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Avant de m’attaquer au trio <em>Lightness</em>, <em>Contrast</em>, <em>Saturation</em>, situé juste avant la courbe, je me barre un peu ailleurs.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="wb"><a class="anchor" href="#wb"></a>2.3.2. Balance des blancs</h4>
+<div class="paragraph">
+<p><em>White balance</em>, côté onglet <b class="menuref">Color</b>.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://rawpedia.rawtherapee.com/White_Balance/fr" target="_blank" rel="noopener">La page RawPedia peut éclairer sur ce sujet</a>, mais elle est un peu technique et dodue.
+Tout n’est pas vital à mon niveau je pense.
+<a href="https://fr.wikipedia.org/wiki/Balance_des_blancs" target="_blank" rel="noopener">Côté Wikipédia</a>, j’en parle même pas…
+Vous aurez peut-être plus de chance sur YouTube, et pas seulement avec des trucs spécifiques à RawTherapee.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Corriger la température et la teinte de manière empirique, « à l’œil », par rapport à ce qui est suggéré en auto par l’appareil, à la rigueur.</p>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<img src="icons/warning.png" alt="Warning">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Je ne vous mets même pas le lien Wikipédia de la température car ça parle de « mired ou mégakelvin inverse » et de « radiateur de Planck » et ça me casse les couilles comme pas permis.
+En gros, <strong>« gros nombres = chaud = rouge, sinon froid et bleu »</strong>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Des fois l’appareil a vu suffisamment juste et on peut se foutre de la balance.</p>
+</li>
+<li>
+<p>Souvent je ne touche qu’à la température, et encore.
+La teinte c’est violent, souvent, et plus dur à gérer.</p>
+</li>
+<li>
+<p>Pas toucher le <em>Blue/Red equalizer</em> à moins que vous ne soyez sous l’eau ou un truc vraiment perché du genre.</p>
+</li>
+<li>
+<p>J’ai peut-être trop boudé le <b class="button">Pick</b> pendant un temps.
+Si, dans la photo, il y a un truc dont vous <em>savez</em> qu’il est censé être blanc (ou gris, mais alors, un vrai gris, pas un truc dégueulasse qui tire en douce vers le bleu ou que sais-je encore – faites gaffe, c’est assez courant ces conneries), vous pouvez <strong>le prendre comme référence</strong> pour que ça ponde des valeurs en fonction de ça.
+Un genre de calibration-étalonnage, quoi.</p>
+<div class="paragraph">
+<p>Utilisez <kbd>H</kbd> pour remettre le curseur normal à la place de la pipette à couleurs (voir la section <a href="#curseurs">Curseurs</a> pour les détails).</p>
+</div>
+</li>
+<li>
+<p>L’idée est vraiment d’<strong>être agnostique vis à vis du type d’éclairage</strong> : idéalement, un objet blanc devra apparaître blanc après réglage de la balance, même si il est sous une lampe orangée dégueulasse.
+De ce fait, le mieux quand on fait une session photo importante est d’y inclure <strong>une photo dédiée à la balance des blancs</strong>, dans les mêmes conditions d’éclairage, sur laquelle on fout une feuille de papier ou une connerie comme ça, qu’on peut ensuite viser avec le <em>color picker</em> de RawTherapee pour obtenir les valeurs adéquates de balance des blancs.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<img src="icons/important.png" alt="Important">
+</td>
+<td class="content">
+<div class="paragraph">
+<p><strong>Ne pas tenter des trucs artistiques avec la balance des blancs</strong>, yo ; c’est pas fait pour et ça risquerait de biaiser plein de trucs genre la définition des couleurs de peau et tout.
+Il faut qu’à ce stade le rendu soit assez naturel, pas qu’on se mange un filtre sépia à la TikTok ou que sais-je encore.
+<strong>Il y aura tout un tas de trucs plus tard</strong>, dans <a href="#couleurs">Couleurs</a>, pour se taper des délires de ce genre.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_noir_et_blanc_ou_couleurs"><a class="anchor" href="#_noir_et_blanc_ou_couleurs"></a>2.3.3. Noir et blanc ou couleurs</h4>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<img src="icons/caution.png" alt="Caution">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Il vaut mieux <strong>décider tôt si vous voulez du noir et blanc</strong> ou de la couleur, car ce choix influe sur un milliard de trucs.
+Mais en même temps, il vaut mieux avoir déjà réglé deux trois trucs vraiment basiques pour faire un choix plus éclairé.
+Je pense que cette étape-ci est un bon compromis, mais chacun se fera son avis…</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Il y a plusieurs approches, la plus explicite étant probablement l’outil <span class="menuseq"><b class="menu">Color</b>&#160;<b class="caret">&#8250;</b> <b class="menuitem">Black-and-White</b></span>.
+Changer la <em>Method</em> peut être une bonne idée – l’impact est souvent plus grand que ce à quoi on pourrait s’attendre, et celle par défaut n’est pas forcément ouf je trouve, souvent.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="icons/note.png" alt="Note">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Vous pouvez aussi faire des trucs genre baisser la saturation au maximum, entre autres bidouilles, mais bon, vu qu’il y a un outil dédié au noir et blanc, pratique et souple…</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_les_extrêmes_rapidos"><a class="anchor" href="#_les_extrêmes_rapidos"></a>2.3.4. Les extrêmes, rapidos</h4>
+<div class="paragraph">
+<p>J’active <em>Shadows/Highlights</em> sous la courbe, dans l’onglet <b class="button">Exposure</b>.
+Ça permet de <strong>récupérer plein d’infos</strong> de couleur dans les parties cramées ou trop sombres.
+Si vous n’avez rien à récupérer, vous pouvez faire sans, mais c’est aussi sympa pour se <strong>donner un peu plus de latitude</strong> pour la suite, dans les extrêmes.</p>
+</div>
+<div class="paragraph">
+<p>Les quatre premiers trucs se règlent assez bien en gigotant à la souris :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Les deux <em>tonal widths</em>, c’est genre « à quel point l’outil doit se focaliser sur les extrêmes ou peut déborder et s’attaquer à des trucs pas tant abusés que ça ».</p>
+</li>
+<li>
+<p>Les <em>sliders</em> <em>Highlights</em> et <em>Shadows</em>, à leurs côtés, c’est la bourrinité.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Le dernier (<em>Radius</em>), c’est plus sournois et il vaut mieux zoomer un peu sur un point « important » de la photo pour le régler.
+Je sors rarement de 30–50 et je garde souvent 40.</p>
+</div>
+<div class="videoblock">
+<div class="content">
+<video src="images/sh_hi.webm" controls>
+Your browser does not support the video tag.
+</video>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<img src="icons/tip.png" alt="Tip">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Il n’est pas rare que j’ai des valeurs de <em>Highlights</em> et <em>Shadows</em> riquiqui (parfois même&#160;1 voire&#160;0), surtout si la photo a été prise dans de bonnes conditions.
+C’est plutôt bon signe, hein.
+Faut pas croire que c’est <em>mal</em> de peu s’appuyer sur certains outils…</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_compression_supplémentaire_éventuelle_et_autres_trucs_gourmands"><a class="anchor" href="#_compression_supplémentaire_éventuelle_et_autres_trucs_gourmands"></a>2.3.5. Compression supplémentaire éventuelle et autres trucs gourmands</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Si vous galérez <em>encore trop</em> avec des trucs <strong>trop lumineux ou trop sombres</strong>, vous pouvez foutre un peu de <em>Dynamic Range compression</em>, toujours dans l’onglet <b class="menuref">Exposure</b>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pas forcément besoin de pousser sa force très loin ; je suis souvent sous&#160;10.</p>
+</li>
+<li>
+<p>Je n’ai jamais touché au <em>slider</em> <em>Detail</em> qui s’y trouve – impression que c’est un truc de niche à l’impact généralement négligeable.</p>
+</li>
+<li>
+<p>L’<em>Anchor</em> permet de rectifier la luminosité ambiante si vous trouvez que la compression a tout foutu en l’air.
+Pratique aussi (avec modération) pour quelques ajustements de dernière minute.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Se calmer un peu sur la force de <em>Shadows/Highlights</em> si on a mis de la compression.</p>
+</li>
+<li>
+<p>Pour les paysages qui font <strong>bleuté au loin</strong>, <span class="menuseq"><b class="menu">Detail</b>&#160;<b class="caret">&#8250;</b> <b class="menuitem">Haze Removal</b></span> peut dépanner.
+Par contre, c’est vite violent, et ça assombrit un peu tout, pour ça que j’essaye de le faire tôt.
+On peut alors compenser avec les autres paramètres.
+Par contre, ça semble demander pas mal de calculs et ralentit l’aperçu, donc c’est super chiant de devoir activer cet outil si tôt…</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_finir_lexposition_de_base"><a class="anchor" href="#_finir_lexposition_de_base"></a>2.3.6. Finir l’exposition de base</h4>
+<div class="imageblock right">
+<div class="content">
+<img src="images/lum_con_sat.png" alt="lum con sat" width="350">
+</div>
+</div>
+<div class="paragraph">
+<p>Là, on revient là où on en était dans l’exposition (<span class="menuseq"><b class="menu">Exposure</b>&#160;<b class="caret">&#8250;</b> <b class="menuitem">Exposure</b></span>) :
+il nous restait :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>la luminosité,</p>
+</li>
+<li>
+<p>le contraste et</p>
+</li>
+<li>
+<p>la saturation.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>N’abusez pas trop sur le contraste et la saturation à ce stade :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Pour le contraste, il faut se garder un peu de marge pour plein d’outils qui exploitent ça pour mieux faire ressortir les objets et tout.</p>
+</li>
+<li>
+<p>Il y aura encore plein de trucs dans l’onglet <b class="button">Colors</b> (on en parle en section <a href="#couleurs">Couleurs</a>) qui pourront faire des trucs similaires à la saturation en mieux, et même la chromaticité machin truc <a href="#vign_grad_adj">dans les ajustements finaux</a>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Bref, faites comme vous voulez, mais moi je suis généralement dans -2–2 pour ces deux-là, à la rigueur&#160;-3 ou&#160;3 mais rarement.
+D’ailleurs, à propos de « comme vous voulez », ces paramètres pourraient être réglés plus tôt, en particulier la luminosité.
+Ça peut être pertinent quand un ajustement un peu extrême est nécessaire.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="fin_pre-c"><a class="anchor" href="#fin_pre-c"></a>2.3.7. Enfin fini le « pré-courbe »</h4>
+<div class="paragraph">
+<p><em>Snapshot</em> <code>pre-c</code>.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="courbe"><a class="anchor" href="#courbe"></a>2.4. Courbe</h3>
+<div class="paragraph">
+<p><em>Tone curve</em>, dans <span class="menuseq"><b class="menu">Exposure</b>&#160;<b class="caret">&#8250;</b> <b class="menuitem">Exposure</b></span> (ouais il y a tout un volet qui porte le même nom que l’onglet, c’est pas ouf mais bon).</p>
+</div>
+<div class="paragraph">
+<p>Je passe souvent beaucoup de temps sur ça.
+Si vous ne deviez toucher qu’à <em>une seule chose</em>, je pense que ça serait cette courbe :</p>
+</div>
+<div class="ulist checklist">
+<ul class="checklist">
+<li>
+<p>&#10003; Ça a un effet sympa 99,9 % du temps, de peaufiner la courbe.
+La première fois, j’ai vraiment eu un « effet “wow” », genre on a d’un coup l’impression d’être un gros guedin.</p>
+</li>
+<li>
+<p>&#10003; Ça permet de mettre l’accent sur ce qu’on juge important dans la photo, dans une certaine mesure.</p>
+</li>
+<li>
+<p>&#10003; Certains utilisateurs font remarquer que, quand on maîtrise ça, certains <em>sliders</em> genre <em>Black</em> ou <em>Contrast</em> deviennent plus ou moins inutiles car on peut les émuler avec la courbe.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Mais c’est quoi cette courbe ?
+On peut la voir comme <strong>une fonction mathématique</strong>, appliquée indépendamment à chaque pixel.
+Le pixel y entre en disant quelle tronche il a, et il ressort potentiellement modifié.
+C’est un filtre, en somme – comme beaucoup d’ outils (<em>tous</em> les outils ?) de RawTherapee, mais là c’est plus flagrant car on a la fonction représentée graphiquement sous les yeux, et chaque pixel est traité indépendamment, sans être emmerdé par ce qui arrive à ses voisins.</p>
+</div>
+<div class="imageblock text-center related thumb">
+<div class="content">
+<img src="images/courbe_bouffe.png" alt="courbe bouffe">
+</div>
+<div class="title">Image 2. Vision d’artiste du phénomène</div>
+</div>
+<div class="imageblock right">
+<div class="content">
+<img src="images/courbe_un_point.png" alt="courbe un point">
+</div>
+<div class="title">Image 3. Exemple pour un point donné de la courbe</div>
+</div>
+<div class="paragraph">
+<p>C’est surtout en matière de <strong>luminosité</strong>, qu’il se passe des choses.
+En abscisse, on a la luminosité en entrée, et en ordonnée celle en sortie.
+Autrement dit :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>La <strong>partie gauche</strong> du graphique concerne les <strong>zones plutôt sombres</strong> de la photo.</p>
+</li>
+<li>
+<p>La <strong>partie droite</strong> concerne plutôt les <strong>trucs lumineux</strong> <em>as fuck</em>.</p>
+</li>
+<li>
+<p>Plus un point de la courbe est <strong>haut</strong>, plus les parties de la photo qui correspondent à ce point (concernant leur tronche initiale, leur luminosité et tout) vont être <strong>lumineux</strong> en sortie, et inversement.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>La courbe a généralement plus ou moins <strong>une forme de « S »</strong>.
+Plus ce « S » est infléchi, plus l’image apparaîtra <strong>contrastée</strong>, vu que ça défonce les sombres encore plus qu’ils ne le sont déjà, et booste les clairs.
+À l’inverse, une courbe linéaire (diagonale à la con) donne un truc tout fade.</p>
+</div>
+<div class="videoblock">
+<div class="title">Inflexion progressive et personnalisation de la courbe</div>
+<div class="content">
+<video src="images/courbe_lineaire_puis_s.webm" width="85%" controls>
+Your browser does not support the video tag.
+</video>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="icons/note.png" alt="Note">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Pour <strong>supprimer un point</strong>, on peut le prendre et <strong>le « balancer » hors du cadre</strong>, comme j’ai dû le faire à la fin de la vidéo ci-dessus car j’avais, je ne sais trop comment, ajouté un point en trop.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Plus généralement :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Les endroits où <strong>la pente est raide</strong> sont plus <strong>contrastés</strong>, et donc généralement plus jolis et mis en valeur, à condition de ne pas abuser non plus sinon ça part en truc sous LSD.</p>
+</li>
+<li>
+<p>À l’inverse, les endroits de la courbe qui sont <strong>un peu raplaplas</strong> présentent un « risque », car cela va faire se rapprocher le rendu de parties censées avoir des tons différents.
+J’appelle ça <strong>« de la boue »</strong> car des trucs censés être des dégradés deviennent <strong>des aplats dégueulasses</strong>.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/raplapla.jpg" alt="raplapla">
+</div>
+<div class="title">Image 4. Courbe farfelue pour montrer l’effet des zones plates : les mollets sont quasiment devenus unis, et les reliefs du visage sont un peu partis en couille</div>
+</div>
+<div class="paragraph">
+<p>Vous allez peut-être me dire « bah il faut monter comme un goret sans arrêt, alors, non ? Comme ça tout est joli ! », sauf que, bah, au bout d’un moment, on arrive au « plafond » et on est niqué, quoi.
+Dans ma tête, donc, en gros :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>consentir, via du plat, à ce que des choses soient moches revient à <strong>« prendre de l’élan »</strong> ;</p>
+</li>
+<li>
+<p>grimper de manière raide pour embellir quelque chose, c’est <strong>« griller des cartouches »</strong>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Il faut donc faire de l’espèce de micro-management avec sa courbe, des concessions et tout.
+Certains paysages sont casse-burnes, genre, parce qu’il y a des choses intéressantes dans tous les tons, et on ne peut pas trop sacrifier quoi que ce soit car la « boue » se verrait trop.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<img src="icons/tip.png" alt="Tip">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>La « boue » se voit beaucoup moins dans les extrêmes (sombre / clair), ce qui explique probablement pourquoi on se retrouve souvent avec un genre de « S » à la fin : plat aux extrémités, pentu au centre.
+Il reste cependant des exceptions, typiquement si une lampe ou le soleil figure sur la photo et est important – il peut s’avérer nécessaire de lui accorder un peu de pente malgré la violence de la lumière.
+À vous de voir.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>C’est là que <strong>l’histogramme visible en arrière-plan de la courbe</strong> intervient, pour nous aider à faire nos choix :</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/courbe_histogramme.jpg" alt="courbe histogramme" width="85%">
+</div>
+</div>
+<div class="paragraph">
+<p>… Ou pas, car genre là, avec mes fleurs à la con, pour moi le truc important c’est les fleurs, plutôt dans le clair, et l’appareil était en mode « oh bah puisqu’il y avait une chiée de pixels sombres, ça devait être ça le sujet », et ça a donné une suggestion avec la « raideur » de la courbe surtout localisée sur ces tons-là.
+Bref : <strong>il peut y avoir des « montagnes » dans l’histogramme à cause de trucs dont on se contrebranle</strong>, donc il ne faut <strong>pas se sentir obligé non plus de foutre des pentes raides pile dessus</strong>.</p>
+</div>
+<div class="paragraph">
+<p>Maintenant que les bases sont posées, on va pouvoir voir ces histoires un peu plus en détails.</p>
+</div>
+<div class="imageblock right">
+<div class="content">
+<img src="images/courbe_type_mode.png" alt="courbe type mode">
+</div>
+</div>
+<div class="sect3">
+<h4 id="_type"><a class="anchor" href="#_type"></a>2.4.1. Type</h4>
+<div class="paragraph">
+<p>Ça détermine grosso modo comment la courbe est tracée en fonction des points, et donc comment elle réagit quand vous ajoutez ou déplacez des points.</p>
+</div>
+<div class="paragraph">
+<p>Avant je foutais le type <em>Control cage</em>.
+Il est sympa mais fallait partir d’un truc linéaire et ça me saoulait un peu.
+Maintenant je garde le truc par défaut (<em>Flexible</em>), et je peaufine à ma sauce la courbe proposée de base.
+Vu que <strong>ça relève davantage d’une préférence au niveau des manipulations que d’un quelconque choix artistique</strong>, je pense que chacun a son favori et le fout quasi tout le temps.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_mode"><a class="anchor" href="#_mode"></a>2.4.2. Mode</h4>
+<div class="paragraph">
+<p>Ça détermine (si je pige bien) comment la courbe, sa pente et tout, influe sur la luminosité et les couleurs de la photo.
+Le rendu, quoi, on va dire.
+Pas forcément besoin de piger les détails mathématiques tordus ; on peut tester divers modes et à force on choisit assez vite celui qui convient au style de la photo et à l’ambiance qu’on veut.</p>
+</div>
+<div class="videoblock">
+<div class="title">Exemple avec courbe ultra-pentue pour bien montrer</div>
+<div class="content">
+<video src="images/courbe_modes.webm" controls>
+Your browser does not support the video tag.
+</video>
+</div>
+</div>
+<div class="paragraph">
+<p>J’utilise personnellement trois modes :</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Standard</dt>
+<dd>
+<p>si pas grave que couleurs craquent un peu leur slip, rendu plus artistique / pop / whatever.
+Au début je le foutais partout, mais en fait c’est touchy car quand la courbe est pentue <strong>les couleurs deviennent encore plus abusées</strong> (surtout certains verts ou oranges ?) ; ça peut être frustrant.
+Les modes suivants ont moins ce souci.</p>
+</dd>
+<dt class="hdlist1">Perceptual</dt>
+<dd>
+<p>si préfère ultra-réaliste voire <strong>limite trop pépère</strong>.
+Peut quand même être rendu plus vénèr après avec contraste et couleurs boostés, via les autres outils.</p>
+</dd>
+<dt class="hdlist1">Film-like</dt>
+<dd>
+<p>pour un <strong>compromis</strong> entre les deux ci-dessus.
+Dans les faits, c’est celui que j’utilise le plus ces dernières années.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="icons/note.png" alt="Note">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Le mode <em>Film-like</em> a été développé à la base par Adobe pour Lightroom et tout.
+Je crois que son nom vient du fait qu’il tente de se rapprocher de ce qu’on obtient avec de vraies pellicules photo.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_trifouiller_les_points_de_la_courbe"><a class="anchor" href="#_trifouiller_les_points_de_la_courbe"></a>2.4.3. Trifouiller les points de la courbe</h4>
+<div class="paragraph">
+<p>Des conseils et astuces un peu en vrac, désolé.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Si vous aviez activé des outils gourmands en calculs (notamment <em>Dynamic Range Compression</em> et <em>Haze Removal</em>), je recommande de :</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Les désactiver avant de bosser sur la courbe.</p>
+</li>
+<li>
+<p>Gérer la courbe en essayant de ne pas trop se formaliser sur la luminosité ambiante moyenne globale et la tronche des zones très sombres ou très claires :
+on ne peut pas trop s’y fier vu qu’on a temporairement désactivé des trucs.</p>
+</li>
+<li>
+<p>Une fois que vous êtes satisfait, réactiver les outils gourmands précédemment désactivés.</p>
+</li>
+<li>
+<p>Éventuellement peaufiner la courbe, maintenant que le plus gros du travail est fait et que les délais d’actualisation de l’aperçu posent moins de problèmes.
+En particulier, la <em>Dynamic Range Compression</em> permet généralement de faire monter les points de la courbe dans la moité de droite du graphique, car ça calme la joie des parties grave lumineuses en nous donnant une bonne marge de manœuvre.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Garder <kbd>Ctrl</kbd> enfoncé pendant le glisser-déposer d’un point pour déplacer pépère.
+Par contre ça me nique les doigts, à force, mais bon.</p>
+</li>
+<li>
+<p>On peut aussi passer en mode « édition de coordonnées » en faisant un clic droit sur un point, pour ensuite carrément taper des valeurs numériques.
+Je le faisais beaucoup au début, mais en fait c’est un peu chiant, même avec les techniques au clavier pour augmenter ou baisser les valeurs pas à pas.
+(Re-clic droit, hors points, pour sortir de ce mode.)</p>
+<div class="videoblock">
+<div class="content">
+<video src="images/courbe_coordonnees.webm" controls>
+Your browser does not support the video tag.
+</video>
+</div>
+</div>
+</li>
+<li>
+<p>Ne pas abuser non plus sur le contraste dû aux inflexions et tout.
+Gardez en tête qu’il y a d’autres outils derrière qui vont faire ressortir les choses un peu plus nettement, etc.
+Avant, j’avais un peu trop tendance à vouloir « faire avec la courbe ce pour quoi des outils parmi les suivants sont prévus » : je faisais des espèces d’escaliers tarabiscotés et tout.
+Maintenant :</p>
+<div class="ulist checklist">
+<ul class="checklist">
+<li>
+<p>&#10003; je garde <strong>des trajectoires plutôt fluides</strong> (ça évite de se retrouver avec des artefacts bizarres, de la « boue » ou du « LSD »), et</p>
+</li>
+<li>
+<p>&#10003; je conserve un peu de marge dans les extrêmes, au lieu de chercher à être vraiment à la limite du tolérable pour les ombres et la lumière pétante.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Plutôt que de mettre trop tôt des points <em>pile au niveau des pics de l’histogramme</em> (ou des endroits intéressants de manière générale), mieux vaut contrôler <em>la pente</em> à ces endroits, en mettant des points <em>de part et d’autre de l’endroit crucial</em> et laisser, dans un premier temps en tout cas, la hauteur simplement découler de ces points-là.</p>
+</li>
+<li>
+<p><strong>Comparer à l’original</strong> pour voir si la courbe par défaut présentait des avantages qu’on a perdus (typiquement un bout de l’image qu’on aurait amoché sans s’en être rendu compte).
+Tenter de trouver des compromis si c’est le cas.</p>
+</li>
+<li>
+<p>Faire <strong>plusieurs itérations</strong> avec des <em>snapshots</em> genre <code>c0</code>, <code>c1</code>, <code>c2</code>…
+Ça m’aide à vérifier que je vais dans la bonne direction, et que je ne perds rien d’intéressant en cours de route.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="icons/note.png" alt="Note">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Ouais je commence à <code>c0</code> car le premier essai est rarement suffisant et présente souvent des défauts criants quand on le compare à « avant de tripoter la courbe ».</p>
+</div>
+<div class="paragraph">
+<p>Je pousse aussi le délire jusqu’à faire des <code>c2.1</code>, <code>c2.2</code>… au lieu de <code>c3</code> si je suis loin d’avoir bougé tous les points de la courbe que j’avais en <em>snapshot</em> <code>c2</code>.
+Déformation professionnelle de développeur, je pense.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Ajouter des points intermédiaires au fil des itérations, genre à mi-chemin des points déjà posés.
+De préférence avec <kbd>Ctrl</kbd> enfoncé, pour que les points se mettent sur la courbe au lieu de charcuter cette dernière.</p>
+</li>
+<li>
+<p>Il y a une fonctionnalité cool, activable avec un bouton à droite, pour :</p>
+<div class="openblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>voir <strong>où se situe un endroit de la photo par rapport à la courbe</strong> (et donc piger où on doit tripoter la courbe pour arranger un souci) ;</p>
+</li>
+<li>
+<p>ajouter rapidos (avec <kbd>Ctrl</kbd> &#43; clic) un point sur la courbe <strong>à l’emplacement approprié</strong> pour s’occuper de l’endroit en question de la photo.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="videoblock">
+<div class="content">
+<video src="images/courbe_curseur.webm" controls>
+Your browser does not support the video tag.
+</video>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_détails"><a class="anchor" href="#_détails"></a>2.5. Détails</h3>
+<div class="paragraph">
+<p>Onglet <b class="menuref">Detail</b>.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<img src="icons/warning.png" alt="Warning">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Une icône <strong>« 1:1 » dans l’en-tête d’un outil</strong>, comme pour beaucoup dans cet onglet, signifie qu’il vaut mieux être à un zoom d’<strong>au moins 100 %</strong> pour bien juger le résultat du réglage.
+Vous pouvez foutre <a href="#fenetre_details">une fenêtre de détails</a> (voire plusieurs) à 100 % ou plus dans un coin et garder une vue d’ensemble à côté si vous voulez, à la limite.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Grosso modo dans cet ordre :</p>
+</div>
+<div class="sect3">
+<h4 id="bruit"><a class="anchor" href="#bruit"></a>2.5.1. Bruit</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><em>Noise Reduction</em> mais gaffe car nique couleurs et détails.
+Genre si vous poussez trop ça transforme tout en espèces de flans.
+Surtout utile si la photo a été prise dans des conditions reloues, avec sensibilité&#160;ISO poussée loin ou longue exposition.</p>
+<div class="openblock">
+<div class="content">
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Zoomer à 200 voire 400 % pour bien voir s’il y a du bruit, et voir sa dégaine.</p>
+</li>
+<li>
+<p>Le simple fait d’activer cet outil a un effet, sur le bruit un peu coloré.
+On a alors souvent l’impression que tout est soudainement devenu gris, voilé, d’où le fait qu’il vaut mieux <strong>garder ce filtre pour les photos qui en ont vraiment besoin</strong>.</p>
+</li>
+<li>
+<p>Il reste ensuite généralement des aléas du côté de la luminosité, potentiellement trop « granuleuse ».</p>
+</li>
+<li>
+<p>Régler la <em>Luminance</em> pour lisser autant qu’on veut.</p>
+</li>
+<li>
+<p>Régler la <em>Detail recovery</em> pour redonner un peu de netteté aux petits objets et reliefs qui sont devenus tout moches.</p>
+</li>
+<li>
+<p>Faire des allers-retours entre ces deux <em>sliders</em> si on veut peaufiner.</p>
+</li>
+<li>
+<p>Éventuellement revenir au <em>slider</em> <em>Gamma</em> juste au-dessus pour cibler plutôt l’obscurité ou la lumière.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="videoblock">
+<div class="title">Du bouillon de lentilles qui devient du flan</div>
+<div class="content">
+<video src="images/noise.webm" width="85%" controls>
+Your browser does not support the video tag.
+</video>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="icons/note.png" alt="Note">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>À force, on « sait » quand on va en avoir besoin…
+Avec mon ancien appareil, je commençais à m’inquiéter à ISO&#160;400, et fonçais activer cet outil à&#160;800 ; avec le nouveau, c’est plutôt&#160;6000 et 8000 respectivement, et encore.
+La différence m’avait mis sur le cul, mais heureusement qu’il résiste à ce niveau car mon objectif galère un peu pour récupérer de la lumière.
+Enfin bref, on s’en tape, de mes histoires.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p><em>Impulse Noise Reduction</em> potentiellement, mais impression que c’est pas censé être utilisé souvent.
+Je l’ai quasiment abandonné depuis que je ne suis plus sur mon vieil appareil compact.
+Ça peut néanmoins être un bon complément au <a href="#hot">filtre anti-pixels chauds</a> en cas de soucis techniques.<br>
+<a href="https://fr.wikipedia.org/wiki/Bruit_poivre_et_sel" class="bare" target="_blank" rel="noopener">https://fr.wikipedia.org/wiki/Bruit_poivre_et_sel</a></p>
+<div class="paragraph">
+<p>Ça peut être une bonne idée de désactiver <em>Noise Reduction</em> le temps de régler la force de l’<em>Impulse Noise Reduction</em>, pour les gérer de manière indépendante.
+Pensez juste à le réactiver après…</p>
+</div>
+</li>
+<li>
+<p>Ça peut mériter un <em>snapshot</em> <code>noise</code> si on a fait des trucs significatifs.</p>
+</li>
+<li>
+<p>Pas de panique si vous avez l’impression d’avoir perdu en netteté et en contraste, genre si certains reliefs sont devenus un peu « mous » :</p>
+<div class="ulist">
+<ul>
+<li>
+<p>l’onglet <b class="menuref">Detail</b> contient pas mal de choses qui permettent un peu de compenser ça ;</p>
+</li>
+<li>
+<p>pour les petits changements de couleurs qui peuvent survenir (genre parce que des ombres un peu teintées ont été partiellement interprétées comme du bruit), ça peut faire peur à un gros niveau de zoom mais en vrai la vue d’ensemble est rarement très affectée, je trouve.</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_sharpening_microcontrast"><a class="anchor" href="#_sharpening_microcontrast"></a>2.5.2. <em>Sharpening</em> &#43; <em>Microcontrast</em></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Gaffe à pas accentuer le bruit : le fait d’accroître la netteté quand la photo est pleine de petits points à la con, ça rend les points encore plus visibles, et peut donner aussi un éclaircissement global non voulu, surtout avec la méthode <em>RL&#160;Deconvolution</em> de <em>Sharpening</em>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>D’ailleurs, j’ai tendance à préférer le <em>Sharpening</em> via <em>Unsharp Mask</em>.</p>
+</li>
+<li>
+<p>Si même en méthode <em>Unsharp Mask</em> vous trouvez que ça fiche plus le bazar qu’autre chose, vous pouvez tester en cochant <b class="button">Sharpen only edges</b> : ça se concentrera sur les contours des objets.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="icons/note.png" alt="Note">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Le <b class="button">Sharpen only edges</b> de <em>Sharpening</em> peut sembler redondant avec l’outil <em>Edges</em>, qu’on verra juste après, mais l’effet est différent voire complémentaire : le premier utilise des astuces basées sur une accentuation de contraste, tandis que le second redessine les contours, les rend plus tranchants.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Si l’outil <em>Microcontrast</em> ne semble pas pertinent, ce n’est pas forcément une hérésie de le laisser désactivé.
+Je l’utilise souvent pour les paysages, plantes, etc., mais rarement pour les figurines, par exemple, qui n’ont guère besoin d’accentuation de détails minuscules vu que c’est plutôt lisse.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Je ne change pas trop trop les paramètres en général.
+Je baisse fréquemment d’un pouième l’<em>Amount</em> du <em>Sharpening</em>, mais bon.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_edges"><a class="anchor" href="#_edges"></a>2.5.3. <em>Edges</em></h4>
+<div class="paragraph">
+<p>Si vraiment truc qui s’y prête bien, mais gaffe ça peut être violent.
+Pratique pour tout ce qui est un peu géométrique, très délimité, ou genre mes figurines à la con.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_defringe"><a class="anchor" href="#_defringe"></a>2.5.4. <em>Defringe</em></h4>
+<div class="paragraph">
+<p>Sert pas souvent mais des fois sauve la vie de ouf.
+C’est pour les espèces d’auras à la con – des <em>franges</em> – qui peuvent apparaître, typiquement au bord des branchages en contre-jour.
+(Histoire de longueurs d’ondes à la con.)<br>
+<a href="https://rawpedia.rawtherapee.com/Defringe/fr" class="bare" target="_blank" rel="noopener">https://rawpedia.rawtherapee.com/Defringe/fr</a></p>
+</div>
+<div class="paragraph">
+<p>Je suis parfois obligé de tripoter la courbe pour mieux coller à la couleur de mes soucis à moi, et pour limiter les faux positifs…
+Ça peut mériter d’enregistrer la courbe résultante dans un fichier, si une teinte donnée de frange revient fréquemment dans vos photos.</p>
+</div>
+<div class="paragraph">
+<p>Il vaut parfois mieux accepter de n’enlever qu’une partie du souci plutôt que de chercher à tout éradiquer, car vous risquez de défoncer les couleurs de bouts qui n’ont rien demandé.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<img src="icons/warning.png" alt="Warning">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Ne pas confondre ces franges avec les <a href="https://fr.wikipedia.org/wiki/Aberration_chromatique" target="_blank" rel="noopener">aberrations chromatiques plus génériques</a>.
+Ces dernières, généralement bleues et rouges – le bleu étant du côté opposé au rouge – et plus prononcées dans les régions périphériques de l’image, correspondent à d’autres outils, notamment <span class="menuseq"><b class="menu">Transform</b>&#160;<b class="caret">&#8250;</b> <b class="menuitem">Chromatic Aberration Correction</b></span>.<br>
+<a href="https://rawpedia.rawtherapee.com/Lens/Geometry/fr#Aberration_chromatique" class="bare" target="_blank" rel="noopener">https://rawpedia.rawtherapee.com/Lens/Geometry/fr#Aberration_chromatique</a></p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_contrast_by_detail_levels"><a class="anchor" href="#_contrast_by_detail_levels"></a>2.5.5. <em>Contrast by Detail Levels</em></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Généralement dans -0,75–1,9 pour chaque niveau, et encore.</p>
+</li>
+<li>
+<p>Adapter le niveau de zoom au niveau de détails visé, sinon on voit rien ou bien c’est pas représentatif :</p>
+<div class="ulist">
+<ul>
+<li>
+<p>je fous limite 200 % de zoom au début, pour les niveaux les plus fins,</p>
+</li>
+<li>
+<p>et moins de 100 % pour les trois niveaux les plus dodus.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Si vous en avez rien à foutre, vous pouvez utiliser les gros boutons à la con qui font un escalier automatique :</p>
+<div class="videoblock">
+<div class="content">
+<video src="images/lvl_yolo.webm" controls>
+Your browser does not support the video tag.
+</video>
+</div>
+</div>
+</li>
+<li>
+<p>En général je donne à chaque niveau une valeur relativement proche de celle des niveaux voisins (genre je ne passe pas de -0,8 à 1,5 entre les niveaux&#160;0 et&#160;1, quoi), mais je ne pense pas qu’il faille en faire une maladie non plus.</p>
+</li>
+<li>
+<p>Des valeurs inférieures à&#160;1 sur les niveaux de détails&#160;0 et&#160;1 peuvent servir d’<strong>ersatz de filtre anti-bruit</strong>, mais à n’utiliser que <strong>si vous n’avez pas de petits reliefs importants</strong>.
+J’en abuse sur mes photos de figurines, tout en regardant par exemple si ça ne brouille pas trop leurs yeux.</p>
+</li>
+<li>
+<p>J’ai jamais touché au <em>Threshold</em> (seuil) de ma vie, je crois.
+Vous savez, le truc sous les différents niveaux, là.
+Peut-être que je suis con, mais je ne vois pas trop l’intérêt.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_local_contrast"><a class="anchor" href="#_local_contrast"></a>2.5.6. <em>Local contrast</em></h4>
+<div class="paragraph">
+<p>Ils craquent sur les valeurs par défaut, je trouve.
+En particulier le <em>Radius</em> et l’<em>Amount</em>.</p>
+</div>
+<div class="videoblock">
+<div class="title">Valeurs par défaut <em>vs</em> (trop ?) pépère</div>
+<div class="content">
+<video src="images/loc.webm" controls>
+Your browser does not support the video tag.
+</video>
+</div>
+</div>
+<div class="paragraph">
+<p>Je règle ça de plus en plus à l’arrache (c’est-à-dire à la souris en gigotant avec les <em>sliders</em>), en zieutant le résultat.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Zoomer sur un truc qu’on veut rendre grave beau.</p>
+</li>
+<li>
+<p>Jouer avec le <em>Radius</em> puis l’<em>Amount</em>.</p>
+</li>
+<li>
+<p>Dézoomer un peu voire carrément (je fais souvent <kbd>F</kbd> à ce moment – voir <a href="#raccourcis">Raccourcis</a>).</p>
+</li>
+<li>
+<p>Ajuster les niveaux, éventuellement en regardant ce qui crame (voir <a href="#crame">Trucs qui crament</a>).
+Il y a souvent un niveau à partir duquel la quantité de pixels cramés passe assez soudainement d’« acceptable » à « abusée », et il faut trouver ça un peu au feeling.
+Ne pas oublier pour autant l’aspect esthétique : pas obligé de pousser au max partout !</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="fin_details"><a class="anchor" href="#fin_details"></a>2.5.7. Fin des détails</h4>
+<div class="paragraph">
+<p><em>Snapshot</em> <code>details</code>.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="couleurs"><a class="anchor" href="#couleurs"></a>2.6. Couleurs</h3>
+<div class="sect3">
+<h4 id="_balance_encore"><a class="anchor" href="#_balance_encore"></a>2.6.1. Balance encore</h4>
+<div class="paragraph">
+<p>Affiner la balance des blancs maintenant qu’on y voit peut-être un peu plus clair, mais n’abusez pas non plus sous peine d’invalider ce que vous avez foutu sur la courbe et tout.
+(→ <a href="#wb">Balance des blancs</a>)</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_vibrance"><a class="anchor" href="#_vibrance"></a>2.6.2. <em>Vibrance</em></h4>
+<div class="videoblock">
+<div class="title">Voir explications sous la vidéo</div>
+<div class="content">
+<video src="images/vibrance.webm" controls>
+Your browser does not support the video tag.
+</video>
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Protéger peau (<b class="button">Protect skin-tones</b>) si et seulement s’il y en a (et si pas envie de couleurs artistiques cheloues).</p>
+</li>
+<li>
+<p>Commencer par foutre 100 en saturé et 0 en pastel, puis faire varier le pallier pour voir où on veut placer la barre qui délimite les notions de « saturé » et de « pastel ».</p>
+</li>
+<li>
+<p>Une fois le seuil placé, remettre les deux <em>sliders</em> à zéro.</p>
+</li>
+<li>
+<p>Régler saturé et pastel un à un et éventuellement faire des allers-retours car ils changent l’un et l’autre la perception qu’on a de l’autre.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="icons/note.png" alt="Note">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>C’est pas forcément un crime de mettre des valeurs négatives.
+Peut-être que les rétines du public vous remercieront.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_soft_light"><a class="anchor" href="#_soft_light"></a>2.6.3. <em>Soft Light</em></h4>
+<div class="paragraph">
+<p>Pas grand-chose à dire à part que je fous souvent une valeur de&#160;1 ou&#160;2…
+Ouais, je sais, c’est un peu ridicule…</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_rgb_curves"><a class="anchor" href="#_rgb_curves"></a>2.6.4. <em>RGB Curves</em></h4>
+<div class="videoblock">
+<div class="title">Je fais, dans cette vidéo, un peu nawak, mais ça montre bien à quel point on peut vite obtenir des trucs « artistiques », lol</div>
+<div class="content">
+<video src="images/rgb.webm" height="480" controls>
+Your browser does not support the video tag.
+</video>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Sympa pour faire se détacher un sujet d’un fond, je trouve, notamment.</p>
+</li>
+<li>
+<p>En paramétrique sinon trop prise de tête, trop violent :</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/rgb_param.png" alt="rgb param">
+</div>
+<div class="title">Image 5. Passer les trois courbes en « paramétrique » (pour le rouge, le vert et le bleu – ici le rouge, par exemple)</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<img src="icons/tip.png" alt="Tip">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>C’est relou de changer le type des trois courbes de couleurs à chaque fois, donc mieux vaut mettre ça <a href="#profil_defaut">dans un profil de trucs par défaut</a>, même si dans ledit profil l’outil est désactivé.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Pas hésiter à « normaliser », genre si on a foutu -5 au sombre dans toutes les couleurs, c’est un peu con, souvent, et on peut les remonter un peu voire refoutre les trois à 0 pour le sombre : si on baisse ou monte tout pareil, la couleur ne va pas changer, quoi, donc autant calmer sa joie.</p>
+</li>
+<li>
+<p>Je commence généralement par le vert, car c’est souvent celui sur lequel je me laisse le plus aller.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="toning"><a class="anchor" href="#toning"></a>2.6.5. <em>Color toning</em></h4>
+<div class="paragraph">
+<p>J’hésite parfois beaucoup au niveau de cet outil, donc je fais un <em>snapshot</em> <code>pre-toning</code> avant de l’activer.</p>
+</div>
+<div class="paragraph">
+<p>Au début, il faut choisir (ou non) de faire tendre les couleurs de traviole.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Tourner autour dans les quatre carrés du centre pour voir s’il y a une direction qui semble pas trop délirante, puis voir quel éloignement va le mieux.</p>
+<div class="videoblock">
+<div class="content">
+<video src="images/toning_point.webm" height="480" controls>
+Your browser does not support the video tag.
+</video>
+</div>
+</div>
+</li>
+<li>
+<p>Le point est souvent (pour moi en tout cas) suuuuuper proche du centre, voire au centre.
+Pas se forcer à mettre autre chose que le centre si on le sent pas.</p>
+</li>
+</ul>
+</div>
+<div id="color_toning_sliders" class="paragraph">
+<p>Après, dessous, il y a quelques valeurs qu’on peut tripoter :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>La <em>Saturation</em> présente ici donne souvent un truc plus sympa que celle qu’on a croisée tout au début dans <span class="menuseq"><b class="menu">Exposure</b>&#160;<b class="caret">&#8250;</b> <b class="menuitem">Exposure</b></span>, mais est biaisé selon l’endroit où vous avez placé le point sur la grille colorée.</p>
+</li>
+<li>
+<p>Faire <em>Offset</em> avant de s’intéresser à <em>Slope</em> et à <em>Power</em> est une bonne idée, je trouve.
+(Comme le nom l’indique, ça semble décaler la luminosité de plus ou moins tous les pixels.)</p>
+</li>
+<li>
+<p><em>Slope</em> affecte surtout les zones claires, <em>Power</em> les sombres.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<img src="icons/tip.png" alt="Tip">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Ça permet d’ajuster des trucs qui éclatent un peu trop la rétine dans les zones claires, etc.
+Ça peut aussi servir d’ajustements plus fins que les <em>L*a*b* Adjustments</em> (qu’on verra <a href="#vign_grad_lab">un peu plus tard</a>).</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Il est possible de mettre plusieurs « couches » de <em>Color Toning</em>, chacune avec ses propres paramètres, et de les faire s’appliquer uniquement à certains pixels de la photo (et plus ou moins fortement) en fonction de conditions sur leur teinte, leur luminosité, etc. (la partie <em>Mask</em>, dessous).
+Je ne vais pas me lancer dans des explications sur ça, mais c’est assez puissant.
+Je vous encourage à chercher des vidéos sur le sujet à l’occasion.</p>
+</div>
+<div class="paragraph">
+<p>Il y a aussi d’autres « méthodes » proposées que le <em>Color correction regions</em> que j’utilise (liste déroulante en haut de l’outil), mais elles me font flipper.
+Jamais touché à ça.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="fin_colours"><a class="anchor" href="#fin_colours"></a>2.6.6. Hop</h4>
+<div class="paragraph">
+<p><em>Snapshot</em> <code>colours</code> (ou <code>colors</code> si je suis d’humeur américaine).</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_transformations_pour_de_bon"><a class="anchor" href="#_transformations_pour_de_bon"></a>2.7. Transformations pour de bon</h3>
+<div class="sect3">
+<h4 id="crop"><a class="anchor" href="#crop"></a>2.7.1. Recadrage (<em>Crop</em>)</h4>
+<div class="paragraph">
+<p>Ils ont tendance à foutre par défaut le <em>Lock ratio</em> qui garde les proportions d’origine.
+Perso j’avoue que je m’en cogne souvent, des proportions d’origine. Du moment qu’on ÉTIRE PAS la photo <a href="https://www.alicem.net/shr/etirement.png.html" target="_blank" rel="noopener">comme le font les journalistes à la con avec des images d’archive</a>…</p>
+</div>
+<div class="videoblock">
+<div class="content">
+<video src="images/crop.webm" width="85%" controls>
+Your browser does not support the video tag.
+</video>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<img src="icons/tip.png" alt="Tip">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Pour les guides de recadrage, j’utilise généralement la règle des tiers, ou la moyenne harmonique machin truc pour les sujets « dynamiques ».
+Je me tape aussi parfois des trips avec les trucs à base de triangles mais c’est quand même assez ésotérique.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<img src="icons/caution.png" alt="Caution">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Le <b class="button">Select</b> change le curseur pour passer en mode recadrage.
+Vous pouvez aussi passer dans ce mode avec <kbd>C</kbd>, et en sortir avec <kbd>H</kbd>.
+Voir la section <a href="#curseurs">Curseurs</a> pour des détails.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_rotation"><a class="anchor" href="#_rotation"></a>2.7.2. Rotation</h4>
+<div class="paragraph">
+<p><span class="menuseq"><b class="menu">Transform</b>&#160;<b class="caret">&#8250;</b> <b class="submenu">Lens&#160;/ Geometry</b>&#160;<b class="caret">&#8250;</b> <b class="menuitem">Rotate</b></span></p>
+</div>
+<div class="paragraph">
+<p>Soit vous foutez des degrés, soit vous tracez une ligne (que vous souhaiteriez) horizontale ou verticale pour initialiser le truc.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_perspective"><a class="anchor" href="#_perspective"></a>2.7.3. Perspective</h4>
+<div class="paragraph">
+<p><span class="menuseq"><b class="menu">Transform</b>&#160;<b class="caret">&#8250;</b> <b class="submenu">Lens&#160;/ Geometry</b>&#160;<b class="caret">&#8250;</b> <b class="menuitem">Perspective</b></span></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Toujours utilisée en mode <em>Simple</em>.
+Sinon ça fait peur.</p>
+</li>
+<li>
+<p>Rarement utilisé, en fait, de base.
+Surtout pour faire genre on était davantage face à un bâtiment qu’on ne l’était vraiment.</p>
+</li>
+<li>
+<p>Rarement des valeurs dodues.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="fin_transfo_encore"><a class="anchor" href="#fin_transfo_encore"></a>2.7.4. Et bien sûr…</h4>
+<div class="paragraph">
+<p><em>Snapshot</em> <code>transfo</code> si changé un truc.
+Ou plus spécifique genre <code>rot &#43; crop</code> si j’ai rotaté puis croppé.
+Bref.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="select"><a class="anchor" href="#select"></a>2.8. <em>Selective Editing</em></h3>
+<div class="paragraph">
+<p>Pas trop la motivation de disserter sur ça, mais en gros vous pouvez <strong>poser des ellipses ou des rectangles</strong> où vous voulez et <strong>appliquer certains filtres sur ce qui s’y trouve</strong>.
+Typique pour embellir les yeux.</p>
+</div>
+<div class="paragraph">
+<p>Ça s’appelait initialement <em>Local Adjustments</em>.
+D’ailleurs la page de documentation porte encore ce nom, et le lien que je m’apprête à vous donner risque donc de péter du jour au lendemain :<br>
+<a href="https://rawpedia.rawtherapee.com/Local_Adjustments" class="bare" target="_blank" rel="noopener">https://rawpedia.rawtherapee.com/Local_Adjustments</a></p>
+</div>
+<div class="paragraph">
+<p><em>Snapshot</em> <code>select</code> si utilisé.
+Parfois un <em>snapshot</em> par zone ajoutée (<code>select head</code>) ou par thème (<code>select eyes</code>).</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<img src="icons/important.png" alt="Important">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Les zones placées peuvent se retrouver complètement à l’ouest si, après les avoir placées, vous effectuez certains changements dans l’onglet <b class="menuref">Transform</b> !
+(Rotation, perspective, distorsion…)</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="spot"><a class="anchor" href="#spot"></a>2.9. <em>Spot Removal</em></h3>
+<div class="paragraph">
+<p>Dans <b class="menuref">Detail</b>.</p>
+</div>
+<div class="paragraph">
+<p>Planquer un truc en copiant un rond sur un autre.</p>
+</div>
+<div class="videoblock">
+<div class="content">
+<video src="images/spot.webm" width="85%" controls>
+Your browser does not support the video tag.
+</video>
+</div>
+</div>
+<div class="paragraph">
+<p>Il y a un « mode édition » à activer et à désactiver avec le bouton que j’utilise, à la fin.
+En mode édition, certaines transformations géométriques (toutes ?) sont désactivées, car (je suppose) ce traitement a lieu avant elles.
+L’avantage est que, contrairement à ce qu’on vient de voir pour le <em>Selective Editing</em>, vos réglages dans cet outil-là ne sont pas flingués à la moindre rotation faite par la suite.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://rawpedia.rawtherapee.com/Spot_Removal" class="bare" target="_blank" rel="noopener">https://rawpedia.rawtherapee.com/Spot_Removal</a></p>
+</div>
+<div class="paragraph">
+<p><em>Snapshot</em> <code>spot</code> si utilisé.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="vign_grad_lab"><a class="anchor" href="#vign_grad_lab"></a>2.10. <em>Vignette Filter</em> &#43; <em>Graduated Filter</em> &#43; <em>L*a*b* Adjustments</em></h3>
+<div class="paragraph">
+<p>Tout un peu voisin, dans l’onglet <b class="menuref">Exposure</b>.</p>
+</div>
+<div class="paragraph">
+<p>Ordre vaguement important à mes yeux, mais bon :</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><em>Vignette Filter</em>, longtemps ignoré mais pas si mal.
+On pourrait se dire « mais à quoi ça sert d’assombrir le tour de l’image ? C’est complètement con ! », mais bizarrement ça donne souvent un effet grave stylé.
+Peut-être parce que ça dit au cerveau « hey, oublie ce qui traîne sur le côté, concentre-toi sur le milieu, abruti ! », je sais pas.
+Ça peut aussi calmer la joie d’éventuels trucs éblouissants dans les coins.</p>
+<div class="paragraph">
+<p>Par contre je trouve qu’ils craquent sur les valeurs par défaut et je les divise souvent par quatre, voire par six ou sept.
+La force négative (pour éclaircir) me sert beaucoup moins ; ça fait genre truc jovial ou rêveur, des fois.</p>
+</div>
+</li>
+<li>
+<p><em>Graduated Filter</em>, même style, mais plus un truc de niche peut-être.
+Ça fait un genre de dégradé à partir d’un point dans une direction donnée.
+Sympa si le sujet est excentré et qu’il n’y a rien de très intéressant dans le coin opposé – il s’agit pour moi là encore d’orienter subtilement l’attention des gens.</p>
+<div class="videoblock">
+<div class="content">
+<video src="images/grad.webm" width="85%" controls>
+Your browser does not support the video tag.
+</video>
+</div>
+</div>
+</li>
+<li>
+<p><em>L*a*b* Adjustments</em>, nom barbare et maths wtf, mais à la limite on s’en branle des détails.
+Ça aide à corriger quelques trucs en fin de traitement (genre « putain j’ai vraiment abusé sur le contraste, en fait » car on se laisse vite emporter dans nos délires) <strong>sans invalider tous les paramètres de la Terre et flinguer <a href="#courbe">la courbe</strong> sur laquelle on a passé trois heures</a>.
+En plus, le <em>Chromaticity</em> présent ici est super cool et souvent préférable à des tripotages de la saturation (celle dans <span class="menuseq"><b class="menu">Exposure</b>&#160;<b class="caret">&#8250;</b> <b class="menuitem">Exposure</b></span>).</p>
+<div class="paragraph">
+<p>Je fais ça après les deux <em>Filters</em> ci-dessus car si on met du vignettage ET un dégradé à la con, on se retrouve vite avec une image qui paraît globalement plus sombre (même si le centre n’a pas vraiment été affecté), ce qui peut mériter un petit boost ici.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="icons/note.png" alt="Note">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>On verra aussi tout à l’heure que je m’en sers beaucoup pour contrebalancer certains effets du <em>Tone Mapping</em>, ce qui me fait d’ailleurs me demander s’il n’y a pas un souci dans ma façon d’utiliser le <em>Tone Mapping</em>, mais tant que le résultat est là…</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p><em>Snapshot</em> <code>vign &#43; grad &#43; adj</code> (si tous activés ; sinon ça peut n’être que <code>adj</code> quoi).</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="tone"><a class="anchor" href="#tone"></a>2.11. <em>Tone Mapping</em></h3>
+<div class="paragraph">
+<p>On reste dans l’onglet <b class="menuref">Exposure</b>.</p>
+</div>
+<div class="sect3">
+<h4 id="_sorte_davertissement"><a class="anchor" href="#_sorte_davertissement"></a>2.11.1. Sorte d’avertissement</h4>
+<div class="paragraph">
+<p>J’ai une <em>love-and-hate relationship</em> avec cet outil.
+D’un côté <strong>il fait des trucs assez magiques</strong> et je suis dégoûté de m’en être passé pendant des années, d’un autre côté c’est une plaie pour trouver les bonnes valeurs, et il m’arrive de passer plus de temps sur cet outil que sur tous les autres rassemblés – sans exagérer.
+Mais bon, il faut dire que j’ai toujours peur de m’arrêter sur un truc potentiellement sous-optimal, hein ; une personne normalement constituée s’en sortirait probablement mieux.</p>
+</div>
+<div class="paragraph">
+<p>Oh et en plus de ça :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Cet outil demande <strong>trois tonnes de calculs à l’ordi</strong>, ce qui rend l’<strong>aperçu très peu réactif</strong>.
+D’où le fait que le le garde <strong>pour la fin</strong>.</p>
+</li>
+<li>
+<p>On ne peut pas trop se fier à l’aperçu pour cet outil, à moins d’avoir <strong>au moins 100 %</strong> de zoom.
+Autant pour certains outils, même parmi ceux qui portent la marque « 1:1 » dans leur en-tête, on peut <em>se faire une idée</em> du résultat même de loin, autant là c’est vraiment n’importe quoi.</p>
+<div class="paragraph">
+<p>Il existe des techniques bizarres pour remédier à cela, mais je n’ai jamais eu la motivation de les tester, <a href="https://rawpedia.rawtherapee.com/Tone_Mapping#Getting_the_preview_to_match_the_saved_image" target="_blank" rel="noopener">rien qu’en voyant la tronche des explications</a>.
+Mais rien ne vous empêche d’essayer – je suis probablement juste con, sur ce point.</p>
+</div>
+</li>
+<li>
+<p>Ça ralentit aussi de ouf l’export final en JPG / PNG / etc., donc ça rend les essais longs et laborieux.</p>
+</li>
+<li>
+<p>Je sais pas si c’est moi qui utilise mal ce truc, mais je suis presque toujours obligé de retourner triturer les <em>L*a*b* Adjustments</em> (voire aussi <a href="#color_toning_sliders">les <em>sliders</em> du <em>Color Toning</em></a>) pour rectifier la luminosité et le contraste après avoir activé le <em>Tone Mapping</em> – parfois de manière assez marquée.
+Au début cet aspect me rebutait, mais j’ai fini par dire « qu’il en soit ainsi » et je fais avec, car ça en vaut souvent la peine.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_kézako"><a class="anchor" href="#_kézako"></a>2.11.2. Kézako</h4>
+<div class="paragraph">
+<p>Mais ça fait quoi, me diriez-vous ?
+Bah franchement, j’ai du mal à l’expliquer, à part que ça :</p>
+</div>
+<div class="ulist checklist">
+<ul class="checklist">
+<li>
+<p>&#10003; rend les bords des choses plus visibles, plus nets, un peu comme pas mal d’outils de <b class="menuref">Detail</b>, ou au contraire donne un côté « rêveur » si on met une force négative ;</p>
+</li>
+<li>
+<p>&#10003; ramène du même coup, par je ne sais quelle sorcellerie, les lumières et ombres extrêmes dans les clous… tout en pétant davantage la rétine, bizarrement, si on ne compense pas côté <em>L*a*b* Adjustments</em> ?!</p>
+</li>
+</ul>
+</div>
+<div class="videoblock">
+<div class="title">Activation puis compensation, et comparaison avec état initial</div>
+<div class="content">
+<video src="images/tone_plus_adj.webm" width="85%" controls>
+Your browser does not support the video tag.
+</video>
+</div>
+</div>
+<div class="paragraph">
+<p>Bon, c’est pas trop trop violent sur mon exemple, mais dites-vous que là je suis à une force de&#160;0,2 !
+Ça va bien plus loin !
+D’ailleurs, la force par défaut est genre de&#160;0,5, alors que je dépasse rarement&#160;0,2, moi.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<img src="icons/tip.png" alt="Tip">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Activer le <em>Tone Mapping</em> redonne souvent de la marge pour booster un peu la quantité de <em>Local Contrast</em> sans trop cramer les lumières et ombres extrêmes.
+Enfin j’sais pas trop, mais souvent ça me donne un bon résultat, après, si j’augmente la force du <em>Local Contrast</em> en cas de <em>Tone Mapping</em>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_paramètres"><a class="anchor" href="#_paramètres"></a>2.11.3. Paramètres</h4>
+<div class="paragraph">
+<p>Ma compréhension un peu naïve des paramètres :</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Strength</dt>
+<dd>
+<p>Bourrinité.
+On en a déjà un peu parlé à l’instant.</p>
+</dd>
+<dt class="hdlist1">Gamma</dt>
+<dd>
+<p>S’attaquer plutôt au clair (&gt; 1) ou au sombre (&lt; 1).
+Vu que ça « calme la joie » de la cible, mettre une valeur élevée pour s’attaquer au clair va donner un résultat plus sombre qu’une valeur sous&#160;1.
+Je suis <em>très souvent</em> dans&#160;1,05–1,5, ma valeur par défaut perso étant&#160;1,1.
+Mais je suppose que si les éléments qui méritent le plus d’être rendus plus beaux sont dans la pénombre, vous irez plutôt dans les petites valeurs.</p>
+<div class="paragraph">
+<p>J’ai l’impression que l’impact (éclaircissement ou assombrissement de l’image) est inversé si la force du <em>Tone Mapping</em> est négative – il faut le prendre en compte côté <em>L*a*b* Adjustments</em>.</p>
+</div>
+</dd>
+<dt class="hdlist1">Edge stopping</dt>
+<dd>
+<p>À quel point on veut que les <strong>contours, bordures, contrastes</strong> et tout soient saillants.
+Mon intervalle de prédilection est&#160;1,2–1,5.</p>
+</dd>
+<dt class="hdlist1">Scale</dt>
+<dd>
+<p>Si on veut rendre plus stylés des <strong>petits détails</strong> ou des <strong>gros trucs</strong>.
+L’impact n’est pas toujours flagrant, pour moi.
+La valeur par défaut officielle est&#160;1, la mienne&#160;1,9, et dans les faits je suis souvent dans&#160;1,5–2,5 pour les figurines, et aux alentours de&#160;1,45 pour le reste.
+Mais c’est vraiment le genre de truc sur lequel je ne prétendrai pas avoir la science infuse…</p>
+<div class="paragraph">
+<p>Par contre, l’avantage, c’est qu’on peut le fixer assez vite avec un zoom à 100 % (pour avoir un aperçu assez fiable) en se concentrant sur une partie « importante » de la photo, et après <strong>on y touche plus trop</strong> au fil des ajustements.
+Donc c’est pas forcément l’aspect le plus casse-couille de l’outil, tout bien considéré.</p>
+</div>
+</dd>
+<dt class="hdlist1">Reweighting iterates</dt>
+<dd>
+<p>Plus les paramètres sont poussés loin, plus on risque d’avoir un résultat qui fume la moquette : des points blancs à gogo peuvent apparaître au milieu de zones sombres, ou bien on peut avoir un truc sous-optimal sans même s’en rendre compte.
+En fait, l’algorithme planqué derrière le <em>Tone Mapping</em> fonctionne par itérations successives, et il faut lui dire au bout de combien de « tours » on veut qu’il s’arrête.
+Autrement dit, le résultat est <strong>davantage digne de confiance</strong> si on met un grand nombre ici, mais ça augmente aussi drastiquement <strong>les besoins en puissance de calcul</strong>.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_ordres_didée"><a class="anchor" href="#_ordres_didée"></a>2.11.4. Ordres d’idée</h4>
+<div class="paragraph">
+<p>Voici <em>à la grosse louche</em> ce que j’ai en tête pour chopper les bons paramètres plus vite, mais ça vaut ce que ça vaut, hein.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 66.6668%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Force</th>
+<th class="tableblock halign-left valign-top">Itérations</th>
+<th class="tableblock halign-left valign-top">Changement appliqué à <em>Lightness</em> et <em>Contrast</em> dans <em>L*a*b* Adjustments</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">0,02</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-1</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">0,04</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1 ou 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-2</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">0,07</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-3</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">0,1</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-4 ou -5</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">0,2</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-7 ?</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Notes :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Ces estimations sont d’autant plus moisies que l’ajustement adéquat dépend aussi probablement pas mal de l’<em>Edge stopping</em>, mais bon.
+Et comme vous le voyez, je ne m’aventure pas dans les forces négatives, ici.
+J’utilise ça trop rarement et j’ai du mal à le gérer.
+Et j’ai probablement assez raconté de conneries comme ça pour aujourd’hui.</p>
+</li>
+<li>
+<p>Comme vous pouvez le voir, mes valeurs de force sont plutôt basses.
+Souvent, je n’aime pas le rendu avec les valeurs plus bourrines que ça.
+Il m’arrive même de foutre&#160;0,01…</p>
+</li>
+<li>
+<p>Ce n’est peut-être pas une idée géniale d’appliquer <em>le même changement</em> à la luminosité et au contraste, mais bon, rien n’empêche de les ajuster séparément, après, en comparant les JPG obtenus avec et sans <em>Tone Mapping</em> (on verra ça <a href="#tone_protocole">dans deux secondes</a>).
+Il faut bien un point de départ…</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="tone_protocole"><a class="anchor" href="#tone_protocole"></a>2.11.5. Protocole à deux balles</h4>
+<div class="paragraph">
+<p>Voici comment je procède (vous allez voir, c’est très « naïf », hein) :</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Exporter</strong> (<span class="keyseq"><kbd>Ctrl</kbd>+<kbd>S</kbd></span>, etc.) pour faire un JPG (ou ce que vous voulez, quoi : ce que vous visez pour votre résultat) sans <em>Tone Mapping</em> avant de s’y aventurer, <strong>avec un suffixe</strong> dans le nom genre <code>_nt</code> (pour dire <em>« no tone »</em>).
+Chez moi ça donne genre <code>G79A1386_edit_nt.JPG</code>, mais à chacun ses conventions.</p>
+</li>
+<li>
+<p>Bien vérifier qu’on a <strong>un <em>snapshot</em> correspondant à cet état « sans <em>Tone Mapping</em> »</strong> au cas où on se rende compte que la photo est mieux sans (notamment parce qu’on risque fort de charcuter les <em>L*a*b* Adjustments</em>, et peut-être d’autres trucs, et que ça serait dommage de galérer pour retrouver l’état d’avant).</p>
+</li>
+<li>
+<p>Faire <strong>un essai</strong> de paramétrage de <em>Tone Mapping</em>, compenser avec les <em>L*a*b* Adjustments</em> un peu au jugé si besoin, éventuellement ajouter du <em>Local Contrast</em> au passage pour la forme, etc.</p>
+</li>
+<li>
+<p><strong>Exporter</strong> le résultat, cette fois-ci <strong>sans le suffixe</strong> <code>_nt</code> de tout à l’heure (genre pour moi, <code>G79A1386_edit.JPG</code>).</p>
+</li>
+<li>
+<p><strong>Comparer</strong> les deux JPG, de préférence en faisant gauche-droite-gauche-droite plus ou moins frénétiquement, au clavier, dans une visionneuse d’images, pour que les deux photos s’affichent alternativement au même endroit et qu’on voit bien les changements éventuels nous sauter à la figure.
+Le « deux versions côte à côte », ça atteint vite ses limites, je trouve.
+D’ailleurs vous aurez peut-être remarqué que je n’ai pas du tout fait la pub du mode « comparaison avant et après » automatique de RawTherapee, que j’ai du mal à utiliser efficacement – je préfère faire des <em>snapshots</em> et alterner entre plusieurs d’entre eux.</p>
+</li>
+<li>
+<p>Tant qu’on est pas content, <strong>ajuster</strong> les paramètres et retenter le coup.</p>
+</li>
+<li>
+<p>Si au bout de quarante essais ça saoule et semble toujours moins bien que la version <code>_nt</code>, <strong>peut-être abandonner</strong> l’idée du <em>Tone Mapping</em> pour cette photo, ou tenter avec une <strong>force négative</strong> (ou positive si vous étiez déjà sur du négatif).</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="icons/note.png" alt="Note">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>J’ai parfois remarqué que la végétation pouvait devenir presque oppressante, avec le <em>Tone Mapping</em>, surtout si on pousse trop loin l’<em>Edge stopping</em> : chaque feuille se détache tant qu’elle semble nous sauter à la figure.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p><strong>Supprimer</strong> la version <code>_nt</code> et son <code>.pp3</code> pour éviter de trop polluer.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="resume"><a class="anchor" href="#resume"></a>Résumé</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Voici une liste minimaliste des <em>snapshots</em> mentionnés de près ou de loin dans les étapes ci-dessus.
+Tout n’est pas forcément présent pour chaque photo, et – je ne le dirai jamais assez – rien ne vous oblige à coller à ça.
+Je me disais juste que ça pouvait donner une autre lecture du présent document, et démystifier le tout.
+J’y mets aussi des liens vers les passages correspondants.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><a href="#init"><code>init</code></a></p>
+</li>
+<li>
+<p><a href="#transfo_debut"><code>transfo</code> ou <code>disto</code>, etc.</a></p>
+</li>
+<li>
+<p><a href="#fin_pre-c"><code>pre-c</code></a></p>
+</li>
+<li>
+<p><a href="#courbe"><code>c0</code>, <code>c1</code>, …, <code>c<em>&lt;n&gt;</em></code></a></p>
+</li>
+<li>
+<p><a href="#bruit"><code>noise</code></a></p>
+</li>
+<li>
+<p><a href="#fin_details"><code>details</code></a></p>
+</li>
+<li>
+<p><a href="#toning"><code>pre-toning</code></a></p>
+</li>
+<li>
+<p><a href="#fin_colours"><code>colours</code></a></p>
+</li>
+<li>
+<p><a href="#fin_transfo_encore"><code>transfo</code> ou <code>rot + crop</code>, etc.</a></p>
+</li>
+<li>
+<p><a href="#select"><code>select head</code>, …, <code>select eyes</code></a></p>
+</li>
+<li>
+<p><a href="#spot"><code>spot</code></a></p>
+</li>
+<li>
+<p><a href="#vign_grad_lab"><code>vign + grad + adj</code></a></p>
+</li>
+<li>
+<p><a href="#tone"><code>tone</code></a></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_généralpour_aller_plus_loin"><a class="anchor" href="#_généralpour_aller_plus_loin"></a>Général / Pour aller plus loin</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_notes_en_vrac"><a class="anchor" href="#_notes_en_vrac"></a>Notes en vrac</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Pour les trucs plutôt faciles à voir sans zoomer comme un porc, plutôt foutre la photo à une taille correspondant à celle qu’elle aura quand les gens la verront à la fin.
+Aussi faire gaffe à des trucs à la con genre la distance à laquelle se trouve l’écran de votre tronche et la luminosité de la pièce.</p>
+</li>
+</ul>
+</div>
+<div id="fenetre_details" class="ulist">
+<ul>
+<li>
+<p>Gaffe à ne pas fixer trop longtemps un point précis comme un teubé en faisant un réglage : on a vite fait de rendre moches d’autres endroits sans s’en rendre compte.
+Vous pouvez ouvrir <strong>des fenêtres de détails</strong> pour examiner plusieurs trucs précis à la fois, d’ailleurs.
+Bouton vers le bas de l’interface :</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/detail_window.png" alt="detail window">
+</div>
+</div>
+</li>
+<li>
+<p>Puisqu’on peut supprimer des snapshots, ne pas hésiter à en créer à tire-l’arigot en cas de doute, quitte à faire le ménage de temps en temps.</p>
+</li>
+<li>
+<p>Pour chercher une valeur numérique adéquate pour un paramètre donné, j’utilise parfois ce que j’appelle la technique de la dichotomie, inspirée de <a href="https://fr.wikipedia.org/wiki/Recherche_dichotomique" class="bare" target="_blank" rel="noopener">https://fr.wikipedia.org/wiki/Recherche_dichotomique</a> :</p>
+<div class="imageblock right related thumb">
+<div class="content">
+<img src="images/dichotomie.png" alt="dichotomie" width="550">
+</div>
+</div>
+<div class="openblock">
+<div class="content">
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Regarder ce que la valeur par défaut (supposons pour l’exemple qu’il s’agit de&#160;0) donne comme résultat, visuellement.</p>
+</li>
+<li>
+<p>Mettre une valeur exagérée – on va dire 20 – et regarder le nouveau résultat visuel.</p>
+</li>
+<li>
+<p>Mettre une valeur située, autant que possible, au milieu des deux qu’on vient de tester.
+Ici, ça donnera (0 &#43; 20) ÷ 2 = 10.</p>
+</li>
+<li>
+<p>Voir si ce 10 nous semble produire un effet trop fort ou trop faible.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Si l’effet est trop fort, la zone de recherche devient 0–10, et on refait le coup de « tester le milieu » donc&#160;5, et ainsi de suite jusqu’à converger vers une valeur « idéale ».</p>
+</li>
+<li>
+<p>Si l’effet était trop faible, même chose mais en partant au-dessus, dans 10–20, en testant ensuite&#160;15.</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Le but est de tester un nombre logarithmique de valeurs différentes plutôt que linéaire, et donc de gagner du temps.
+Ça permet aussi d’observer des changements plus « nets » entre les valeurs, alors que passer tous les nombres en revue dans l’ordre nous expose au risque de ne pas voir qu’on part trop loin (façon fable de la grenouille ébouillantée).</p>
+</div>
+</li>
+<li>
+<p>Après avoir fini de régler un outil, faire des désactivations-réactivations pour <strong>prendre du recul</strong> et vérifier qu’on ne s’est pas laissé emporter et qu’on a pas abusé de ouf.
+Ou au contraire pour voir si on aurait pu faire davantage.
+Vous voyez le genre.
+Surtout pour certains trucs genre <em>Local Contrast</em>.</p>
+</li>
+<li>
+<p>Pour tester la <strong>compatibilité de RawTherapee</strong> avec les <em>raws</em> d’un appareil avant d’acheter l’appareil en question, vous pouvez utiliser les exemples disponibles sur la base de données <a href="https://raw.pixls.us/#repo" class="bare" target="_blank" rel="noopener">https://raw.pixls.us/#repo</a>.
+Voir aussi la discussion présente ici :<br>
+<a href="https://discuss.pixls.us/t/supported-camera-list/12402" class="bare" target="_blank" rel="noopener">https://discuss.pixls.us/t/supported-camera-list/12402</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_cli"><a class="anchor" href="#_cli"></a>CLI</h3>
+<div class="paragraph">
+<p>(<a href="https://fr.wikipedia.org/wiki/Interface_en_ligne_de_commande" target="_blank" rel="noopener"><em>Command-Line Interface</em></a>)</p>
+</div>
+<div class="paragraph">
+<p>Un aspect qui me plaît beaucoup avec RawTherapee est la possibilité de le lancer en ligne de commande (sans ouvrir l’interface graphique, quoi) pour appliquer <a href="#pp3">des paramètres de traitement</a> à un <em>raw</em> et produire une image, en sortie, dans le format de son choix.</p>
+</div>
+<div class="paragraph">
+<p>Ça pourra sembler anecdotique à certains, mais le fait de me dire que, au besoin, je peux pondre un script (Bash, Python ou autre) capable de réappliquer tous mes <code>.pp3</code> à mes <em>raw</em> et me re-fabriquer des JPG ou PNG aux dimensions que je veux, c’est rassurant (et ça évite de se sentir obligé de faire <em>également</em> une sauvegarde de secours des JPG ou PNG qu’on produit au fil de l’eau).</p>
+</div>
+<div class="paragraph">
+<p>D’ailleurs, <a href="https://github.com/alice-mm/pics" target="_blank" rel="noopener">c’est ainsi que je produis les diaporamas qui sont sur mon site personnel</a> : chaque <em>raw</em> du diaporama se voit appliquer son propre <code>…_edit.JPG.out.pp3</code> ET <a href="https://github.com/alice-mm/pics/blob/master/exporting.pp3" target="_blank" rel="noopener">un <code>.pp3</code> commun</a> qui se charge du redimensionnement et de quelques broutilles additionnelles comme ajouter un nom d’auteur.
+On peut utiliser plusieurs fois l’option <code>-p</code> pour donner autant de profils qu’on veut.</p>
+</div>
+<div class="paragraph">
+<p>La documentation de ce versant de RawTherapee laisse un peu à désirer mais a le mérite d’exister :<br>
+<a href="https://rawpedia.rawtherapee.com/Command-Line_Options#RawTherapee_CLI" class="bare">https://rawpedia.rawtherapee.com/Command-Line_Options#RawTherapee_CLI</a></p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<img src="icons/warning.png" alt="Warning">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Quand la documentation montre une valeur <em>collée</em> à une option (par exemple pour <code>-j[1-100]</code>), ce n’est pas un hasard : c’est souvent obligatoire, chez eux, de respecter ça.
+Et inversement (<code>-p &lt;file.pp3&gt;</code>).
+J’avais perdu du temps à batailler avec ça.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="icons/note.png" alt="Note">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Sur certaines plateformes, la manière d’accéder à la version&#160;CLI de RawTherapee a un peu évolué au fil du temps : exécutable séparé, puis option <code>--cli</code> à donner à l’exécutable « normal », et maintenant, sous Linux, je dois extraire le contenu de l’AppImage et exécuter le <code>usr/bin/rawtherapee-cli</code> qui s’y trouve.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://discuss.pixls.us/t/app-image-of-rawtherapee-cli/15704/7" class="bare" target="_blank" rel="noopener">https://discuss.pixls.us/t/app-image-of-rawtherapee-cli/15704/7</a></p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="profil_defaut"><a class="anchor" href="#profil_defaut"></a>Se faire un profil de trucs par défaut</h2>
+<div class="sectionbody">
+<div class="imageblock right">
+<div class="content">
+<img src="images/sauvegarde_pp3.png" alt="sauvegarde pp3">
+</div>
+<div class="title">Image 6. Comme le dit l’infobulle, il faut faire <kbd>Ctrl</kbd> &#43; clic pour l’enregistrement partiel</div>
+</div>
+<div class="paragraph">
+<p>Pendant que vous bossez sur n’importe quelle photo, vous pouvez enregistrer une copie du <code>.pp3</code> correspondant à l’état courant, sous un nom arbitraire.
+Vous pouvez aussi bien l’enregistrer avec tous les paramètres que juste avec certains de votre choix.
+Ça permet ainsi de faire des « fragments » de profils <strong>réutilisables à volonté</strong>, pour avoir des valeurs par défaut ou gagner du temps pour des types de photos récurrents.</p>
+</div>
+<div class="paragraph">
+<p>Pour le <strong>chargement de profils</strong> (avec le bouton juste à côté), même délire : avec <kbd>Ctrl</kbd>, vous pouvez choisir librement les paramètres à importer ou non.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="icons/note.png" alt="Note">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Par paranoïa, je décoche toujours <span class="menuseq"><b class="menu">Basic Settings</b>&#160;<b class="caret">&#8250;</b> <b class="menuitem">Exposure</b></span> (pour <strong>ne pas appliquer une courbe hors sujet</strong>) et <span class="menuseq"><b class="menu">Basic Settings</b>&#160;<b class="caret">&#8250;</b> <b class="menuitem">White balance</b></span> (un peu la même logique), même lorsque je sais que le profil ne contient pas ces paramètres-là.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Il y a aussi toute une machinerie disponible pour charger automatiquement des profils à l’ouverture d’une photo, avec même potentiellement des conditions sur la sensibilité&#160;ISO et compagnie, mais j’avoue n’avoir jamais poussé l’exploration très loin de ce côté.
+J’aime bien garder un contrôle manuel sur certains trucs, des fois…</p>
+</div>
+<div class="paragraph">
+<p>Mon profil de paramètres par défaut n’active pas tant d’outils que ça – presque rien, en fait, à part le filtre anti-pixels chauds.
+Il s’agit plutôt de mettre des valeurs « qui ont du sens » un peu partout, en préparation de mon passage manuel sur les outils, tout en laissant les outils en « désactivé ».
+C’est assez pratique, de pouvoir charger des choses comme ça sans activer tous les outils de la Terre.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_contact"><a class="anchor" href="#_contact"></a>Contact</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Si vous voulez échanger sur tout ça ou demander des précisions…</p>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="https://www.alicem.net/contact.jpg" alt="Informations de contact dans une image">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. Bien que ça ne soit semble-t-il pas dit dans la documentation, le format des <code>.pp3</code> se rapproche fortement du TOML: <a href="https://fr.wikipedia.org/wiki/TOML" class="bare" target="_blank" rel="noopener">https://fr.wikipedia.org/wiki/TOML</a>.
+</div>
+<div class="footnote" id="_footnotedef_2">
+<a href="#_footnoteref_2">2</a>. <a href="https://fr.wikipedia.org/wiki/Touches_de_d%C3%A9filement" class="bare" target="_blank" rel="noopener">https://fr.wikipedia.org/wiki/Touches_de_d%C3%A9filement</a>
+</div>
+<div class="footnote" id="_footnotedef_3">
+<a href="#_footnoteref_3">3</a>. <a href="https://fr.wikipedia.org/wiki/Retour_arri%C3%A8re" class="bare" target="_blank" rel="noopener">https://fr.wikipedia.org/wiki/Retour_arri%C3%A8re</a>
+</div>
+<div class="footnote" id="_footnotedef_4">
+<a href="#_footnoteref_4">4</a>. <kbd>Début</kbd> = <kbd>Home</kbd> = <kbd>↖</kbd>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank"><img src="images/cc.png"></a>&emsp;<a href="https://www.alicem.net/" target="_blank">alicem.net</a>&emsp;·&emsp;Écrit en <a href="https://asciidoctor.org/" target="_blank">AsciiDoc</a>&emsp;·&emsp;Dernière édition de cette page : 2025-07-29 09:39:34
+</div>
+</div>
+<script src="highlight/highlight.min.js"></script>
+<script>
+if (!hljs.initHighlighting.called) {
+  hljs.initHighlighting.called = true
+  ;[].slice.call(document.querySelectorAll('pre.highlight > code[data-lang]')).forEach(function (el) { hljs.highlightBlock(el) })
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.20">
+<meta name="description" content="Vulgarisation sur le concept des photos en raws et leur traitement, et remarques personnelles liées à ça.">
+<meta name="keywords" content="photographie,photo,rawtherapee,raw,tutoriel,tuto,documentation,alice,alicem">
+<meta name="author" content="Alice M. – alicem.net">
+<title>Explications sur les photos en raws et le traitement</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
+<style>
+/*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
+/* Uncomment the following line when using as a custom stylesheet */
+/* @import "https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700"; */
+html{font-family:sans-serif;-webkit-text-size-adjust:100%}
+a{background:none}
+a:focus{outline:thin dotted}
+a:active,a:hover{outline:0}
+h1{font-size:2em;margin:.67em 0}
+b,strong{font-weight:bold}
+abbr{font-size:.9em}
+abbr[title]{cursor:help;border-bottom:1px dotted #dddddf;text-decoration:none}
+dfn{font-style:italic}
+hr{height:0}
+mark{background:#ff0;color:#000}
+code,kbd,pre,samp{font-family:monospace;font-size:1em}
+pre{white-space:pre-wrap}
+q{quotes:"\201C" "\201D" "\2018" "\2019"}
+small{font-size:80%}
+sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}
+sup{top:-.5em}
+sub{bottom:-.25em}
+img{border:0}
+svg:not(:root){overflow:hidden}
+figure{margin:0}
+audio,video{display:inline-block}
+audio:not([controls]){display:none;height:0}
+fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}
+legend{border:0;padding:0}
+button,input,select,textarea{font-family:inherit;font-size:100%;margin:0}
+button,input{line-height:normal}
+button,select{text-transform:none}
+button,html input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer}
+button[disabled],html input[disabled]{cursor:default}
+input[type=checkbox],input[type=radio]{padding:0}
+button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}
+textarea{overflow:auto;vertical-align:top}
+table{border-collapse:collapse;border-spacing:0}
+*,::before,::after{box-sizing:border-box}
+html,body{font-size:100%}
+body{background:#fff;color:rgba(0,0,0,.8);padding:0;margin:0;font-family:"Noto Serif","DejaVu Serif",serif;line-height:1;position:relative;cursor:auto;-moz-tab-size:4;-o-tab-size:4;tab-size:4;word-wrap:anywhere;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased}
+a:hover{cursor:pointer}
+img,object,embed{max-width:100%;height:auto}
+object,embed{height:100%}
+img{-ms-interpolation-mode:bicubic}
+.left{float:left!important}
+.right{float:right!important}
+.text-left{text-align:left!important}
+.text-right{text-align:right!important}
+.text-center{text-align:center!important}
+.text-justify{text-align:justify!important}
+.hide{display:none}
+img,object,svg{display:inline-block;vertical-align:middle}
+textarea{height:auto;min-height:50px}
+select{width:100%}
+.subheader,.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{line-height:1.45;color:#7a2518;font-weight:400;margin-top:0;margin-bottom:.25em}
+div,dl,dt,dd,ul,ol,li,h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6,pre,form,p,blockquote,th,td{margin:0;padding:0}
+a{color:#2156a5;text-decoration:underline;line-height:inherit}
+a:hover,a:focus{color:#1d4b8f}
+a img{border:0}
+p{line-height:1.6;margin-bottom:1.25em;text-rendering:optimizeLegibility}
+p aside{font-size:.875em;line-height:1.35;font-style:italic}
+h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{font-family:"Open Sans","DejaVu Sans",sans-serif;font-weight:300;font-style:normal;color:#ba3925;text-rendering:optimizeLegibility;margin-top:1em;margin-bottom:.5em;line-height:1.0125em}
+h1 small,h2 small,h3 small,#toctitle small,.sidebarblock>.content>.title small,h4 small,h5 small,h6 small{font-size:60%;color:#e99b8f;line-height:0}
+h1{font-size:2.125em}
+h2{font-size:1.6875em}
+h3,#toctitle,.sidebarblock>.content>.title{font-size:1.375em}
+h4,h5{font-size:1.125em}
+h6{font-size:1em}
+hr{border:solid #dddddf;border-width:1px 0 0;clear:both;margin:1.25em 0 1.1875em}
+em,i{font-style:italic;line-height:inherit}
+strong,b{font-weight:bold;line-height:inherit}
+small{font-size:60%;line-height:inherit}
+code{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;font-weight:400;color:rgba(0,0,0,.9)}
+ul,ol,dl{line-height:1.6;margin-bottom:1.25em;list-style-position:outside;font-family:inherit}
+ul,ol{margin-left:1.5em}
+ul li ul,ul li ol{margin-left:1.25em;margin-bottom:0}
+ul.circle{list-style-type:circle}
+ul.disc{list-style-type:disc}
+ul.square{list-style-type:square}
+ul.circle ul:not([class]),ul.disc ul:not([class]),ul.square ul:not([class]){list-style:inherit}
+ol li ul,ol li ol{margin-left:1.25em;margin-bottom:0}
+dl dt{margin-bottom:.3125em;font-weight:bold}
+dl dd{margin-bottom:1.25em}
+blockquote{margin:0 0 1.25em;padding:.5625em 1.25em 0 1.1875em;border-left:1px solid #ddd}
+blockquote,blockquote p{line-height:1.6;color:rgba(0,0,0,.85)}
+@media screen and (min-width:768px){h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2}
+h1{font-size:2.75em}
+h2{font-size:2.3125em}
+h3,#toctitle,.sidebarblock>.content>.title{font-size:1.6875em}
+h4{font-size:1.4375em}}
+table{background:#fff;margin-bottom:1.25em;border:1px solid #dedede;word-wrap:normal}
+table thead,table tfoot{background:#f7f8f7}
+table thead tr th,table thead tr td,table tfoot tr th,table tfoot tr td{padding:.5em .625em .625em;font-size:inherit;color:rgba(0,0,0,.8);text-align:left}
+table tr th,table tr td{padding:.5625em .625em;font-size:inherit;color:rgba(0,0,0,.8)}
+table tr.even,table tr.alt{background:#f8f8f7}
+table thead tr th,table tfoot tr th,table tbody tr td,table tr td,table tfoot tr td{line-height:1.6}
+h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2;word-spacing:-.05em}
+h1 strong,h2 strong,h3 strong,#toctitle strong,.sidebarblock>.content>.title strong,h4 strong,h5 strong,h6 strong{font-weight:400}
+.center{margin-left:auto;margin-right:auto}
+.stretch{width:100%}
+.clearfix::before,.clearfix::after,.float-group::before,.float-group::after{content:" ";display:table}
+.clearfix::after,.float-group::after{clear:both}
+:not(pre).nobreak{word-wrap:normal}
+:not(pre).nowrap{white-space:nowrap}
+:not(pre).pre-wrap{white-space:pre-wrap}
+:not(pre):not([class^=L])>code{font-size:.9375em;font-style:normal!important;letter-spacing:0;padding:.1em .5ex;word-spacing:-.15em;background:#f7f7f8;border-radius:4px;line-height:1.45;text-rendering:optimizeSpeed}
+pre{color:rgba(0,0,0,.9);font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;line-height:1.45;text-rendering:optimizeSpeed}
+pre code,pre pre{color:inherit;font-size:inherit;line-height:inherit}
+pre>code{display:block}
+pre.nowrap,pre.nowrap pre{white-space:pre;word-wrap:normal}
+em em{font-style:normal}
+strong strong{font-weight:400}
+.keyseq{color:rgba(51,51,51,.8)}
+kbd{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;display:inline-block;color:rgba(0,0,0,.8);font-size:.65em;line-height:1.45;background:#f7f7f7;border:1px solid #ccc;border-radius:3px;box-shadow:0 1px 0 rgba(0,0,0,.2),inset 0 0 0 .1em #fff;margin:0 .15em;padding:.2em .5em;vertical-align:middle;position:relative;top:-.1em;white-space:nowrap}
+.keyseq kbd:first-child{margin-left:0}
+.keyseq kbd:last-child{margin-right:0}
+.menuseq,.menuref{color:#000}
+.menuseq b:not(.caret),.menuref{font-weight:inherit}
+.menuseq{word-spacing:-.02em}
+.menuseq b.caret{font-size:1.25em;line-height:.8}
+.menuseq i.caret{font-weight:bold;text-align:center;width:.45em}
+b.button::before,b.button::after{position:relative;top:-1px;font-weight:400}
+b.button::before{content:"[";padding:0 3px 0 2px}
+b.button::after{content:"]";padding:0 2px 0 3px}
+p a>code:hover{color:rgba(0,0,0,.9)}
+#header,#content,#footnotes,#footer{width:100%;margin:0 auto;max-width:62.5em;*zoom:1;position:relative;padding-left:.9375em;padding-right:.9375em}
+#header::before,#header::after,#content::before,#content::after,#footnotes::before,#footnotes::after,#footer::before,#footer::after{content:" ";display:table}
+#header::after,#content::after,#footnotes::after,#footer::after{clear:both}
+#content{margin-top:1.25em}
+#content::before{content:none}
+#header>h1:first-child{color:rgba(0,0,0,.85);margin-top:2.25rem;margin-bottom:0}
+#header>h1:first-child+#toc{margin-top:8px;border-top:1px solid #dddddf}
+#header>h1:only-child,body.toc2 #header>h1:nth-last-child(2){border-bottom:1px solid #dddddf;padding-bottom:8px}
+#header .details{border-bottom:1px solid #dddddf;line-height:1.45;padding-top:.25em;padding-bottom:.25em;padding-left:.25em;color:rgba(0,0,0,.6);display:flex;flex-flow:row wrap}
+#header .details span:first-child{margin-left:-.125em}
+#header .details span.email a{color:rgba(0,0,0,.85)}
+#header .details br{display:none}
+#header .details br+span::before{content:"\00a0\2013\00a0"}
+#header .details br+span.author::before{content:"\00a0\22c5\00a0";color:rgba(0,0,0,.85)}
+#header .details br+span#revremark::before{content:"\00a0|\00a0"}
+#header #revnumber{text-transform:capitalize}
+#header #revnumber::after{content:"\00a0"}
+#content>h1:first-child:not([class]){color:rgba(0,0,0,.85);border-bottom:1px solid #dddddf;padding-bottom:8px;margin-top:0;padding-top:1rem;margin-bottom:1.25rem}
+#toc{border-bottom:1px solid #e7e7e9;padding-bottom:.5em}
+#toc>ul{margin-left:.125em}
+#toc ul.sectlevel0>li>a{font-style:italic}
+#toc ul.sectlevel0 ul.sectlevel1{margin:.5em 0}
+#toc ul{font-family:"Open Sans","DejaVu Sans",sans-serif;list-style-type:none}
+#toc li{line-height:1.3334;margin-top:.3334em}
+#toc a{text-decoration:none}
+#toc a:active{text-decoration:underline}
+#toctitle{color:#7a2518;font-size:1.2em}
+@media screen and (min-width:768px){#toctitle{font-size:1.375em}
+body.toc2{padding-left:15em;padding-right:0}
+#toc.toc2{margin-top:0!important;background:#f8f8f7;position:fixed;width:15em;left:0;top:0;border-right:1px solid #e7e7e9;border-top-width:0!important;border-bottom-width:0!important;z-index:1000;padding:1.25em 1em;height:100%;overflow:auto}
+#toc.toc2 #toctitle{margin-top:0;margin-bottom:.8rem;font-size:1.2em}
+#toc.toc2>ul{font-size:.9em;margin-bottom:0}
+#toc.toc2 ul ul{margin-left:0;padding-left:1em}
+#toc.toc2 ul.sectlevel0 ul.sectlevel1{padding-left:0;margin-top:.5em;margin-bottom:.5em}
+body.toc2.toc-right{padding-left:0;padding-right:15em}
+body.toc2.toc-right #toc.toc2{border-right-width:0;border-left:1px solid #e7e7e9;left:auto;right:0}}
+@media screen and (min-width:1280px){body.toc2{padding-left:20em;padding-right:0}
+#toc.toc2{width:20em}
+#toc.toc2 #toctitle{font-size:1.375em}
+#toc.toc2>ul{font-size:.95em}
+#toc.toc2 ul ul{padding-left:1.25em}
+body.toc2.toc-right{padding-left:0;padding-right:20em}}
+#content #toc{border:1px solid #e0e0dc;margin-bottom:1.25em;padding:1.25em;background:#f8f8f7;border-radius:4px}
+#content #toc>:first-child{margin-top:0}
+#content #toc>:last-child{margin-bottom:0}
+#footer{max-width:none;background:rgba(0,0,0,.8);padding:1.25em}
+#footer-text{color:hsla(0,0%,100%,.8);line-height:1.44}
+#content{margin-bottom:.625em}
+.sect1{padding-bottom:.625em}
+@media screen and (min-width:768px){#content{margin-bottom:1.25em}
+.sect1{padding-bottom:1.25em}}
+.sect1:last-child{padding-bottom:0}
+.sect1+.sect1{border-top:1px solid #e7e7e9}
+#content h1>a.anchor,h2>a.anchor,h3>a.anchor,#toctitle>a.anchor,.sidebarblock>.content>.title>a.anchor,h4>a.anchor,h5>a.anchor,h6>a.anchor{position:absolute;z-index:1001;width:1.5ex;margin-left:-1.5ex;display:block;text-decoration:none!important;visibility:hidden;text-align:center;font-weight:400}
+#content h1>a.anchor::before,h2>a.anchor::before,h3>a.anchor::before,#toctitle>a.anchor::before,.sidebarblock>.content>.title>a.anchor::before,h4>a.anchor::before,h5>a.anchor::before,h6>a.anchor::before{content:"\00A7";font-size:.85em;display:block;padding-top:.1em}
+#content h1:hover>a.anchor,#content h1>a.anchor:hover,h2:hover>a.anchor,h2>a.anchor:hover,h3:hover>a.anchor,#toctitle:hover>a.anchor,.sidebarblock>.content>.title:hover>a.anchor,h3>a.anchor:hover,#toctitle>a.anchor:hover,.sidebarblock>.content>.title>a.anchor:hover,h4:hover>a.anchor,h4>a.anchor:hover,h5:hover>a.anchor,h5>a.anchor:hover,h6:hover>a.anchor,h6>a.anchor:hover{visibility:visible}
+#content h1>a.link,h2>a.link,h3>a.link,#toctitle>a.link,.sidebarblock>.content>.title>a.link,h4>a.link,h5>a.link,h6>a.link{color:#ba3925;text-decoration:none}
+#content h1>a.link:hover,h2>a.link:hover,h3>a.link:hover,#toctitle>a.link:hover,.sidebarblock>.content>.title>a.link:hover,h4>a.link:hover,h5>a.link:hover,h6>a.link:hover{color:#a53221}
+details,.audioblock,.imageblock,.literalblock,.listingblock,.stemblock,.videoblock{margin-bottom:1.25em}
+details{margin-left:1.25rem}
+details>summary{cursor:pointer;display:block;position:relative;line-height:1.6;margin-bottom:.625rem;outline:none;-webkit-tap-highlight-color:transparent}
+details>summary::-webkit-details-marker{display:none}
+details>summary::before{content:"";border:solid transparent;border-left:solid;border-width:.3em 0 .3em .5em;position:absolute;top:.5em;left:-1.25rem;transform:translateX(15%)}
+details[open]>summary::before{border:solid transparent;border-top:solid;border-width:.5em .3em 0;transform:translateY(15%)}
+details>summary::after{content:"";width:1.25rem;height:1em;position:absolute;top:.3em;left:-1.25rem}
+.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{text-rendering:optimizeLegibility;text-align:left;font-family:"Noto Serif","DejaVu Serif",serif;font-size:1rem;font-style:italic}
+table.tableblock.fit-content>caption.title{white-space:nowrap;width:0}
+.paragraph.lead>p,#preamble>.sectionbody>[class=paragraph]:first-of-type p{font-size:1.21875em;line-height:1.6;color:rgba(0,0,0,.85)}
+.admonitionblock>table{border-collapse:separate;border:0;background:none;width:100%}
+.admonitionblock>table td.icon{text-align:center;width:80px}
+.admonitionblock>table td.icon img{max-width:none}
+.admonitionblock>table td.icon .title{font-weight:bold;font-family:"Open Sans","DejaVu Sans",sans-serif;text-transform:uppercase}
+.admonitionblock>table td.content{padding-left:1.125em;padding-right:1.25em;border-left:1px solid #dddddf;color:rgba(0,0,0,.6);word-wrap:anywhere}
+.admonitionblock>table td.content>:last-child>:last-child{margin-bottom:0}
+.exampleblock>.content{border:1px solid #e6e6e6;margin-bottom:1.25em;padding:1.25em;background:#fff;border-radius:4px}
+.sidebarblock{border:1px solid #dbdbd6;margin-bottom:1.25em;padding:1.25em;background:#f3f3f2;border-radius:4px}
+.sidebarblock>.content>.title{color:#7a2518;margin-top:0;text-align:center}
+.exampleblock>.content>:first-child,.sidebarblock>.content>:first-child{margin-top:0}
+.exampleblock>.content>:last-child,.exampleblock>.content>:last-child>:last-child,.exampleblock>.content .olist>ol>li:last-child>:last-child,.exampleblock>.content .ulist>ul>li:last-child>:last-child,.exampleblock>.content .qlist>ol>li:last-child>:last-child,.sidebarblock>.content>:last-child,.sidebarblock>.content>:last-child>:last-child,.sidebarblock>.content .olist>ol>li:last-child>:last-child,.sidebarblock>.content .ulist>ul>li:last-child>:last-child,.sidebarblock>.content .qlist>ol>li:last-child>:last-child{margin-bottom:0}
+.literalblock pre,.listingblock>.content>pre{border-radius:4px;overflow-x:auto;padding:1em;font-size:.8125em}
+@media screen and (min-width:768px){.literalblock pre,.listingblock>.content>pre{font-size:.90625em}}
+@media screen and (min-width:1280px){.literalblock pre,.listingblock>.content>pre{font-size:1em}}
+.literalblock pre,.listingblock>.content>pre:not(.highlight),.listingblock>.content>pre[class=highlight],.listingblock>.content>pre[class^="highlight "]{background:#f7f7f8}
+.literalblock.output pre{color:#f7f7f8;background:rgba(0,0,0,.9)}
+.listingblock>.content{position:relative}
+.listingblock code[data-lang]::before{display:none;content:attr(data-lang);position:absolute;font-size:.75em;top:.425rem;right:.5rem;line-height:1;text-transform:uppercase;color:inherit;opacity:.5}
+.listingblock:hover code[data-lang]::before{display:block}
+.listingblock.terminal pre .command::before{content:attr(data-prompt);padding-right:.5em;color:inherit;opacity:.5}
+.listingblock.terminal pre .command:not([data-prompt])::before{content:"$"}
+.listingblock pre.highlightjs{padding:0}
+.listingblock pre.highlightjs>code{padding:1em;border-radius:4px}
+.listingblock pre.prettyprint{border-width:0}
+.prettyprint{background:#f7f7f8}
+pre.prettyprint .linenums{line-height:1.45;margin-left:2em}
+pre.prettyprint li{background:none;list-style-type:inherit;padding-left:0}
+pre.prettyprint li code[data-lang]::before{opacity:1}
+pre.prettyprint li:not(:first-child) code[data-lang]::before{display:none}
+table.linenotable{border-collapse:separate;border:0;margin-bottom:0;background:none}
+table.linenotable td[class]{color:inherit;vertical-align:top;padding:0;line-height:inherit;white-space:normal}
+table.linenotable td.code{padding-left:.75em}
+table.linenotable td.linenos,pre.pygments .linenos{border-right:1px solid;opacity:.35;padding-right:.5em;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}
+pre.pygments span.linenos{display:inline-block;margin-right:.75em}
+.quoteblock{margin:0 1em 1.25em 1.5em;display:table}
+.quoteblock:not(.excerpt)>.title{margin-left:-1.5em;margin-bottom:.75em}
+.quoteblock blockquote,.quoteblock p{color:rgba(0,0,0,.85);font-size:1.15rem;line-height:1.75;word-spacing:.1em;letter-spacing:0;font-style:italic;text-align:justify}
+.quoteblock blockquote{margin:0;padding:0;border:0}
+.quoteblock blockquote::before{content:"\201c";float:left;font-size:2.75em;font-weight:bold;line-height:.6em;margin-left:-.6em;color:#7a2518;text-shadow:0 1px 2px rgba(0,0,0,.1)}
+.quoteblock blockquote>.paragraph:last-child p{margin-bottom:0}
+.quoteblock .attribution{margin-top:.75em;margin-right:.5ex;text-align:right}
+.verseblock{margin:0 1em 1.25em}
+.verseblock pre{font-family:"Open Sans","DejaVu Sans",sans-serif;font-size:1.15rem;color:rgba(0,0,0,.85);font-weight:300;text-rendering:optimizeLegibility}
+.verseblock pre strong{font-weight:400}
+.verseblock .attribution{margin-top:1.25rem;margin-left:.5ex}
+.quoteblock .attribution,.verseblock .attribution{font-size:.9375em;line-height:1.45;font-style:italic}
+.quoteblock .attribution br,.verseblock .attribution br{display:none}
+.quoteblock .attribution cite,.verseblock .attribution cite{display:block;letter-spacing:-.025em;color:rgba(0,0,0,.6)}
+.quoteblock.abstract blockquote::before,.quoteblock.excerpt blockquote::before,.quoteblock .quoteblock blockquote::before{display:none}
+.quoteblock.abstract blockquote,.quoteblock.abstract p,.quoteblock.excerpt blockquote,.quoteblock.excerpt p,.quoteblock .quoteblock blockquote,.quoteblock .quoteblock p{line-height:1.6;word-spacing:0}
+.quoteblock.abstract{margin:0 1em 1.25em;display:block}
+.quoteblock.abstract>.title{margin:0 0 .375em;font-size:1.15em;text-align:center}
+.quoteblock.excerpt>blockquote,.quoteblock .quoteblock{padding:0 0 .25em 1em;border-left:.25em solid #dddddf}
+.quoteblock.excerpt,.quoteblock .quoteblock{margin-left:0}
+.quoteblock.excerpt blockquote,.quoteblock.excerpt p,.quoteblock .quoteblock blockquote,.quoteblock .quoteblock p{color:inherit;font-size:1.0625rem}
+.quoteblock.excerpt .attribution,.quoteblock .quoteblock .attribution{color:inherit;font-size:.85rem;text-align:left;margin-right:0}
+p.tableblock:last-child{margin-bottom:0}
+td.tableblock>.content{margin-bottom:1.25em;word-wrap:anywhere}
+td.tableblock>.content>:last-child{margin-bottom:-1.25em}
+table.tableblock,th.tableblock,td.tableblock{border:0 solid #dedede}
+table.grid-all>*>tr>*{border-width:1px}
+table.grid-cols>*>tr>*{border-width:0 1px}
+table.grid-rows>*>tr>*{border-width:1px 0}
+table.frame-all{border-width:1px}
+table.frame-ends{border-width:1px 0}
+table.frame-sides{border-width:0 1px}
+table.frame-none>colgroup+*>:first-child>*,table.frame-sides>colgroup+*>:first-child>*{border-top-width:0}
+table.frame-none>:last-child>:last-child>*,table.frame-sides>:last-child>:last-child>*{border-bottom-width:0}
+table.frame-none>*>tr>:first-child,table.frame-ends>*>tr>:first-child{border-left-width:0}
+table.frame-none>*>tr>:last-child,table.frame-ends>*>tr>:last-child{border-right-width:0}
+table.stripes-all>*>tr,table.stripes-odd>*>tr:nth-of-type(odd),table.stripes-even>*>tr:nth-of-type(even),table.stripes-hover>*>tr:hover{background:#f8f8f7}
+th.halign-left,td.halign-left{text-align:left}
+th.halign-right,td.halign-right{text-align:right}
+th.halign-center,td.halign-center{text-align:center}
+th.valign-top,td.valign-top{vertical-align:top}
+th.valign-bottom,td.valign-bottom{vertical-align:bottom}
+th.valign-middle,td.valign-middle{vertical-align:middle}
+table thead th,table tfoot th{font-weight:bold}
+tbody tr th{background:#f7f8f7}
+tbody tr th,tbody tr th p,tfoot tr th,tfoot tr th p{color:rgba(0,0,0,.8);font-weight:bold}
+p.tableblock>code:only-child{background:none;padding:0}
+p.tableblock{font-size:1em}
+ol{margin-left:1.75em}
+ul li ol{margin-left:1.5em}
+dl dd{margin-left:1.125em}
+dl dd:last-child,dl dd:last-child>:last-child{margin-bottom:0}
+li p,ul dd,ol dd,.olist .olist,.ulist .ulist,.ulist .olist,.olist .ulist{margin-bottom:.625em}
+ul.checklist,ul.none,ol.none,ul.no-bullet,ol.no-bullet,ol.unnumbered,ul.unstyled,ol.unstyled{list-style-type:none}
+ul.no-bullet,ol.no-bullet,ol.unnumbered{margin-left:.625em}
+ul.unstyled,ol.unstyled{margin-left:0}
+li>p:empty:only-child::before{content:"";display:inline-block}
+ul.checklist>li>p:first-child{margin-left:-1em}
+ul.checklist>li>p:first-child>.fa-square-o:first-child,ul.checklist>li>p:first-child>.fa-check-square-o:first-child{width:1.25em;font-size:.8em;position:relative;bottom:.125em}
+ul.checklist>li>p:first-child>input[type=checkbox]:first-child{margin-right:.25em}
+ul.inline{display:flex;flex-flow:row wrap;list-style:none;margin:0 0 .625em -1.25em}
+ul.inline>li{margin-left:1.25em}
+.unstyled dl dt{font-weight:400;font-style:normal}
+ol.arabic{list-style-type:decimal}
+ol.decimal{list-style-type:decimal-leading-zero}
+ol.loweralpha{list-style-type:lower-alpha}
+ol.upperalpha{list-style-type:upper-alpha}
+ol.lowerroman{list-style-type:lower-roman}
+ol.upperroman{list-style-type:upper-roman}
+ol.lowergreek{list-style-type:lower-greek}
+.hdlist>table,.colist>table{border:0;background:none}
+.hdlist>table>tbody>tr,.colist>table>tbody>tr{background:none}
+td.hdlist1,td.hdlist2{vertical-align:top;padding:0 .625em}
+td.hdlist1{font-weight:bold;padding-bottom:1.25em}
+td.hdlist2{word-wrap:anywhere}
+.literalblock+.colist,.listingblock+.colist{margin-top:-.5em}
+.colist td:not([class]):first-child{padding:.4em .75em 0;line-height:1;vertical-align:top}
+.colist td:not([class]):first-child img{max-width:none}
+.colist td:not([class]):last-child{padding:.25em 0}
+.thumb,.th{line-height:0;display:inline-block;border:4px solid #fff;box-shadow:0 0 0 1px #ddd}
+.imageblock.left{margin:.25em .625em 1.25em 0}
+.imageblock.right{margin:.25em 0 1.25em .625em}
+.imageblock>.title{margin-bottom:0}
+.imageblock.thumb,.imageblock.th{border-width:6px}
+.imageblock.thumb>.title,.imageblock.th>.title{padding:0 .125em}
+.image.left,.image.right{margin-top:.25em;margin-bottom:.25em;display:inline-block;line-height:0}
+.image.left{margin-right:.625em}
+.image.right{margin-left:.625em}
+a.image{text-decoration:none;display:inline-block}
+a.image object{pointer-events:none}
+sup.footnote,sup.footnoteref{font-size:.875em;position:static;vertical-align:super}
+sup.footnote a,sup.footnoteref a{text-decoration:none}
+sup.footnote a:active,sup.footnoteref a:active{text-decoration:underline}
+#footnotes{padding-top:.75em;padding-bottom:.75em;margin-bottom:.625em}
+#footnotes hr{width:20%;min-width:6.25em;margin:-.25em 0 .75em;border-width:1px 0 0}
+#footnotes .footnote{padding:0 .375em 0 .225em;line-height:1.3334;font-size:.875em;margin-left:1.2em;margin-bottom:.2em}
+#footnotes .footnote a:first-of-type{font-weight:bold;text-decoration:none;margin-left:-1.05em}
+#footnotes .footnote:last-of-type{margin-bottom:0}
+#content #footnotes{margin-top:-.625em;margin-bottom:0;padding:.75em 0}
+div.unbreakable{page-break-inside:avoid}
+.big{font-size:larger}
+.small{font-size:smaller}
+.underline{text-decoration:underline}
+.overline{text-decoration:overline}
+.line-through{text-decoration:line-through}
+.aqua{color:#00bfbf}
+.aqua-background{background:#00fafa}
+.black{color:#000}
+.black-background{background:#000}
+.blue{color:#0000bf}
+.blue-background{background:#0000fa}
+.fuchsia{color:#bf00bf}
+.fuchsia-background{background:#fa00fa}
+.gray{color:#606060}
+.gray-background{background:#7d7d7d}
+.green{color:#006000}
+.green-background{background:#007d00}
+.lime{color:#00bf00}
+.lime-background{background:#00fa00}
+.maroon{color:#600000}
+.maroon-background{background:#7d0000}
+.navy{color:#000060}
+.navy-background{background:#00007d}
+.olive{color:#606000}
+.olive-background{background:#7d7d00}
+.purple{color:#600060}
+.purple-background{background:#7d007d}
+.red{color:#bf0000}
+.red-background{background:#fa0000}
+.silver{color:#909090}
+.silver-background{background:#bcbcbc}
+.teal{color:#006060}
+.teal-background{background:#007d7d}
+.white{color:#bfbfbf}
+.white-background{background:#fafafa}
+.yellow{color:#bfbf00}
+.yellow-background{background:#fafa00}
+span.icon>.fa{cursor:default}
+a span.icon>.fa{cursor:inherit}
+.admonitionblock td.icon [class^="fa icon-"]{font-size:2.5em;text-shadow:1px 1px 2px rgba(0,0,0,.5);cursor:default}
+.admonitionblock td.icon .icon-note::before{content:"\f05a";color:#19407c}
+.admonitionblock td.icon .icon-tip::before{content:"\f0eb";text-shadow:1px 1px 2px rgba(155,155,0,.8);color:#111}
+.admonitionblock td.icon .icon-warning::before{content:"\f071";color:#bf6900}
+.admonitionblock td.icon .icon-caution::before{content:"\f06d";color:#bf3400}
+.admonitionblock td.icon .icon-important::before{content:"\f06a";color:#bf0000}
+.conum[data-value]{display:inline-block;color:#fff!important;background:rgba(0,0,0,.8);border-radius:50%;text-align:center;font-size:.75em;width:1.67em;height:1.67em;line-height:1.67em;font-family:"Open Sans","DejaVu Sans",sans-serif;font-style:normal;font-weight:bold}
+.conum[data-value] *{color:#fff!important}
+.conum[data-value]+b{display:none}
+.conum[data-value]::after{content:attr(data-value)}
+pre .conum[data-value]{position:relative;top:-.125em}
+b.conum *{color:inherit!important}
+.conum:not([data-value]):empty{display:none}
+dt,th.tableblock,td.content,div.footnote{text-rendering:optimizeLegibility}
+h1,h2,p,td.content,span.alt,summary{letter-spacing:-.01em}
+p strong,td.content strong,div.footnote strong{letter-spacing:-.005em}
+p,blockquote,dt,td.content,td.hdlist1,span.alt,summary{font-size:1.0625rem}
+p{margin-bottom:1.25rem}
+.sidebarblock p,.sidebarblock dt,.sidebarblock td.content,p.tableblock{font-size:1em}
+.exampleblock>.content{background:#fffef7;border-color:#e0e0dc;box-shadow:0 1px 4px #e0e0dc}
+.print-only{display:none!important}
+@page{margin:1.25cm .75cm}
+@media print{*{box-shadow:none!important;text-shadow:none!important}
+html{font-size:80%}
+a{color:inherit!important;text-decoration:underline!important}
+a.bare,a[href^="#"],a[href^="mailto:"]{text-decoration:none!important}
+a[href^="http:"]:not(.bare)::after,a[href^="https:"]:not(.bare)::after{content:"(" attr(href) ")";display:inline-block;font-size:.875em;padding-left:.25em}
+abbr[title]{border-bottom:1px dotted}
+abbr[title]::after{content:" (" attr(title) ")"}
+pre,blockquote,tr,img,object,svg{page-break-inside:avoid}
+thead{display:table-header-group}
+svg{max-width:100%}
+p,blockquote,dt,td.content{font-size:1em;orphans:3;widows:3}
+h2,h3,#toctitle,.sidebarblock>.content>.title{page-break-after:avoid}
+#header,#content,#footnotes,#footer{max-width:none}
+#toc,.sidebarblock,.exampleblock>.content{background:none!important}
+#toc{border-bottom:1px solid #dddddf!important;padding-bottom:0!important}
+body.book #header{text-align:center}
+body.book #header>h1:first-child{border:0!important;margin:2.5em 0 1em}
+body.book #header .details{border:0!important;display:block;padding:0!important}
+body.book #header .details span:first-child{margin-left:0!important}
+body.book #header .details br{display:block}
+body.book #header .details br+span::before{content:none!important}
+body.book #toc{border:0!important;text-align:left!important;padding:0!important;margin:0!important}
+body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-break-before:always}
+.listingblock code[data-lang]::before{display:block}
+#footer{padding:0 .9375em}
+.hide-on-print{display:none!important}
+.print-only{display:block!important}
+.hide-for-print{display:none!important}
+.show-for-print{display:inherit!important}}
+@media amzn-kf8,print{#header>h1:first-child{margin-top:1.25rem}
+.sect1{padding:0!important}
+.sect1+.sect1{border:0}
+#footer{background:none}
+#footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
+@media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
+</style>
+<!--
+Used to extend AsciiDoctor’s default stylesheet.
+https://docs.asciidoctor.org/asciidoctor/latest/html-backend/default-stylesheet/
+-->
+<style>
+#toc .sectlevel3 {
+  font-size: smaller;
+  font-weight: lighter;
+}
+
+#toc .sectlevel3 li a {
+  color: darkslategrey;
+}
+
+h4 {
+  padding-left: calc(2em / 3);
+}
+
+.admonitionblock td.icon img {
+  border-radius: 10px;
+}
+
+.menuref, .menuseq {
+  padding-left: 0.3em;
+  padding-right: 0.3em;
+  border: 1px lightgrey dashed;
+  border-radius: 0.2em;
+}
+
+.menuseq .caret {
+  color: grey;
+}
+
+kbd {
+  font-size: 0.95em;
+  padding: 0.025em 0.4em
+}
+
+#footer-text {
+  color: darkgrey;
+}
+
+#footer-text a {
+  color: inherit;
+  text-decoration: underline dotted 1px;
+}
+
+#footer-text img {
+  max-height: 4ex;
+  border-radius: calc(2ex / 3);
+}
+
+#return-to-index {
+  color: grey;
+  font-size: 12px;
+  font-family: "Open Sans", "DejaVu Sans", sans-serif;
+  text-decoration: none;
+
+  background-color: #ffffffcc;
+  border-radius: 2px;
+
+  position: fixed;
+  top: 2px;
+  left: 2px;
+  z-index: 9999;
+}
+
+#return-to-index:hover,
+#return-to-index:focus {
+  color: black;
+  text-decoration: underline 1px solid black;
+}
+
+
+/* ↓ Gemini-generated CSS to make figure caption appear *before* the picture ↓ */
+/* (Customized a bit because I did not want to suddenly center ALL pictures.) */
+
+/* Target the parent container of the image and its caption */
+div.imageblock {
+  display: flex;
+  flex-direction: column;
+}
+
+div.imageblock > div.content {
+  /* Make the image content appear second. */
+  order: 2;
+}
+
+div.imageblock > div.title {
+  /* Make the caption appear first. */
+  order: 1;
+  /* Optional: Add some bottom margin to separate it from the image */
+  margin-bottom: 0.5em;
+}
+
+/* Optional: Center the caption if desired */
+/*div.imageblock > div.title {
+  text-align: center;
+}*/
+
+/* Ensure the image itself doesn't cause overflow issues. */
+div.imageblock img {
+  max-width: 100%;
+  height: auto;
+  max-height: 480px;
+  /* Removes extra space below image. */
+  display: block;
+  /* For centering if image is smaller than container. */
+  /*margin-left: auto;
+  margin-right: auto;*/
+}
+
+/* Fix “align = center” broken by customizations. */
+div.imageblock.text-center img {
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>
+</head>
+<body class="article toc2 toc-left">
+<div id="header">
+<h1>Explications sur les photos en <em>raws</em> et le traitement</h1>
+<div class="details">
+<span id="author" class="author">Alice M. – alicem.net</span><br>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table des matières</div>
+<ul class="sectlevel1">
+<li><a href="#_yo">Yo</a></li>
+<li><a href="#_raws"><em>Raws</em></a>
+<ul class="sectlevel2">
+<li><a href="#_œil_capteurs_et_information">Œil, capteurs et information</a></li>
+<li><a href="#_doù_les_raws">D’où les <em>raws</em></a></li>
+<li><a href="#_visionnage">Visionnage</a></li>
+</ul>
+</li>
+<li><a href="#_comment_produire_des_raws">Comment produire des <em>raws</em></a></li>
+<li><a href="#_traitement">Traitement</a></li>
+<li><a href="#_triche">Triche</a></li>
+<li><a href="#_ia">IA</a></li>
+<li><a href="#_formats">Formats</a></li>
+<li><a href="#_voilà">Voilà</a></li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div id="preamble">
+<div class="sectionbody">
+<a id="return-to-index" href="index.html" title="Revenir à l’index de ce projet">Retour</a>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_yo"><a class="anchor" href="#_yo"></a>Yo</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>À la base je voulais juste faire un dessin rapidos sur mon site pour expliquer :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>ce que j’appelle <strong>« traiter mes photos »</strong> ;</p>
+</li>
+<li>
+<p>pourquoi ça me prend <strong>des mois voire des années</strong> pour mettre un diaporama de mes photos en ligne ;</p>
+</li>
+<li>
+<p>ce que sont <strong>les <em>raws</em></strong> (en gros) ;</p>
+</li>
+<li>
+<p>pourquoi ça me saoule quand on me dit que je <strong>« triche »</strong>, et aussi (dans une moindre mesure), que je « fais <strong>de la retouche</strong> ».</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Je me suis rendu compte que ça faisait beaucoup, et qu’un document en bonne et due forme serait mieux.
+Ça me donnait aussi l’occasion de formaliser un peu, <a href="rawtherapee.html">dans un document séparé</a>, <strong>mon processus de traitement actuel</strong>.</p>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<img src="icons/caution.png" alt="Caution">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Ce n’est pas mon domaine professionnel, donc ne prenez pas non plus <em>trop</em> pour argent comptant ce que je vous raconte.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_raws"><a class="anchor" href="#_raws"></a><em>Raws</em></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_œil_capteurs_et_information"><a class="anchor" href="#_œil_capteurs_et_information"></a>Œil, capteurs et information</h3>
+<div class="paragraph">
+<p>On a beau se surpasser en technologie, l’œil humain reste, sur bien des plans, incroyablement <strong>stylé par rapport aux capteurs</strong> de nos appareils.
+En particulier, l’œil s’adapte vachement bien aux <strong>changements de luminosité</strong> :
+la plage visible (les degrés de luminosité qu’on arrive à analyser à un instant <em>t</em>) change à volonté, constamment, se déplaçant et s’étirant.
+L&#8217;œil ne peut certes pas percevoir <em>simultanément</em> une très forte lumière et une très faible lumière avec le même niveau de détail, mais peut se concentrer sur l’un ou l’autre alternativement.</p>
+</div>
+<div class="imageblock text-center related thumb">
+<div class="content">
+<img src="images/plage.png" alt="plage">
+</div>
+<div class="title">Image 1. Deux instants, deux plages visibles avec un certain niveau de détail</div>
+</div>
+<div class="paragraph">
+<p>En plus :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>le cerveau arrive à <strong>amalgamer les informations</strong> ramassées sur différentes plages, donnant l’impression qu’on voit plein de trucs grave bien ;</p>
+</li>
+<li>
+<p>même sans changer la plage, elle est, de base, <strong>plutôt large</strong>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Quant aux <strong>écrans</strong>, ils sont encore plus à la peine quand il s’agit de représenter différents degrés de luminosité.
+Et encore pire pour les <strong>imprimantes</strong>.</p>
+</div>
+<div class="paragraph">
+<p>Tout ceci implique qu’il faut <strong>sacrifier une part de l’information visuelle</strong> au moins deux fois de suite, avant de « voir » une photo :</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>un premier sacrifice entre la « réalité » et <strong>ce que l’appareil photo va capturer</strong> ;</p>
+</li>
+<li>
+<p>un second sacrifice <strong>pour afficher sur un écran ou imprimer la photo</strong> en partant des données écrites par l’appareil photo.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Selon comment on gère ça, il peut par exemple y avoir des pixels <strong>« plus noirs que noir » et « plus blancs que blanc »</strong> (<a href="https://www.youtube.com/watch?v=VEZw1Vmq97Y&amp;t=60" target="_blank" rel="noopener">Coluche se retourne dans sa tombe</a>, là), impossibles à représenter sans concessions.</p>
+</div>
+<div class="imageblock text-center related thumb">
+<div class="content">
+<img src="images/information.png" alt="information">
+</div>
+<div class="title">Image 2. L’information visuelle qui se fait défoncer la figure deux fois de suite</div>
+</div>
+<div class="paragraph">
+<p>On est pas forcément conscient de tout ça, car bon, on nous a habitués à appuyer sur un bouton, et pouf, à avoir une image qui surgit sur notre écran, et on la prend pour acquise et comme un truc final, alors que les choses sont un peu plus subtiles que ça, surtout si on veut faire des choses un peu plus poussées.</p>
+</div>
+<div class="paragraph">
+<p>« Bah oui mais même ton appareil, il te montre bien la photo après la prise, non ? »
+Certes, mais c’est juste <strong><em>une</em> interprétation possible</strong>, suggérée parmi une infinité, histoire qu’on puisse quand même un peu naviguer, supprimer les photos foireuses directement sur l’appareil, etc.
+On détaillera ça très bientôt.</p>
+</div>
+<div class="paragraph">
+<p>La photo, c’est un peu comme quand on essaye de représenter l’ouïe d’un éléphant, l’odorat d’un chien, ou la vision d’un chat ou d’un insecte : on est plus ou moins niqué d’avance et il faut s’appuyer sur des abstractions.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_doù_les_raws"><a class="anchor" href="#_doù_les_raws"></a>D’où les <em>raws</em></h3>
+<div class="paragraph">
+<p>Pour obtenir le meilleur résultat possible, il vaut mieux, du fait des sacrifices susmentionnés :</p>
+</div>
+<div class="ulist checklist">
+<ul class="checklist">
+<li>
+<p>&#10003; Faire attention au <strong>paramétrage de l’appareil</strong>, et lui demander, dans la mesure du possible et du raisonnable, de <strong>conserver autant d’information que possible</strong>.</p>
+</li>
+<li>
+<p>&#10003; <strong>Retarder</strong> au maximum l’instant du sacrifice de « capteur vers écran », <strong>en évitant tout changement irréversible</strong> dont on peut se passer.</p>
+</li>
+<li>
+<p>&#10003; Effectuer des choix relativement manuels et éclairés concernant <strong><em>quoi</em> sacrifier</strong>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Un fichier <em>raw</em> <sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="Voir la note de pied de page.">1</a>]</sup> représente l’information disponible avant d’avoir effectué le sacrifice de « capteur vers écran ».<br>
+<a href="https://fr.wikipedia.org/wiki/RAW_(format_d%27image)" class="bare" target="_blank" rel="noopener">https://fr.wikipedia.org/wiki/RAW_(format_d%27image)</a><br>
+On est donc encore freiné par les capacités de l’appareil, mais <strong>on a limité les dégâts</strong> au maximum.</p>
+</div>
+<div class="paragraph">
+<p>Cela permet de conserver une certaine <strong>latitude</strong>, des <strong>degrés de liberté</strong> sur plein de choses, au lieu d’avoir d’emblée une image « figée », gravée dans le marbre.
+Une analogie qui vient tout juste de me venir et qui est peut-être moisie serait : c’est une partition de musique plutôt qu’une <em>interprétation sonore enregistrée</em> de cette partition.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_visionnage"><a class="anchor" href="#_visionnage"></a>Visionnage</h3>
+<div class="paragraph">
+<p>Donc OK, c’est cool, mais à ce stade, ce n’est <strong>pas « regardable »</strong> sans une phase d’« interprétation ».
+À ce stade, <a href="https://rawpedia.rawtherapee.com/How_to_create_DCP_color_profiles" target="_blank" rel="noopener">comme dit dans la documentation de RawTherapee</a>, « il n’y a <strong>même pas de concept de “couleur”</strong> ».
+On a juste une foule de <strong>pixels</strong> (ouais, les éléments du capteur de l’appareil sont qualifiés de « pixels » au même titre que ceux d’un écran, même si on reçoit la lumière au lieu de la produire) qui <strong>disent des trucs cryptiques</strong> :</p>
+</div>
+<div class="imageblock text-center related thumb">
+<div class="content">
+<img src="images/pixels_raw.png" alt="pixels raw">
+</div>
+<div class="title">Image 3. Les pixels au stade du <em>raw</em></div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="icons/note.png" alt="Note">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Les <em>raws</em> contiennent aussi trois tonnes de <strong>métadonnées</strong>, genre des informations sur les réglages de l’appareil au moment de la prise, ou les bonnes vieilles coordonnées&#160;GPS, etc.
+C’est partiellement encore vrai pour les JPG, mais quand même moins.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Il n’est pas rare, que les explorateurs de fichiers, en l’absence de modules supplémentaires, <strong>n’essayent même pas de générer d’aperçus</strong> pour les <em>raws</em> :</p>
+</div>
+<div class="imageblock text-center related thumb">
+<div class="content">
+<img src="images/explorateur.png" alt="explorateur">
+</div>
+<div class="title">Image 4. Mes <em>raws</em> dans mon explorateur de fichiers</div>
+</div>
+<div class="paragraph">
+<p>Voilà pourquoi, en particulier, ça me semble absurde quand <strong>on me presse pour voir des photos</strong> que je viens <em>tout juste de prendre</em> :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Je peux juste montrer les <strong>aperçus potentiellement foireux</strong> et distordus proposés par l’appareil photo.</p>
+</li>
+<li>
+<p>Les observateurs n’auront pas forcément le <strong>recul</strong> et l’habitude nécessaire pour faire un peu fi de l’exposition, de l’orientation, et j’en passe – pour voir « au-delà » de ce qui est affiché, et penser <strong>en termes de potentiel et non d’esthétique instantanée</strong>.</p>
+</li>
+<li>
+<p>Une fois le traitement terminé et les photos <em>vraiment</em> regardables, les gens risquent d’être blasés et d’avoir la flemme de regarder, car ils auront le sentiment d’avoir <strong>déjà tout vu</strong>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>La comparaison la plus évidente est celle que l’on peut effectuer avec les bonnes vieilles <strong>pellicules photographiques</strong> d’époque. <sup class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnotedef_2" title="Voir la note de pied de page.">2</a>]</sup>
+En photographie sur film, <a href="https://fr.wikipedia.org/wiki/Photographie_argentique" target="_blank" rel="noopener">dite « argentique »</a>, l’appareil permet d’inscrire les informations visuelles sur la pellicule, de manière chimique.
+À ce stade, <strong>un être humain ne peut rien voir</strong> à proprement parler, sur la pellicule !
+Il faut une première série de <strong>manipulations</strong> pour produire les négatifs – qui eux non plus ne sont pas géniaux à regarder en tant que tels –, et quelques tours de passe-passe de plus pour en tirer des photos en bonne et due forme.</p>
+</div>
+<div class="paragraph">
+<p>La comparaison entre pellicule et <em>raw</em> est intéressante pour au moins deux aspects :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Au début, on a un truc qu’on ne va pas forcément <strong>foutre allègrement sous le nez de ses voisins</strong>.</p>
+</li>
+<li>
+<p>Les étapes qui mènent à l’image finale peuvent faire l’objet de <strong>personnalisation, d’expérimentation… et d’erreurs</strong>, bien entendu.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="icons/note.png" alt="Note">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Les <em>raws</em> sont d’ailleurs parfois qualifiés de « négatifs numériques ».</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Donc bon, harcèleriez-vous quelqu’un pour qu’il vous montre ses négatifs ou sa pellicule ?
+Je veux bien vous présenter mes <em>raws</em>, mais bon…</p>
+</div>
+<div class="imageblock text-center related thumb">
+<div class="content">
+<img src="images/regarder_un_raw.png" alt="regarder un raw">
+</div>
+<div class="title">Image 5. Il faudra assumer les conséquences potentielles</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_comment_produire_des_raws"><a class="anchor" href="#_comment_produire_des_raws"></a>Comment produire des <em>raws</em></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Le sujet des <em>raws</em> peut sembler encore un peu ésotérico-élitiste à ce stade, mais en fait pas forcément.
+<strong>En produire soi-même n’est pas si compliqué.</strong></p>
+</div>
+<div class="paragraph">
+<p>En général c’est juste <strong>un paramètre à la con</strong> dans l’appareil, disant <strong>quel format de fichier produire</strong>.
+C’est généralement <strong>aussi possible pour les téléphones portables</strong>. <sup class="footnote">[<a id="_footnoteref_3" class="footnote" href="#_footnotedef_3" title="Voir la note de pied de page.">3</a>]</sup>
+Le mode d’emploi (et le web) vous en diront davantage, je suppose.
+Mais rien de très sorcier, en soi.</p>
+</div>
+<div class="paragraph">
+<p>Vous pouvez même souvent choisir de produire <em>à la fois</em> les <em>raws</em> et un format plus basique comme les JPG « habituels ».
+Cette option est cependant souvent perçue comme exagérée car il n’est pas rare qu’un tel JPG soit déjà inclus, de base, dans les métadonnées du <em>raw</em>.
+On peut l’extraire relativement facilement, donc c’est pas ouf de prendre de la place pour écrire deux fois le même JPG, quoi.
+Mais tout ça pour dire qu’<strong>on peut effectuer une transition « en douceur »</strong>, sans abandonner du jour au lendemain les JPG, ou même n’utiliser les <em>raws</em> que pour nos clichés préférés, qui « le méritent » selon nous, tout en continuant comme d’habitude pour les autres.</p>
+</div>
+<div class="paragraph">
+<p>Il est également souvent proposé de produire des <em>raws</em> de divers types :</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Compressés sans perte</dt>
+<dd>
+<p>Autant d’information qu’à l’origine, mais mieux organisée, pour moins phagocyter votre disque-dur, un peu comme quand on fait une archive en <code>.zip</code>.</p>
+</dd>
+<dt class="hdlist1">Non compressés</dt>
+<dd>
+<p>Pas trop d’avantage si une compression sans perte est proposée par ailleurs.
+Je crois que parfois, ce n’est même pas proposé et c’est la compression sans perte qui prend le nom, genre, de <em>raws</em> « normaux ».</p>
+</dd>
+<dt class="hdlist1">Compressés avec des pertes jugées acceptables par le constructeur</dt>
+<dd>
+<p>La différence n’est généralement visible qu’en zoomant vraiment comme un goret sur la photo finale, en tout cas chez Canon.
+Si vous ne jouez pas votre vie sur la qualité de vos photos et que vous ne faites pas des tirages dédiés à des publicités remplissant la facade d’un gratte-ciel (et encore…), <strong>vous pouvez probablement opter pour ce mode</strong> sans craintes.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_traitement"><a class="anchor" href="#_traitement"></a>Traitement</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Il se trouve que <strong>les paramètres d’interprétation par défaut</strong>, suggérés par l’appareil et utilisés pour pondre l’aperçu qu’il expose (et éventuellement pour produire un JPG embarqué dans le <em>raw</em>), collent rarement à ce qu’on veut.
+Quand on photographie en <em>raw</em>, on demande même souvent explicitement à l’appareil de <strong>calmer sa joie sur certains aspects</strong> pour nous donner une vision plus fiable de la <strong>marge de manœuvre</strong> qu’on aura, donc forcément, ça fait des trucs pas fous, de base. <sup class="footnote">[<a id="_footnoteref_4" class="footnote" href="#_footnotedef_4" title="Voir la note de pied de page.">4</a>]</sup>
+Il faut ensuite faire un peu de gymnastique mentale lors du tri des photos, pour juger non l’aspect qu’elles ont avec les paramètres par défaut, mais plutôt leur potentiel : il faut penser compensation d’exposition, rotation, recadrage, recalibration des couleurs…</p>
+</div>
+<div class="paragraph">
+<p>Commence ensuite la tâche du <strong>traitement</strong>, consistant à <strong>choisir soi-même les paramètres</strong> qui nous semblent <strong>les plus appropriés</strong> pour <strong>tirer le meilleur des données brutes</strong>.
+Il faut un peu se remonter les manches, des fois, mais ça vaut le coup.
+Pas le meilleur exemple, mais j’ai récemment fait le ménage sur l’ordi et flemme de faire de la spéléo pour trouver mieux :</p>
+</div>
+<div class="imageblock text-center related thumb">
+<div class="content">
+<img src="images/jpg_raw_comp.jpg" alt="jpg raw comp" width="85%">
+</div>
+<div class="title">Image 6. À gauche le JPG proposé automatiquement par l’appareil (mais bon, en style d’image « Neutre », il faut dire), et à droite ce que j’ai obtenu en me retroussant les manches à partir du <em>raw</em>.</div>
+</div>
+<div class="paragraph">
+<p>Un truc marrant, c’est que pour un même <em>raw</em> de départ, <strong>plusieurs personnes pondront des images radicalement différentes</strong>.
+C’est même devenu un jeu (et un moyen d’apprentissage) sur le sympathique site communautaire <a href="https://discuss.pixls.us" target="_blank" rel="noopener">discuss.pixls.us</a> (qui comporte une section francophone, il me semble) :<br>
+<a href="https://discuss.pixls.us/t/animal-pajama-party/43005" class="bare" target="_blank" rel="noopener">https://discuss.pixls.us/t/animal-pajama-party/43005</a><br>
+… Sans parler des filtres artistiques et autres bidouilles qui relèvent plus de l’infographie que de la photographie – c’est un autre sujet.
+Un autre sujet auquel on va indirectement se frotter ci-après.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_triche"><a class="anchor" href="#_triche"></a>Triche</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Je fais une <strong>distinction</strong> entre les deux concepts suivants :</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Traitement</dt>
+<dd>
+<p>💾 —[🧮]→ 🖼️<br>
+Choisir des <strong>paramètres</strong> pour produire un JPG (ou similaire) à partir d’un <em>raw</em>, via des procédés <strong>mathématiques</strong> et <strong>reproductibles</strong> automatiquement.
+C’est un peu l’équivalent du <strong>développement</strong> des pellicules et négatifs, et certaines personnes appellent même ça <em>littéralement</em> un développement.
+<strong>C’est ce dont on parle dans le présent document.</strong></p>
+</dd>
+<dt class="hdlist1">Retouche</dt>
+<dd>
+<p>🖼️ —[🖌️]→ 🖼️<br>
+Tripoter une image, souvent pas en <em>raw</em>, avec un logiciel <strong>genre Photoshop</strong> ou Gimp, plus axé <strong>dessin</strong>, où on passe une bonne partie de son temps à changer des choses <strong><em>à des endroits précis</em> à l’aide de la souris</strong>, typiquement pour retirer des rides sur un visage pour une pub, ou faire croire qu’une photo a été prise pendant un magnifique coucher de soleil alors que pas du tout.
+La frontière avec le <em>montage photo</em> est parfois mince.
+Cela n’a pas grand-chose à voir avec ce dont parle le présent document.</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>De ce fait :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>quand les gens disent que je fais de la « retouche », ça me semble totalement hors sujet ;</p>
+</li>
+<li>
+<p>quand les gens disent que je « triche », ça m’évoque des scènes de ce genre :</p>
+<div class="imageblock text-center related thumb">
+<div class="content">
+<img src="images/produits.png" alt="produits">
+</div>
+<div class="title">Image 7. Ils sont un peu cabossés car faits sans souris</div>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Même pour le développement physique, les gens utilisent <strong>des produits chelous</strong> avec des résultats variés et parfois un peu pifométriques, et doivent choisir <strong>combien de temps</strong> ils vont laisser chaque cliché dans tel ou tel bain chimique, etc.</p>
+</div>
+<div class="paragraph">
+<p>Je ne vais quand même pas garder <strong>des artefacts à la con</strong> et la distortion due à l’objectif juste pour vous faire plaisir, si ?
+Des fois, sur les <em>raws</em>, si on ne gère pas <a href="https://fr.wikipedia.org/wiki/Distorsion_(optique)" target="_blank" rel="noopener">la distortion géométrique</a>, on voit même les bords de l’objectif dans les coins !
+(Ça surprend, la première fois.)
+(J’avais des exemples l’autre jour mais ils ont été supprimés depuis ; mince.)</p>
+</div>
+<div class="paragraph">
+<p>Au fait, c’est un peu pareil dans le cinéma : ça fait souvent bizarre, dans les <em>making-of</em>, car on voit une différence notable entre la tronche du décor et même des gens « vus de l’extérieur » par rapport au rendu final. <sup class="footnote">[<a id="_footnoteref_5" class="footnote" href="#_footnotedef_5" title="Voir la note de pied de page.">5</a>]</sup></p>
+</div>
+<div class="paragraph">
+<p>C’est d’autant plus vexant d’être accusé d’une triche quelconque quand, de nos jours, des gens spamment de photos prises avec leurs téléphones portables, qui appliquent, automatiquement et plus ou moins silencieusement, <strong>trois tonnes de traitements</strong> et de filtres, sans demander l’avis ou le point de vue de qui que ce soit.
+Autrement dit, <strong>je fais manuellement</strong> (au pris de vingt minutes à genre deux heures <em>par photo traitée</em>) <strong>ce que les portables font instantanément</strong>, souvent sans que l’utilisateur n’en ait conscience.</p>
+</div>
+<div class="paragraph">
+<p>Un des principaux <strong>avantages du traitement manuel</strong> est, bien entendu, que <strong>j’ai mon mot à dire</strong> sur ce qui est fait et comment (le téléphone ne peut pas trop lire dans nos pensées, même s’ils essayent de plus en plus ardemment).
+En plus (mais ça c’est plus psychologique, vous me direz), la photo me semble vraiment être « la mienne », après – <strong>on s’y attache</strong> beaucoup plus.
+Cette différence me rappelle un peu quand des potes m’invitaient à jouer à des jeux vidéo de bagnoles et qu’ils mettaient les vitesses en manuel alors que moi, qui étais tout paumé, restais en manuel.
+Cela demandait davantage d’efforts à mon adversaire, mais c’était rentabilisé.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_ia"><a class="anchor" href="#_ia"></a>IA</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Cela nous amène au sujet très actuel de l’IA.
+Cette section n’était initialement pas prévue, mais, pendant que je procrastinais au lieu de créer ce document, il y a eu l’essor de l’IA générative et tout le tintouin.
+On en est au point où non seulement <strong>des pubs nous encouragent explicitement</strong>, exemples à l’appui, <strong>à trafiquer des photos</strong> en en retirant automatiquement certains objets ou des personnes, mais en plus c’est parfois <em>la seule chose</em> qu’on nous dit sur un téléphone sur toute la durée d’une longue pub.
+Bon, c’est pas pire que les pubs de bagnoles où on nous dit juste qu’elles sont stylées. <sup class="footnote">[<a id="_footnoteref_6" class="footnote" href="#_footnotedef_6" title="Voir la note de pied de page.">6</a>]</sup></p>
+</div>
+<div class="paragraph">
+<p>En parallèle, internet est envahi de gens qui se font encenser pour des « photos » avant qu’on se rende compte que leur seul mérite est d’avoir bien sû rédiger des requêtes particulières.
+C’est certes une discipline à part entière – <a href="https://fr.wikipedia.org/wiki/Ing%C3%A9nierie_de_prompt" target="_blank" rel="noopener">la « rédactique »</a> –, pas toujours triviale, mais on est assez loin de la photographie.</p>
+</div>
+<div class="imageblock text-center related thumb">
+<div class="content">
+<img src="images/generation.png" alt="generation">
+</div>
+<div class="title">Image 8. Eux aussi sont cabossés car également faits sans souris</div>
+</div>
+<div class="paragraph">
+<p>Et puis, à force, les IA générative s’entraînent sur des trucs créés par des IA génératives – elles « mangent leur propre merde » comme dit mon chef –, et ça part tout en vrille.</p>
+</div>
+<div class="paragraph">
+<p>Même en dehors du génératif pur et dur, <strong>les améliorations automatiquement appliquées sont souvent elles-mêmes basées sur des réseaux de neurones</strong>, certains <strong>entraînés en siphonnant des œuvres existantes</strong> (et des tonnes d’électricité).
+Ça va même vous rajouter du flou artificiel en arrière-plan des portraits, ou ce genre de conneries.
+Si <em>moi</em> je « triche », alors il n’y a pas de mot pour ce que font ces gens.</p>
+</div>
+<div class="imageblock text-center related thumb">
+<div class="content">
+<img src="images/arriere-train.png" alt="arriere train">
+</div>
+<div class="title">Image 9. J’exagère peut-être un peu, mais qui sait ?</div>
+</div>
+<div class="paragraph">
+<p>On parle de plus en plus souvent de <a href="https://en.wikipedia.org/wiki/Computational_photography" target="_blank" rel="noopener"><strong>« photographie computationnelle »</strong></a>, le terme qui englobe cette façon d’<strong>exploiter des resources numériques</strong> et de la <strong>puissance de calcul</strong> pour pallier les défauts de l’optique pure.
+Si ce concept n’est en réalité pas nouveau, il explose en ce moment, et est souvent encensé comme étant « le futur ».
+Alors certes, <strong>retirer du bruit</strong> dans le signal, <strong>suivre un oiseau</strong> en vol, ou <strong>aider à la prise de vue de nuit</strong>, c’est bien, mais j’ai l’impression que les <strong>dérives farfelues</strong> se font de plus en plus nombreuses.</p>
+</div>
+<div class="paragraph">
+<p>Les fabricants, en particulier de téléphones, cherchent à <strong>appâter les gens</strong> en leur promettant des outils pour <strong>se faire mousser</strong> sur des réseaux sociaux à la con.
+Une part de moins en moins grande du résultat est <strong><em>réellement liée</em> à ce qui a été donné en entrée</strong> – à la scène réelle et à l’instant présent.
+Au risque de sonner prématurément comme un vieux con (peut-être est-il trop tard pour m’en inquiéter ?), je voudrais souligner que, en conséquence, il y a de moins en moins d’espace pour <strong>les choix</strong>, et donc pour <strong>exprimer sa personnalité, ses intentions, ses émotions</strong> du moment.</p>
+</div>
+<div class="paragraph">
+<p>Vous me direz que les montages, les bidouilles et la génération par IA sont des formes de choix, et vous aurez peut-être raison, mais personnellement ça ne m’attire pas plus que ça.
+D’ailleurs, même en ce qui concerne le traitement manuel de <em>raws</em>, j’essaye personnellement de ne pas trop « craquer mon slip » et de garder quelque chose d’« organique ». <sup class="footnote">[<a id="_footnoteref_7" class="footnote" href="#_footnotedef_7" title="Voir la note de pied de page.">7</a>]</sup></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_formats"><a class="anchor" href="#_formats"></a>Formats</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Sujet pas très fun.
+Je ne vous en voudrai pas si vous sautez la section, mais c’est quand même mieux de savoir où on met les pieds.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Chaque fabricant d’appareil a tendance à pondre <strong>son propre format de <em>raw</em></strong> : Canon a par exemple le <code>.cr3</code>, Panasonic le <code>.rw2</code>, etc.</p>
+</li>
+<li>
+<p>Ces formats sont grosso modo tous « propriétaires », avec des <strong>spécifications</strong> parfois <strong>gardées jalousement</strong> par leurs créateurs.
+Ils ne prennent, pour la plupart, pas la peine de fournir de la documentation sur « comment le format est gaulé ».
+De ce fait, les développeurs de logiciels, en particulier ceux libres comme RawTherapee, doivent trimer comme des gorets pour réussir à interpréter ces formats et ouvrir ces fichiers de manière satisfaisante.
+Ça donne des discussions à se taper la tête contre un mur, à base de : « À l’adresse <code>0x1f90a4</code>, sur trente-deux octets, il y a telle info, je crois ! Pis après, par contre, sur seize octets, on a aucune idée d’à quoi servent les données ! »
+<a href="https://github.com/RawTherapee/RawTherapee/pull/6983" target="_blank" rel="noopener">Ça peut mener à des bugs</a>, même quand on croit être sorti d’affaire. <sup class="footnote">[<a id="_footnoteref_8" class="footnote" href="#_footnotedef_8" title="Voir la note de pied de page.">8</a>]</sup></p>
+</li>
+<li>
+<p>Une même extension de fichier <strong>peut cacher plusieurs versions d’un même format</strong>, avec des données organisées différemment et même des méthodes de compression changeantes et obscures.
+Il y a par exemple chez Panasonic des « vieux » <code>.rw2</code> et des <code>.rw2</code> « récents ».
+Certains logiciels vont marcher avec les vieux mais pas avec les récents, alors qu’en voyant les noms des fichiers on pourrait s’attendre à ce que le comportement soit le même.
+Ce genre de délires.</p>
+</li>
+<li>
+<p>Certains fabricants essayent, par la même occasion, de nous pousser à traiter nos photos <strong>avec <em>leurs</em> logiciels</strong>, qui ne sont même pas forcément multi-plateformes, donc ça me saoule.</p>
+</li>
+<li>
+<p>Adobe a proposé <strong>un format ouvert et commun</strong>, <a href="https://fr.wikipedia.org/wiki/Digital_Negative" target="_blank" rel="noopener">le DNG (<em>Digital Negative</em>)</a>, mais <strong>son adoption laisse à désirer</strong>.
+À l’heure où j’écris ces lignes, rares sont les appareils qui proposent nativement de <em>shooter</em> en&#160;DNG.
+C’est quand même mieux que rien, car certains utilisateurs parviennent à exploiter leurs photos dans des logiciels récalcitrants après avoir fait des conversions de leurs <em>raws</em> vers le format DNG.
+Ça ouvre certaines portes, et c’est jugé <strong>sympa pour l’archivage</strong>.
+J’aurais préféré que ça vienne d’une organisation à but pas trop lucratif plutôt que d’Adobe, par contre.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Je suppose que certaines de ces difficultés viennent du fait que les <em>raws</em> sont <strong>intrinsèquement liés aux technologies utilisées</strong> dans chaque appareil, à comment les <strong>capteurs</strong> sont gaulés, etc., et qu’il est dur d’uniformiser tout ça, sans parler des risques de dévoiler des secrets industriels en dévoilant trop de choses.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_voilà"><a class="anchor" href="#_voilà"></a>Voilà</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Si ce débroussaillage vous a motivé ou que vous étiez déjà au taquet, et si vous voulez voir <strong>comment je me démerde pour traiter mes photos</strong> (et pourquoi ça me prend parfois deux heures pour un seul cliché – je crois que ça n’est <em>pas</em> la norme…), vous pouvez continuer votre visite en consultant <strong>mes notes</strong> prises dans <a href="rawtherapee.html" class="bare">rawtherapee.html</a>.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. De l’anglais « brut », et prononcé avec une espèce de « ô » comme pour <em>law</em>, <em>draw</em>, <em>saw</em>…
+</div>
+<div class="footnote" id="_footnotedef_2">
+<a href="#_footnoteref_2">2</a>. Encore utilisées par certains, ce que je peux comprendre même si, personnellement, je pense que je n’y toucherai jamais.
+</div>
+<div class="footnote" id="_footnotedef_3">
+<a href="#_footnoteref_3">3</a>. Une bête recherche internet du style « android shoot raw » donne trois tonnes de résultats.
+</div>
+<div class="footnote" id="_footnotedef_4">
+<a href="#_footnoteref_4">4</a>. Avec mon appareil Canon, j’utilise le <a href="https://global.canon/en/imaging/picturestyle/style/index.html" target="_blank" rel="noopener">« style d’image »</a> appelé « Neutre », légèrement personnalisé pour relever d’un cran l’amélioration de netteté, tandis que par défaut ça doit être genre « Auto » ou « Standard », qui sont en mode fête du slip et essayent de faire péter les couleurs et le contraste comme pas permis. Ça n’affecte que le JPG et pas les données brutes, ce qui permet de changer d’avis plus tard en appliquant un « profil colorimétrique » différent, correspondant à n’importe lequel des « styles d’image » initialement proposés… mais je trouve généralement qu’en dehors de « Neutre » (et « Monochrome » mais c’est pas le même délire) les couleurs sont absurdes.
+</div>
+<div class="footnote" id="_footnotedef_5">
+<a href="#_footnoteref_5">5</a>. Sans même parler des <a href="https://www.alicem.net/shr/film_chuchote_obscurite.png.html" target="_blank" rel="noopener">acteurs qui parlent en chuchotant à moitié alors qu’on ne fait jamais ça en vrai, et des salles qui sont plongées dans la pénombre sans raison apparente</a>.
+</div>
+<div class="footnote" id="_footnotedef_6">
+<a href="#_footnoteref_6">6</a>. Je voulais faire un dessin là-dessus sur mon site, tiens, mais c’est enfoui dans ma liste d’idées à l’heure où j’écris ça.
+</div>
+<div class="footnote" id="_footnotedef_7">
+<a href="#_footnoteref_7">7</a>. Une chose qui m’est également souvent chère en musique, sauf quand le non-organique est vraiment bien pensé et maîtrisé plutôt qu’imposé sans réfléchir, mais on s’éloigne du sujet.
+</div>
+<div class="footnote" id="_footnotedef_8">
+<a href="#_footnoteref_8">8</a>. Oui, j’ai participé à la résolution de ce bug en fournissant gracieusement des photos d’un manchot en peluche perché sur une boîte de mouchoirs.
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank"><img src="images/cc.png"></a>&emsp;<a href="https://www.alicem.net/" target="_blank">alicem.net</a>&emsp;·&emsp;Écrit en <a href="https://asciidoctor.org/" target="_blank">AsciiDoc</a>&emsp;·&emsp;Dernière édition de cette page : 2025-07-29 09:40:34
+</div>
+</div>
+</body>
+</html>

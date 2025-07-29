@@ -1,0 +1,118 @@
+<!--
+Used to extend AsciiDoctor’s default stylesheet.
+https://docs.asciidoctor.org/asciidoctor/latest/html-backend/default-stylesheet/
+-->
+<style>
+#toc .sectlevel3 {
+  font-size: smaller;
+  font-weight: lighter;
+}
+
+#toc .sectlevel3 li a {
+  color: darkslategrey;
+}
+
+h4 {
+  padding-left: calc(2em / 3);
+}
+
+.admonitionblock td.icon img {
+  border-radius: 10px;
+}
+
+.menuref, .menuseq {
+  padding-left: 0.3em;
+  padding-right: 0.3em;
+  border: 1px lightgrey dashed;
+  border-radius: 0.2em;
+}
+
+.menuseq .caret {
+  color: grey;
+}
+
+kbd {
+  font-size: 0.95em;
+  padding: 0.025em 0.4em
+}
+
+#footer-text {
+  color: darkgrey;
+}
+
+#footer-text a {
+  color: inherit;
+  text-decoration: underline dotted 1px;
+}
+
+#footer-text img {
+  max-height: 4ex;
+  border-radius: calc(2ex / 3);
+}
+
+#return-to-index {
+  color: grey;
+  font-size: 12px;
+  font-family: "Open Sans", "DejaVu Sans", sans-serif;
+  text-decoration: none;
+
+  background-color: #ffffffcc;
+  border-radius: 2px;
+
+  position: fixed;
+  top: 2px;
+  left: 2px;
+  z-index: 9999;
+}
+
+#return-to-index:hover,
+#return-to-index:focus {
+  color: black;
+  text-decoration: underline 1px solid black;
+}
+
+
+/* ↓ Gemini-generated CSS to make figure caption appear *before* the picture ↓ */
+/* (Customized a bit because I did not want to suddenly center ALL pictures.) */
+
+/* Target the parent container of the image and its caption */
+div.imageblock {
+  display: flex;
+  flex-direction: column;
+}
+
+div.imageblock > div.content {
+  /* Make the image content appear second. */
+  order: 2;
+}
+
+div.imageblock > div.title {
+  /* Make the caption appear first. */
+  order: 1;
+  /* Optional: Add some bottom margin to separate it from the image */
+  margin-bottom: 0.5em;
+}
+
+/* Optional: Center the caption if desired */
+/*div.imageblock > div.title {
+  text-align: center;
+}*/
+
+/* Ensure the image itself doesn't cause overflow issues. */
+div.imageblock img {
+  max-width: 100%;
+  height: auto;
+  max-height: 480px;
+  /* Removes extra space below image. */
+  display: block;
+  /* For centering if image is smaller than container. */
+  /*margin-left: auto;
+  margin-right: auto;*/
+}
+
+/* Fix “align = center” broken by customizations. */
+div.imageblock.text-center img {
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>

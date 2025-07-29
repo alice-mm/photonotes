@@ -1,0 +1,13 @@
+= Notes sur la photographie
+
+.🇫🇷
+Projet rassemblant des notes sur le thème de la photographie.
+Prévu pour être publié via GitHub Pages.
+Les pages sont écrites en AsciiDoc puis compilées en HTML via le script `build.sh`.
+L’accueil est `index.html`.
+
+.🇬🇧 / 🇺🇸
+_Project hosting notes related to photography.
+Meant for publication via GitHub Pages.
+The pages are written in AsciiDoc and compiled to HTML via the `build.sh` script.
+The home page is `index.html`._

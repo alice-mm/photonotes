@@ -1,0 +1,3 @@
+:source-highlighter: highlight.js
+:highlightjsdir: highlight
+:highlightjs-theme: obsidian
