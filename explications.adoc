@@ -181,7 +181,7 @@ Pas le meilleur exemple, mais j’ai récemment fait le ménage sur l’ordi et 
 image::jpg_raw_comp.jpg[role = "related thumb", align = center, width = {max_media_width}]
 
 Un truc marrant, c’est que pour un même _raw_ de départ, *plusieurs personnes pondront des images radicalement différentes*.
-C’est même devenu un jeu (et un moyen d’apprentissage) sur le sympathique site communautaire https://discuss.pixls.us[discuss.pixls.us^] (qui comporte une section francophone, il me semble) : +
+C’est même devenu un jeu (et un moyen d’apprentissage) sur le sympathique site communautaire https://discuss.pixls.us[discuss.pixls.us^] (qui comporte une section francophone, il me semble. Edit : Nan, j’ai fumé) : +
 https://discuss.pixls.us/t/animal-pajama-party/43005[^] +
 … Sans parler des filtres artistiques et autres bidouilles qui relèvent plus de l’infographie que de la photographie – c’est un autre sujet.
 Un autre sujet auquel on va indirectement se frotter ci-après.
