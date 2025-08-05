@@ -372,12 +372,20 @@ Le gros de cette partie a lieu dans l’onglet btn:[Exposure], avec quelques pet
 
 ==== Petite base
 
-. _Exposure compensation_ en faisant surtout gaffe <<crame, aux trucs qui crament>> (regarder la tronche de l’histogramme, aussi).
-Pas trop stresser si ça rend moche les parties sombres.
+. _Exposure compensation_ en faisant surtout gaffe <<crame, aux trucs qui crament>> (regarder la tronche de l’histogramme, aussi) :
+
+** Surtout essayer de sauver ces parties trop claires, sans non plus sacrifier tout le reste.
+
+** Si de toute façon rien n’était trop clair, tant mieux.
+Vous pouvez ajuster (probablement vers le haut) selon vos goûts.
+
+** Ne pas mettre des valeurs trop extrêmes, ni trop chercher la perfection : ce n’est que le début, il y aura d’autres outils.
+
+** En particulier, ne pas trop stresser si ça rend moche les parties sombres.
 
 . _Highlight compression_ si trucs encore cramés qui auraient demandé trop de sacrifices niveau _Exposure compensation_.
 Pas abuser sur ça non plus car il y a d’autres moyens de rectifier ça après.
-Je dépasse rarement{nbsp}30 et presque jamais{nbsp}50.
+Je dépasse rarement{nbsp}30.
 Peut-être que j’ai tort, mais perso je trouve que ça fait trop de la bouillie terne, après.
 
 . _Black_, je sais pas trop pourquoi ça autorise des valeurs à cinq chiffres ; perso je suis généralement dans{nbsp}-1000–1000, mais faut pas trop se mettre spécialement de limite je pense.
