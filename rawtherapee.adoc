@@ -36,6 +36,8 @@ Personnellement, c’est le seul que j’utilise (après avoir jeté un coup d�
 
 * Je risque de donner surtout les noms de *l’interface anglaise*, car c’est ce que j’utilise, et ce qui est probablement plus facile à retrouver en ligne quand on cherche de l’aide.
 En plus, la traduction française, aussi bien côté logiciel que dans la documentation, est incomplète (je voulais d’ailleurs essayer d’y contribuer mais je procrastine et utilise le logiciel au lieu de participer à son développement parce que je suis un boulet).
+Il y a beaucoup de mots transparents (genre _« local contrast »_ ↔ « contraste local »), donc c’est généralement pas si gênant.
+J’essaye quand même, en plus, de dire dans quel onglet on se trouve, pour que ça soit moins le bazar.
 
 * Ceci a été pondu avec *RawTherapee{nbsp}5.11*.
 Je doute qu’il y ait des changements trop radicaux dans l’avenir proche, mais bon, je préfère prévenir.
@@ -491,7 +493,7 @@ Faut pas croire que c’est _mal_ de peu s’appuyer sur certains outils…
 ====
 
 
-==== Compression supplémentaire éventuelle et autres trucs gourmands
+==== Compression supplémentaire éventuelle et brume atmosphérique
 
 . Si vous galérez _encore trop_ avec des trucs *trop lumineux ou trop sombres*, vous pouvez foutre un peu de _Dynamic Range compression_, toujours dans l’onglet menu:Exposure[].
 
@@ -505,9 +507,7 @@ Pratique aussi (avec modération) pour quelques ajustements de dernière minute.
 . Se calmer un peu sur la force de _Shadows/Highlights_ si on a mis de la compression.
 
 . Pour les paysages qui font *bleuté au loin*, menu:Detail[Haze Removal] peut dépanner.
-Par contre, c’est vite violent, et ça assombrit un peu tout, pour ça que j’essaye de le faire tôt.
-On peut alors compenser avec les autres paramètres.
-Par contre, ça semble demander pas mal de calculs et ralentit l’aperçu, donc c’est super chiant de devoir activer cet outil si tôt…
+Par contre, c’est vite violent, et ça assombrit un peu tout, pour ça que j’essaye de le faire tôt, comme ça on peut compenser avec tout le bazar de l’onglet menu:Exposure[], entre autres.
 
 
 ==== Finir l’exposition de base
@@ -525,7 +525,7 @@ N’abusez pas trop sur le contraste et la saturation à ce stade :
 
 * Pour le contraste, il faut se garder un peu de marge pour plein d’outils qui exploitent ça pour mieux faire ressortir les objets et tout.
 
-* Il y aura encore plein de trucs dans l’onglet btn:[Colors] (on en parle en section <<couleurs>>) qui pourront faire des trucs similaires à la saturation en mieux, et même la chromaticité machin truc <<vign_grad_adj, dans les ajustements finaux>>.
+* Il y aura encore plein de trucs dans l’onglet menu:Colors[] (on en parle en section <<couleurs>>) qui pourront faire des trucs similaires à la saturation en mieux, et même la chromaticité machin truc <<vign_grad_adj, dans les ajustements finaux>>.
 
 Bref, faites comme vous voulez, mais moi je suis généralement dans -2–2 pour ces deux-là, à la rigueur{nbsp}-3 ou{nbsp}3 mais rarement.
 D’ailleurs, à propos de « comme vous voulez », ces paramètres pourraient être réglés plus tôt, en particulier la luminosité.
@@ -670,7 +670,7 @@ Je crois que son nom vient du fait qu’il tente de se rapprocher de ce qu’on 
 
 Des conseils et astuces un peu en vrac, désolé.
 
-* Si vous aviez activé des outils gourmands en calculs (notamment _Dynamic Range Compression_ et _Haze Removal_), je recommande de :
+* Si vous aviez activé des outils gourmands en calculs (notamment _Dynamic Range Compression_), je recommande de :
 
 .. Les désactiver avant de bosser sur la courbe.
 
