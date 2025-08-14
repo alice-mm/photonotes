@@ -177,8 +177,11 @@ Commence ensuite la tâche du *traitement*, consistant à *choisir soi-même les
 Il faut un peu se remonter les manches, des fois, mais ça vaut le coup.
 Pas le meilleur exemple, mais j’ai récemment fait le ménage sur l’ordi et flemme de faire de la spéléo pour trouver mieux :
 
-.À gauche le JPG proposé automatiquement par l’appareil (mais bon, en style d’image « Neutre », il faut dire), et à droite ce que j’ai obtenu en me retroussant les manches à partir du _raw_.
+.À gauche le JPG proposé automatiquement par l’appareil (mais bon, en style d’image « Neutre », il faut dire), et à droite ce que j’ai obtenu en me retroussant les manches à partir du _raw_
 image::jpg_raw_comp.jpg[role = "related thumb", align = center, width = {max_media_width}]
+
+.Ah celui-là est peut-être plus parlant
+image::jpg_raw_comp_2.jpg[role = "related thumb", align = center, width = {max_media_width}]
 
 Un truc marrant, c’est que pour un même _raw_ de départ, *plusieurs personnes pondront des images radicalement différentes*.
 C’est même devenu un jeu (et un moyen d’apprentissage) sur le sympathique site communautaire https://discuss.pixls.us[discuss.pixls.us^] (qui comporte une section francophone, il me semble. Edit : Nan, j’ai fumé) : +
