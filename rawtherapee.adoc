@@ -684,6 +684,12 @@ En particulier, la _Dynamic Range Compression_ permet généralement de faire mo
 
 * Garder kbd:[Ctrl] enfoncé pendant le glisser-déposer d’un point pour déplacer pépère.
 Par contre ça me nique les doigts, à force, mais bon.
++
+[TIP]
+====
+Maintenant, j’active parfois l’option https://fr.wikipedia.org/wiki/Touche_r%C3%A9manente[« Touches rémanentes » (_« Sticky keys »_)] de mon ordi, comme ça j’appuie juste une fois sur kbd:[Ctrl] avant chaque clic au lieu de maintenir la touche.
+Ça aide déjà pas mal.
+====
 
 * On peut aussi passer en mode « édition de coordonnées » en faisant un clic droit sur un point, pour ensuite carrément taper des valeurs numériques.
 Je le faisais beaucoup au début, mais en fait c’est un peu chiant, même avec les techniques au clavier pour augmenter ou baisser les valeurs pas à pas.
