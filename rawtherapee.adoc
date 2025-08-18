@@ -953,6 +953,10 @@ C’est relou de changer le type des trois courbes de couleurs à chaque fois, d
 
 * Je commence généralement par le vert, car c’est souvent celui sur lequel je me laisse le plus aller.
 
+* Si je ne vois pas trop quelles zones sont affectées par l’un des _sliders_, je lui fous temporairement des valeurs abusées juste pour me faire une idée.
+
+* J’essaye de voir avec par exemple{nbsp}-10 et{nbsp}10 si je veux plutôt partir dans le positif ou le négatif (ou rester à zéro), et enfin je recherche une « vraie » valeur.
+
 
 [[toning]]
 ==== _Color toning_
